@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/assets/sass/variables';
+html,
+body,
+.view {
+  height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+//scrollbar
+body {
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: #cccccc;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #333333;
+    border: 1px solid #555;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #333333;
+    border: 1px solid #555555;
+  }
+  &::-webkit-scrollbar-track {
+    border: 1px gray solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 6px gray inset;
+  }
+}
+

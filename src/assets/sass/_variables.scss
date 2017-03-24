@@ -1,0 +1,7 @@
+@import "colors";
+
+$primary-color: map-get($grey, darken-1);
+$accent-color: map-get($red, accent-4);
+$third-color: map-get($indigo, darken-4);
+
+
