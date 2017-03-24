@@ -10,6 +10,7 @@ import { CarouselComponent } from './landing-page/content/carousel/carousel.comp
 import { ContentComponent } from './landing-page/content/content.component';
 import { ServicesComponent } from './landing-page/content/services/services.component';
 import { FooterComponent } from './landing-page/footer/footer.component';
+import { ContactComponent } from './landing-page/content/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './landing-page/footer/footer.component';
     CarouselComponent,
     ContentComponent,
     ServicesComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
