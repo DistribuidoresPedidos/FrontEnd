@@ -6,12 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './landing-page/navbar/navbar.component';
+import { CarouselComponent } from './landing-page/content/carousel/carousel.component';
+import { ContentComponent } from './landing-page/content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    CarouselComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
