@@ -11,20 +11,23 @@ import { UserValidator } from './validations';
 export class ContactComponent implements OnInit {
   form: FormGroup;	  
 
+  /* Expresion regular para validar correo */
+  emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
+
   	constructor(private fb:FormBuilder){
  	this.form = fb.group({
   		name: ['',  Validators.compose([
   			Validators.required,
   			])], 
   		email: ['',  Validators.compose([
-  			Validators.required,
+  			Validators.required, Validators.pattern(this.emailRegex)
   			])],
   		number: ['',  Validators.compose([
   			Validators.required
   			])],
   		message: ['',  Validators.compose([
   			Validators.required,
-  			Validators.maxLength(250 ),
+  			Validators.maxLength(250 )
   			])]
 
   		})
