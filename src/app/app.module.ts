@@ -11,6 +11,7 @@ import { ContentComponent } from './landing-page/content/content.component';
 import { ServicesComponent } from './landing-page/content/services/services.component';
 import { FooterComponent } from './landing-page/footer/footer.component';
 import { ContactComponent } from './landing-page/content/contact/contact.component';
+import { CoverageComponent } from './landing-page/content/coverage/coverage.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ContactComponent } from './landing-page/content/contact/contact.compone
     ContentComponent,
     ServicesComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    CoverageComponent
   ],
   imports: [
     BrowserModule,
