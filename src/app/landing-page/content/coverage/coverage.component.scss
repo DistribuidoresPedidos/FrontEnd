@@ -1,0 +1,17 @@
+@import 'src/assets/sass/variables';
+.container {
+  margin-bottom: 20px;
+  z-index: 1;
+  color: #fff;
+}
+
+.section-title {
+  margin: 1em auto;
+}
+
+.parallax-content{
+  margin-top: 1%;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 10px;
+}
+
