@@ -14,12 +14,11 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     console.log("productListComponent");
-    for(let i in this.products){
-      console.log("here");
-      console.log(i);
-    }
+      this.getProducts();
+
   }
   getProducts(){
-    this.productListService.getProducts().subscribe(products => this.products = products);
+
+    this.productListService.getProducts().subscribe(data => console.log(data));
   }
 }
