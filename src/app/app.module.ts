@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
+//import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
+
+import { AppRoutingModule } from './app-routing.module';
+
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './landing-page/navbar/navbar.component';
 import { CarouselComponent } from './landing-page/content/carousel/carousel.component';
@@ -44,7 +46,7 @@ import { DistributorsComponent } from './distributors/distributors.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    NguiParallaxScrollModule,
+    //NguiParallaxScrollModule,
     AppRoutingModule
   ],
   providers: [],

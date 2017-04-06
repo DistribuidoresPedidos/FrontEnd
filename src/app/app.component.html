@@ -1,5 +1,7 @@
-<a href="#" routerLink = "/home">Home</a>
-<a href="#" routerLink = "/distributors">Distributor</a>
-<a href="#" routerLink = "/retailers" >Retailers</a>
-<a href="#" routerLink = "/products">Products</a>
-<app-landing-page></app-landing-page>
+<div *ngIf="location.path()!=''">
+    <a href="#" routerLink = "/">Home</a>
+    <a href="#" routerLink = "/distributors">Distributor</a>
+    <a href="#" routerLink = "/retailers" >Retailers</a>
+    <a href="#" routerLink = "/products">Products</a>
+</div>
+<router-outlet></router-outlet>
