@@ -17,6 +17,8 @@ import { CoverageComponent } from './landing-page/content/coverage/coverage.comp
 import { AboutUsComponent } from './landing-page/content/about-us/about-us.component';
 
 import {AppRoutingModule} from './app-routing.module';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListService } from "./product-list/products-list.service";
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import {AppRoutingModule} from './app-routing.module';
     FooterComponent,
     ContactComponent,
     CoverageComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import {AppRoutingModule} from './app-routing.module';
     AppRoutingModule//,
     //NguiParallaxScrollModule
   ],
-  providers: [],
+  providers: [ProductListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
