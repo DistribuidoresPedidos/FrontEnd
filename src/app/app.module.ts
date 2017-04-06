@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
+//import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -16,6 +16,7 @@ import { ContactComponent } from './landing-page/content/contact/contact.compone
 import { CoverageComponent } from './landing-page/content/coverage/coverage.component';
 import { AboutUsComponent } from './landing-page/content/about-us/about-us.component';
 
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AboutUsComponent } from './landing-page/content/about-us/about-us.compo
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    NguiParallaxScrollModule
+    AppRoutingModule//,
+    //NguiParallaxScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
