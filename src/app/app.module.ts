@@ -15,6 +15,9 @@ import { FooterComponent } from './landing-page/footer/footer.component';
 import { ContactComponent } from './landing-page/content/contact/contact.component';
 import { CoverageComponent } from './landing-page/content/coverage/coverage.component';
 import { AboutUsComponent } from './landing-page/content/about-us/about-us.component';
+import { DistributorComponent } from './distributor/distributor.component';
+import { RetailerComponent } from './retailer/retailer.component';
+import { ProductComponent } from './product/product.component';
 
 
 
@@ -29,7 +32,11 @@ import { AboutUsComponent } from './landing-page/content/about-us/about-us.compo
     FooterComponent,
     ContactComponent,
     CoverageComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ProductsComponent,
+    DistributorComponent,
+    RetailerComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
