@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './landing-page/navbar/navbar.component';
 import { CarouselComponent } from './landing-page/content/carousel/carousel.component';
@@ -15,9 +16,9 @@ import { FooterComponent } from './landing-page/footer/footer.component';
 import { ContactComponent } from './landing-page/content/contact/contact.component';
 import { CoverageComponent } from './landing-page/content/coverage/coverage.component';
 import { AboutUsComponent } from './landing-page/content/about-us/about-us.component';
-import { DistributorComponent } from './distributor/distributor.component';
-import { RetailerComponent } from './retailer/retailer.component';
-import { ProductComponent } from './product/product.component';
+import { ProductsComponent } from './products/products.component';
+import { RetailersComponent } from './retailers/retailers.component';
+import { DistributorsComponent } from './distributors/distributors.component';
 
 
 
@@ -34,16 +35,17 @@ import { ProductComponent } from './product/product.component';
     CoverageComponent,
     AboutUsComponent,
     ProductsComponent,
-    DistributorComponent,
-    RetailerComponent,
-    ProductComponent
+    RetailersComponent,
+    DistributorsComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    NguiParallaxScrollModule
+    NguiParallaxScrollModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
