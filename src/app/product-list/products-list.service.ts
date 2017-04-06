@@ -10,9 +10,9 @@ export class ProductListService{
 
     constructor(private http: Http){
         console.log("productListService");
-        this.http.request('http://localhost:3000/products').subscribe((response: Response ) => {
-            console.log(response.json());
-        })
+        //this.http.request('http://localhost:3000/products').subscribe((response: Response ) => {
+            //console.log(response.json());
+        //})
     }
 
 

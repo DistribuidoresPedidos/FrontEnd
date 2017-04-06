@@ -9,16 +9,21 @@ import {ProductListService} from'./products-list.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[]
+   products: Product[] =[];
   constructor(private productListService :ProductListService) { }
 
   ngOnInit() {
     console.log("productListComponent");
       this.getProducts();
+      
 
   }
   getProducts(){
 
-    this.productListService.getProducts().subscribe(data => console.log(data));
+    //this.productListService.getProducts().subscribe(data => console.log(data));
+    this.productListService.getProducts().subscribe(data => data.forEach(element => {
+      //console.log(element);
+     this.products.push(element);
+    }));
   }
 }
