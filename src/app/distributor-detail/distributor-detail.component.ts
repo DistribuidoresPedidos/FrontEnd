@@ -12,7 +12,8 @@ import { DistributorService } from '../services/distributor.service';
 })
 export class DistributorDetailComponent implements OnInit {
 
-  distributor: Distributor;
+  distributor: Distributor[] = [];
+  errorMessage: string;
   id: number;
   private sub: any;
 
@@ -30,7 +31,8 @@ export class DistributorDetailComponent implements OnInit {
   }
 
   getDistributor(id: number) {
-    this.distributorService.getDistributorById(3).subscribe((distributor: Distributor) => console.log(distributor));
+    let distributors: Distributor[] = [];
+    this.distributorService.getDistributorById(id).subscribe(data => distributors.push(data));
+    this.distributor = distributors;
   }
-
 }

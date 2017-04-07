@@ -1,3 +1,53 @@
-<p>
-  
-</p>
+<div class="container-fluid" *ngFor="let distributor of distributor">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="card">
+
+        <img class="img-fluid" id="background-image" src="src/assets/img/distributors/background.jpg" alt="background">
+        <img id="profile-img" src="https://static.pexels.com/photos/3348/dirty-horror-duck.jpg" alt="profile image">
+
+        <div class="card-block container">
+          <div class="row">
+            <div class="col-sm-4">
+              <h3 class="card-title">{{distributor.name}}</h3>
+            </div>
+            <div class="col-sm-4">
+              <h4 class="card-title">Número de celular</h4>
+            </div>
+            <div class="col-sm-4">
+              <h4 class="card-title">Miembro desde</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <h5 class="card-title">{{distributor.email}}</h5>
+            </div>
+            <div class="col-sm-4">
+              <h5 class="card-title">{{distributor.phoneNumber}}</h5>
+            </div>
+            <div class="col-sm-4">
+              <h5 class="card-title">{{distributor.created_at}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-block container">
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-block container">
+          ESTADISTICAS
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
