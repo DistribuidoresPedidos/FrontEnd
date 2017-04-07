@@ -28,6 +28,7 @@ import { ProductDetailComponent } from './products/product-detail.component';
 import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 import { Angular2TokenService } from 'angular2-token';
+import { RetailersListService } from "./services/retailers-list.service";
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { Angular2TokenService } from 'angular2-token';
   providers: [
     ProductListService,
     DistributorService,
-    Angular2TokenService
+    Angular2TokenService,
+    RetailersListService
   ],
   bootstrap: [AppComponent]
 })

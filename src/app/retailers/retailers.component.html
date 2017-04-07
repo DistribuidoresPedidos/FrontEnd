@@ -1,3 +1,20 @@
-<p>
-  retailers works!
-</p>
+<h2>Retailers List</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let retailer of retailers">
+      <div class="card">
+        <div class="view overlay hm-white-slight">
+          <img src="https://static.pexels.com/photos/36003/duck-funny-soft-toy-toys.jpg" class="img-fluid" alt="">
+          <a href="#">
+            <div class="mask"></div>
+          </a>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Nombre :{{retailer.name}}</h4>
+          <p class="card-text">email : {{retailer.email}} <br> Celular : {{retailer.phoneNumber}}</p>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

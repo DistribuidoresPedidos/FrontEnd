@@ -8,6 +8,7 @@ import { DistributorDetailComponent } from './distributor-detail/distributor-det
 import { ProductsComponent } from './products/products.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail.component';
+import { RetailersComponent } from "./retailers/retailers.component";
 
 const appRoutes: Routes = [
     { path: '', component: LandingPageComponent},
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
             { path: 'detail/:id', component: ProductDetailComponent }
         ]
     },
+    {path:  'retailers', component:RetailersComponent},
     { path: '**', component: PageNotFoundComponent }
 ];
 
