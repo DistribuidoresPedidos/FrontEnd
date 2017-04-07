@@ -17,10 +17,12 @@ import { ContactComponent } from './landing-page/content/contact/contact.compone
 import { CoverageComponent } from './landing-page/content/coverage/coverage.component';
 import { AboutUsComponent } from './landing-page/content/about-us/about-us.component';
 import { DistributorsComponent } from './distributors/distributors.component';
-
-import { DistributorService } from './services/distributor.service';
 import { DistributorDetailComponent } from './distributor-detail/distributor-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductListComponent } from './product-list/product-list.component';
+
+import { DistributorService } from './services/distributor.service';
+import { ProductListService } from "./product-list/products-list.service";
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AboutUsComponent,
     DistributorsComponent,
     DistributorDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductListComponent
   ],
   imports: [
     //NguiParallaxScrollModule,
@@ -48,8 +51,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule
   ],
   providers: [
+    ProductListService,
     DistributorService
-    ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
