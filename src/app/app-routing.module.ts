@@ -13,7 +13,7 @@ const appRoutes: Routes = [
 	{ path: '', component: LandingPageComponent},
 	{ path: 'distributors', component: DistributorsComponent},
 	{ path: 'distributors/:id', component: DistributorDetailComponent},
-  { path: 'products', component: ProductsComponent, 
+    { path: 'products', component: ProductsComponent, 
 		children: [
 			{ path: '', redirectTo: 'list', pathMatch: 'full'},
 			{ path: 'list', component: ProductListComponent },

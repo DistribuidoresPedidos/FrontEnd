@@ -10,9 +10,15 @@ export class ProductListService{
 
     constructor(private http: Http){
         console.log("productListService");
+        //this.http.request('http://localhost:3000/products').subscribe((response: Response ) => {
+            //console.log(response.json());
+        //})
     }
 
-    getProducts():Observable<Product[]>{
-        return this.http.get(this.productListUrl).map((response: Response) => <Product[]>response.json())
+
+    getProducts(){
+return this.http.get(this.productListUrl).map((response: Response) => response.json())
+  // return  this.http.request('http://localhost:3000/products').subscribe((response: Response ) => {})
+
     }
 }
