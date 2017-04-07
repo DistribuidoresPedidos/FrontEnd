@@ -26,7 +26,8 @@ import { ProductDetailComponent } from './products/product-detail.component';
 
 
 import { DistributorService } from './services/distributor.service';
-import { ProductListService } from "./product-list/products-list.service";
+import { ProductListService } from './product-list/products-list.service';
+import { Angular2TokenService } from 'angular2-token';
 
 
 @NgModule({
@@ -59,8 +60,8 @@ import { ProductListService } from "./product-list/products-list.service";
   ],
   providers: [
     ProductListService,
-    DistributorService
-    // NguiParallaxScrollModule
+    DistributorService,
+    Angular2TokenService
   ],
   bootstrap: [AppComponent]
 })

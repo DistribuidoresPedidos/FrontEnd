@@ -13,18 +13,24 @@ import { DistributorService } from '../services/distributor.service';
 export class DistributorDetailComponent implements OnInit {
 
   distributor: Distributor;
+  id: number;
+  private sub: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: DistributorService
+    private distributorService: DistributorService
   ) {
 
   }
 
   ngOnInit() {
-    this.route.params.switchMap((params: Params) => this.service.getDistributorById()).subscribe((distributor: Distributor) => this.distributor = distributor);
-    console.log(this.distributor);
+    this.route.params.subscribe(params => {this.id = +params['id']; });
+    this.getDistributor(this.id);
+  }
+
+  getDistributor(id: number) {
+    this.distributorService.getDistributorById(3).subscribe((distributor: Distributor) => console.log(distributor));
   }
 
 }
