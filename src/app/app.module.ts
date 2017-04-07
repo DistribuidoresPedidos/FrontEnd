@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 //import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
 import { AppRoutingModule } from './app-routing.module';
+import { Ng2MapModule } from 'ng2-map';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -56,7 +58,9 @@ import { Angular2TokenService } from 'angular2-token';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' }),
+    MaterializeModule
   ],
   providers: [
     ProductListService,
