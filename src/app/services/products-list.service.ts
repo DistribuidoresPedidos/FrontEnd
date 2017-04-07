@@ -2,11 +2,11 @@ import {Injectable} from '@angular/core';
 import {Http,Response,Headers,RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Product} from './product';
+
 
 @Injectable()
 export class ProductListService{
-    private productListUrl = 'http://localhost:3000/products';
+    private productListUrl = 'http://localhost:3000/api/v1/products';
 
     constructor(private http: Http){
         console.log("productListService");

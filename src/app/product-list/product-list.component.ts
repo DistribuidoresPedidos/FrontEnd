@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Rx';
-import {Product} from './product';
-import {ProductListService} from'./products-list.service';
+import { Product } from './product';
+import { ProductListService } from "../services/products-list.service";
+
 
 @Component({
   selector: 'app-product-list',
