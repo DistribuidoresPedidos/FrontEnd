@@ -1,0 +1,19 @@
+<h2>Distributor List</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let distributor of distributors">
+      <div class="card">
+        <div class="view overlay hm-white-slight">
+          <img src={{distributor.photo}} class="img-fluid" alt="">
+          <a href="#">
+            <div class="mask"></div>
+          </a>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">{{distributor.name}}</h4>
+          <p class="card-text">{{distributor.email}} <br> {{distributor.phoneNumber}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
