@@ -1,0 +1,25 @@
+.container-fluid{
+  padding-top: 5%;
+}
+
+.card{
+  max-height: 45vh;
+  #background-image{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+  }
+  #profile-img{
+    height: auto;
+    width: 8%;
+    object-fit: fill;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    z-index: 150;
+    left: 2%;
+  }
+  .card-block{
+    left: 5%;
+  }
+}
