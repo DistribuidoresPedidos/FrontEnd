@@ -21,6 +21,10 @@ import { AboutUsComponent } from './landing-page/content/about-us/about-us.compo
 import { ProductsComponent } from './products/products.component';
 import { RetailersComponent } from './retailers/retailers.component';
 import { DistributorsComponent } from './distributors/distributors.component';
+import { ProductListComponent } from './products/product-list.component';
+import { ProductDetailComponent } from './products/product-detail.component';
+
+
 
 
 
@@ -38,7 +42,9 @@ import { DistributorsComponent } from './distributors/distributors.component';
     AboutUsComponent,
     ProductsComponent,
     RetailersComponent,
-    DistributorsComponent
+    DistributorsComponent,
+    ProductListComponent,
+    ProductDetailComponent   
 
   ],
   imports: [
