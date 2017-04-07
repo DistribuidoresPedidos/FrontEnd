@@ -1,9 +1,11 @@
-<div class="container-fluid" *ngFor="let distributor of distributor">
+<div id="profile" class="container-fluid" *ngFor="let distributor of distributor">
   <div class="col-md-12">
     <div class="row">
-      <div class="card">
+      <div id="profile-banner" class="card">
 
         <img class="img-fluid" id="background-image" src="src/assets/img/distributors/background.jpg" alt="background">
+        <!-- Descomentar y comentar la imagen de abajo cuando funcionen las urls de las imagenes -->
+        <!-- <img id="profile-img" src={{distributor.photo}} class="img-fluid" alt="profile image"> -->
         <img id="profile-img" src="https://static.pexels.com/photos/3348/dirty-horror-duck.jpg" alt="profile image">
 
         <div class="card-block container">
@@ -37,8 +39,14 @@
   <div class="row">
     <div class="col-md-5">
       <div class="card">
-        <div class="card-block container">
-          
+        <div class="container">
+          <br>
+          <div class="col-md-12">
+            <ng2-map id="map" center="{{distributor.latitude}} {{distributor.longitude}}" zoom="17" scrollwheel="false" >
+              <marker position="{{distributor.latitude}} {{distributor.longitude}}"></marker>
+            </ng2-map>
+          </div>
+          <br>
         </div>
       </div>
     </div>
@@ -50,4 +58,5 @@
       </div>
     </div>
   </div>
+  <br>
 </div>

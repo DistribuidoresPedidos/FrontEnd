@@ -1,8 +1,13 @@
-.container-fluid{
+#profile{
   padding-top: 5%;
+  overflow-x: hidden;
 }
 
-.card{
+#map{
+  margin:auto;
+}
+
+#profile-banner{
   max-height: 45vh;
   #background-image{
     width: 100%;

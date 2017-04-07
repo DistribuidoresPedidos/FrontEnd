@@ -1,11 +1,12 @@
-<h2>Distributor List</h2>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let distributor of distributors">
       <div class="card">
         <div class="view overlay hm-white-slight">
+          <!-- Descomentar y comentar la imagen de abajo cuando funcionen las urls de las imagenes -->
+          <!-- <img src={{distributor.photo}} class="img-fluid" alt=""> -->
           <img src="https://static.pexels.com/photos/3348/dirty-horror-duck.jpg" class="img-fluid" alt="">
-          <a href="#">
+          <a href="#" (click)="onClick(distributor)">
             <div class="mask"></div>
           </a>
         </div>
@@ -17,3 +18,4 @@
     </div>
   </div>
 </div>
+
