@@ -20,6 +20,10 @@ import { DistributorsComponent } from './distributors/distributors.component';
 import { DistributorDetailComponent } from './distributor-detail/distributor-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ProductsComponent } from './products/products.component';
+import { RetailersComponent } from './retailers/retailers.component';
+import { ProductDetailComponent } from './products/product-detail.component';
+
 
 import { DistributorService } from './services/distributor.service';
 import { ProductListService } from "./product-list/products-list.service";
@@ -40,10 +44,13 @@ import { ProductListService } from "./product-list/products-list.service";
     DistributorsComponent,
     DistributorDetailComponent,
     PageNotFoundComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductsComponent,
+    RetailersComponent,
+    ProductDetailComponent
   ],
   imports: [
-    //NguiParallaxScrollModule,
+    // NguiParallaxScrollModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -53,6 +60,7 @@ import { ProductListService } from "./product-list/products-list.service";
   providers: [
     ProductListService,
     DistributorService
+    // NguiParallaxScrollModule
   ],
   bootstrap: [AppComponent]
 })

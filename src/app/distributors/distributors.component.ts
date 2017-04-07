@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { DistributorService } from '../services/distributor.service';
 import { Distributor } from '../classes/distributor';
+
 
 @Component({
   selector: 'app-distributors',
@@ -19,8 +21,7 @@ export class DistributorsComponent implements OnInit {
   }
 
   getDistributors() {
-    //this.distributorService.getDistributors().subscribe(data => data.forEach(element => {this.distributors.push(element); } ));
+    // this.distributorService.getDistributors().subscribe(data => data.forEach(element => {this.distributors.push(element); } ));
     this.distributors = this.distributorService.getDistributors();
-}
-
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
+//import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
 
 @Component({
   selector: 'app-coverage',
