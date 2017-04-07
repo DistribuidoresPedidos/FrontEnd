@@ -10,30 +10,30 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 
 const appRoutes: Routes = [
-	{ path: '', component: LandingPageComponent},
-	{ path: 'distributors', component: DistributorsComponent},
-	{ path: 'distributors/:id', component: DistributorDetailComponent},
-    { path: 'products', component: ProductsComponent, 
-		children: [
-			{ path: '', redirectTo: 'list', pathMatch: 'full'},
-			{ path: 'list', component: ProductListComponent },
-			{ path: 'detail', component: ProductDetailComponent },
-			{ path: 'detail/:id', component: ProductDetailComponent }
-		]
-	},
-	{ path: '**', component: PageNotFoundComponent }
+    { path: '', component: LandingPageComponent},
+    { path: 'distributors', component: DistributorsComponent},
+    { path: 'distributors/:id', component: DistributorDetailComponent},
+    { path: 'products', component: ProductsComponent,
+        children: [
+            { path: '', redirectTo: 'list', pathMatch: 'full'},
+            { path: 'list', component: ProductListComponent },
+            { path: 'detail', component: ProductDetailComponent },
+            { path: 'detail/:id', component: ProductDetailComponent }
+        ]
+    },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
-@NgModule({ 
-	imports:[
-		RouterModule.forRoot(appRoutes)
-	],
-	exports: [
-		RouterModule
-	]
+@NgModule({
+    imports: [
+        RouterModule.forRoot(appRoutes)
+    ],
+    exports: [
+        RouterModule
+    ]
 })
 
-export class AppRoutingModule { 
+export class AppRoutingModule {
 
 }
 
