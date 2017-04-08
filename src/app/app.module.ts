@@ -29,7 +29,9 @@ import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 import { Angular2TokenService } from 'angular2-token';
 import { RetailersListService } from "./services/retailers-list.service";
-import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pipe';
+import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
+import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
+import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 
 
 
@@ -45,6 +47,7 @@ import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pi
   ],
   declarations: [
     FilterOfferedProductsNamePipe,
+    FilteredOfferedProductsCategoryPipe,
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -62,6 +65,8 @@ import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pi
     ProductsComponent,
     RetailersComponent,
     ProductDetailComponent,
+    FilterOfferedProductsPricePipe,
+    
     
   
   ],
