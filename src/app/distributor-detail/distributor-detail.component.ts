@@ -12,10 +12,8 @@ import { DistributorService } from '../services/distributor.service';
 })
 export class DistributorDetailComponent implements OnInit {
 
-  distributor: Distributor[] = [];
-  errorMessage: string;
+  distributor: Distributor = new Distributor(null,'','','','',null,null);
   id: number;
-  private sub: any;
 
   constructor(
     private route: ActivatedRoute,

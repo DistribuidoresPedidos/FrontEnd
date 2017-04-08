@@ -1,3 +1,13 @@
 .container-fluid {
   padding-top: 8vh;
 }
+
+.card {
+  margin-bottom: 10%;
+  img {
+    min-height: 300px;
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+}

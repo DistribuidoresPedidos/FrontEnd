@@ -1,15 +1,15 @@
 <div id="profile" class="container-fluid">
   <div class="col-md-12">
     <div class="row">
-      <div id="profile-banner" class="card">
+      <div id="profile-banner" class="card z-depth-3">
 
         <img class="img-fluid" id="background-image" src="src/assets/img/distributors/background.jpg" alt="background">
-        <img id="profile-img" src={{distributor.photo.url}} class="img-fluid" alt="profile image">
+        <img id="profile-img" src={{distributor.photo.url}} class="img-fluid z-depth-4" alt="profile image">
 
         <div class="card-block container">
           <div class="row">
             <div class="col-sm-4">
-              <h3 class="card-title">{{distributor.name}}</h3>
+              <h4 class="card-title">{{distributor.name}}</h4>
             </div>
             <div class="col-sm-4">
               <h4 class="card-title">Número de celular</h4>
@@ -20,36 +20,31 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <h5 class="card-title">{{distributor.email}}</h5>
+              <h5 class="grey-text">{{distributor.email}}</h5>
             </div>
             <div class="col-sm-4">
-              <h5 class="card-title">{{distributor.phoneNumber}}</h5>
+              <h5 class="grey-text">{{distributor.phoneNumber}}</h5>
             </div>
             <div class="col-sm-4">
-              <h5 class="card-title">{{distributor.created_at}}</h5>
+              <h5 class="grey-text">{{distributor.created_at}}</h5>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <br>
-  <div class="row">
+  <div id="profile-content" class="row">
     <div class="col-md-5">
-      <div class="card">
-        <div class="container">
-          <br>
-          <div class="col-md-12">
-            <ng2-map id="map" center="{{distributor.latitude}} {{distributor.longitude}}" zoom="17" scrollwheel="false" >
-              <marker position="{{distributor.latitude}} {{distributor.longitude}}"></marker>
-            </ng2-map>
-          </div>
-          <br>
+      <div class="card z-depth-3">
+        <ng2-map id="map" center="{{distributor.latitude}} {{distributor.longitude}}" zoom="17" scrollwheel="false" >
+          <marker position="{{distributor.latitude}} {{distributor.longitude}}"></marker>
+        </ng2-map>
+        <div class="card-block container">
         </div>
       </div>
     </div>
     <div class="col-md-7">
-      <div class="card">
+      <div class="card z-depth-3">
         <div class="card-block container">
           ESTADISTICAS
         </div>
