@@ -10,16 +10,16 @@
             </a>
             <div class="collapse navbar-collapse" id="navbarNav1">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                        <a class="nav-link" href="#" routerLink="/">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" [class.active]="location.path()=='/distributors'">
                         <a class="nav-link" href="#" routerLink="/distributors">Distributor</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" [class.active]="location.path()=='/retailers'">
                         <a class="nav-link" href="#" routerLink="/retailers">Retailers</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" [class.active]="location.path()=='/products'">
                         <a class="nav-link" href="#" routerLink="/products">Products</a>
                     </li>
                 </ul>

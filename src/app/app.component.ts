@@ -7,7 +7,6 @@ import { Location } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Location],
-  
  // directives: [ROUTER_DIRECTIVES] 
 })
 export class AppComponent {
