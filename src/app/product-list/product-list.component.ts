@@ -14,16 +14,14 @@ export class ProductListComponent implements OnInit {
   constructor(private productListService :ProductListService) { }
 
   ngOnInit() {
-    console.log("productListComponent");
       this.getProducts();
-      
-
   }
   getProducts(){
 
     this.productListService.getProducts().subscribe(response => {
       response.data.forEach(element => {
-        this.products.push(element);
+       // console.log(element.product);
+        this.products.push(element.product);
       });
     });
 

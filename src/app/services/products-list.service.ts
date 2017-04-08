@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductListService{
-    private productListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/products';
+    private productListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
 
     constructor(private http: Http){
         //console.log("productListService");
