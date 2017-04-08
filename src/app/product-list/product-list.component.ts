@@ -22,6 +22,7 @@ export class ProductListComponent implements OnInit {
       response.data.forEach(element => {
        // console.log(element.product);
         this.products.push(element.product);
+        console.log(this.products);
       });
     });
 

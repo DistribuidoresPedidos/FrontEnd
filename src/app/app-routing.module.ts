@@ -10,14 +10,32 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { RetailersComponent } from "./retailers/retailers.component";
 
+import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
+import { DistributorListResolver } from './resolvers/distributor-list.resolver';
+import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
+
+
 import { AppComponent } from "./app.component";
 
 
 const appRoutes: Routes = [
     { path: '', component: LandingPageComponent},
-    { path: 'distributors', component: DistributorsComponent},
-    { path: 'distributors/:id', component: DistributorDetailComponent},
-    { path: 'products', component:ProductListComponent},
+    {
+        path: 'distributors',
+        component: DistributorsComponent,
+        resolve: {
+            distributors: DistributorListResolver
+        }
+    },
+    {
+        path: 'distributors/:id',
+        component: DistributorDetailComponent,
+        resolve: {
+            distributor: DistributorDetailResolver,
+            distributorAddress: DistributorAddressResolver
+        }
+    },
+    { path: 'products', component: ProductListComponent},
     /*
     { path: 'products', component: ProductsComponent,
         children: [
@@ -27,7 +45,7 @@ const appRoutes: Routes = [
             { path: 'detail/:id', component: ProductDetailComponent }
         ]
     },*/
-    {path:  'retailers', component:RetailersComponent},
+    {path:  'retailers', component: RetailersComponent},
     { path: '**', component: PageNotFoundComponent }
 ];
 

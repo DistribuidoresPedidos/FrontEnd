@@ -1,10 +1,11 @@
 #profile{
-  padding-top: 5%;
+  padding-top: 10vh;
   overflow-x: hidden;
 }
 
 #map{
   margin:auto;
+  width: 100%;
 }
 
 #profile-banner{
@@ -15,8 +16,8 @@
     object-fit: cover;
   }
   #profile-img{
-    height: auto;
-    width: 8%;
+    width: 120px;
+    height: 120px;
     object-fit: fill;
     border-radius: 50%;
     position: absolute;
@@ -27,4 +28,8 @@
   .card-block{
     left: 5%;
   }
+}
+
+.row{
+  margin-bottom: 0;
 }
