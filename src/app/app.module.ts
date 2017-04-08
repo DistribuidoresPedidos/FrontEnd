@@ -29,6 +29,9 @@ import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 import { Angular2TokenService } from 'angular2-token';
 import { RetailersListService } from "./services/retailers-list.service";
+import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pipe';
+
+
 
 
 @NgModule({
@@ -41,6 +44,7 @@ import { RetailersListService } from "./services/retailers-list.service";
     AppRoutingModule
   ],
   declarations: [
+    FilterOfferedProductsNamePipe,
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -57,7 +61,9 @@ import { RetailersListService } from "./services/retailers-list.service";
     ProductListComponent,
     ProductsComponent,
     RetailersComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    
+  
   ],
 
   providers: [
