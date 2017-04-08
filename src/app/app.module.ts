@@ -28,12 +28,13 @@ import { ProductDetailComponent } from './products/product-detail.component';
 
 import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
-//import { Angular2TokenService } from 'angular2-token';
+// import { Angular2TokenService } from 'angular2-token';
 import { RetailersListService } from './services/retailers-list.service';
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 
+import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pipe';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { DistributorAddressResolver } from './resolvers/distributor-address.reso
     Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })
   ],
   declarations: [
+    FilterOfferedProductsNamePipe,
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
