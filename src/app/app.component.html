@@ -1,5 +1,5 @@
 <div *ngIf="location.path()!=''">
-    <nav id="app-nav" class="navbar navbar-toggleable-md navbar-dark bg-primary fixed-top">
+    <nav id="app-nav" class="navbar navbar-toggleable-md navbar-dark grey darken-2 fixed-top">
         <div class="container">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse" id="navbarNav1">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                       <a class="nav-link" href="#" routerLink="/">Inicio</a>
+                       <a class="nav-link" href="#" routerLink="/distributors">Inicio</a>
                     </li>
                     <li class="nav-item" [class.active]="location.path()=='/distributors'">
                         <a class="nav-link" href="#" routerLink="/distributors">Distribuidores</a>
