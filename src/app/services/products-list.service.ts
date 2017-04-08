@@ -15,9 +15,12 @@ export class ProductListService{
         //})
     }
 
-
     getProducts(){  
         return this.http.get(this.productListUrl).map((response: Response) => response.json());
+    }
 
+    getProductById(id: number){  
+        var url1 = `${this.productListUrl}/${id}`;
+        return this.http.get(url1).map((response: Response) => response.json());
     }
 }
