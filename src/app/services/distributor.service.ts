@@ -10,7 +10,7 @@ import { Distributor } from '../classes/distributor';
 @Injectable()
 export class DistributorService {
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private distributorListUrl = 'http://localhost:3000/api/v1/distributors';
+  private distributorListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/distributors';
 
   constructor(private http: Http) { }
 

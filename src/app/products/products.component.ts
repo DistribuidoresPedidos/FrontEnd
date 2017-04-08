@@ -9,8 +9,9 @@ import { ProductListService } from "../services/products-list.service";
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-	products: Product[] = [];
+	products1: Product[] = [];
 	id: number;
+
 	constructor(
 		private route: ActivatedRoute,
 	    private router: Router,
@@ -25,7 +26,7 @@ export class ProductsComponent implements OnInit {
 	getProductsById( id: number ){
 		let product: Product[] = [];
 		this.productListService.getProductById(id).subscribe(data => product.push(data));
-		this.products = product;
+		this.products1 = product;
 		console.log(product);
 	}
 

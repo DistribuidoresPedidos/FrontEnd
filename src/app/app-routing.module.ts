@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'distributors', component: DistributorsComponent},
     { path: 'distributors/:id', component: DistributorDetailComponent},
     { path: 'products', component:ProductListComponent},
+    { path: 'products/:id', component: ProductDetailComponent},
     /*
     { path: 'products', component: ProductsComponent,
         children: [
