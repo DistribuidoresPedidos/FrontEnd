@@ -11,26 +11,15 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class DistributorsComponent implements OnInit {
 
-  distributors: Distributor[] = [];
+  distributors: Distributor[];
 
   constructor(
     private distributorService: DistributorService,
     private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.getDistributors();
-  }
-
-  getDistributors() {
-    this.distributorService.getDistributors().subscribe(response => {
-      response.data.forEach(element => {
-        this.distributors.push(element);
-      });
-    });
-  }
-
-  onClick(distributor: Distributor){
-    this.router.navigate(['/distributors',distributor.id])
+    this.distributors = this.route.snapshot.data['distributors'].data;
   }
 }

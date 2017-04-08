@@ -40,7 +40,7 @@
           <marker position="{{distributor.latitude}} {{distributor.longitude}}"></marker>
         </ng2-map>
         <div class="card-block container">
-          {{distributorAddress | async}}
+          {{distributorAddress}}
         </div>
       </div>
     </div>
@@ -54,5 +54,3 @@
   </div>
   <br>
 </div>
-
-{{distributor | json}}

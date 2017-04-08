@@ -30,6 +30,10 @@ import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 //import { Angular2TokenService } from 'angular2-token';
 import { RetailersListService } from './services/retailers-list.service';
+import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
+import { DistributorListResolver } from './resolvers/distributor-list.resolver';
+import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
+
 
 
 @NgModule({
@@ -64,7 +68,10 @@ import { RetailersListService } from './services/retailers-list.service';
   providers: [
     ProductListService,
     DistributorService,
-    RetailersListService
+    RetailersListService,
+    DistributorDetailResolver,
+    DistributorListResolver,
+    DistributorAddressResolver
   ],
   bootstrap: [AppComponent]
 })
