@@ -41,7 +41,7 @@ import { RetailersListService } from "./services/retailers-list.service";
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    Ng2MapModule
+    Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })
   ],
   declarations: [
     AppComponent,

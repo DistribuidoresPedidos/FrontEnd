@@ -16,8 +16,7 @@ export class ProductListService{
     }
 
 
-    getProducts(){  
+    getProducts(){
         return this.http.get(this.productListUrl).map((response: Response) => response.json());
-
     }
 }

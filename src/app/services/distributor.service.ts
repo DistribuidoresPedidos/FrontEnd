@@ -9,34 +9,17 @@ import { Distributor } from '../classes/distributor';
 
 @Injectable()
 export class DistributorService {
-  private headers = new Headers({ 'Content-Type': 'application/json' });
-  private distributorListUrl = 'http://localhost:3000/api/v1/distributors';
+  private distributorListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/distributors';
 
   constructor(private http: Http) { }
 
 
-  getDistributors(): Observable<Distributor[]> {
-    return this.http.get(this.distributorListUrl, { headers: this.headers })
-      .map(this.extractData)
-      .catch(this.handleError);
+  getDistributors() {
+    return this.http.get(this.distributorListUrl).map((response: Response) => response.json());
   }
 
-  getDistributorById(id: number): Observable<Distributor> {
+  getDistributorById(id: number) {
     const url = `${this.distributorListUrl}/${id}`;
-    return this.http.get(url, { headers: this.headers })
-      .map(this.extractData)
-      .catch(this.handleError);
+    return this.http.get(url).map((response: Response) => response.json());
   }
-
-  private extractData(res: Response) {
-    let body = res.json();
-    return body || {};
-  }
-
-  private handleError(error: any) {
-    let errMsg = (error.message) ? error.message :
-      error.status ? `${error.status} - ${error.statusText}` : 'Server   error';
-    return Observable.throw(errMsg);
-  }
-
 }

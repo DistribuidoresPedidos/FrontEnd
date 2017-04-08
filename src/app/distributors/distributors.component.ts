@@ -23,7 +23,11 @@ export class DistributorsComponent implements OnInit {
   }
 
   getDistributors() {
-    this.distributorService.getDistributors().subscribe(data => data.forEach(element => {this.distributors.push(element); } ));
+    this.distributorService.getDistributors().subscribe(response => {
+      response.data.forEach(element => {
+        this.distributors.push(element);
+      });
+    });
   }
 
   onClick(distributor: Distributor){

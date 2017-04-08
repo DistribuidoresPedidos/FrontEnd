@@ -31,8 +31,8 @@ export class DistributorDetailComponent implements OnInit {
   }
 
   getDistributor(id: number) {
-    let distributors: Distributor[] = [];
-    this.distributorService.getDistributorById(id).subscribe(data => distributors.push(data));
-    this.distributor = distributors;
+    this.distributorService.getDistributorById(id).subscribe(response => {
+      this.distributor = response.data;
+    });
   }
 }
