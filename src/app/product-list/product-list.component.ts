@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Rx';
-import {Product} from './product';
-import {ProductListService} from'./products-list.service';
+import { Product } from './product';
+import { ProductListService } from "../services/products-list.service";
+
 
 @Component({
   selector: 'app-product-list',
@@ -13,17 +14,16 @@ export class ProductListComponent implements OnInit {
   constructor(private productListService :ProductListService) { }
 
   ngOnInit() {
-    console.log("productListComponent");
       this.getProducts();
-      
-
   }
   getProducts(){
 
-    //this.productListService.getProducts().subscribe(data => console.log(data));
-    this.productListService.getProducts().subscribe(data => data.forEach(element => {
-      //console.log(element);
-     this.products.push(element);
-    }));
+    this.productListService.getProducts().subscribe(response => {
+      response.data.forEach(element => {
+       // console.log(element.product);
+        this.products.push(element.product);
+      });
+    });
+
   }
 }

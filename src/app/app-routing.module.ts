@@ -8,11 +8,17 @@ import { DistributorDetailComponent } from './distributor-detail/distributor-det
 import { ProductsComponent } from './products/products.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail.component';
+import { RetailersComponent } from "./retailers/retailers.component";
+
+import { AppComponent } from "./app.component";
+
 
 const appRoutes: Routes = [
     { path: '', component: LandingPageComponent},
     { path: 'distributors', component: DistributorsComponent},
     { path: 'distributors/:id', component: DistributorDetailComponent},
+    { path: 'products', component:ProductListComponent},
+    /*
     { path: 'products', component: ProductsComponent,
         children: [
             { path: '', redirectTo: 'list', pathMatch: 'full'},
@@ -20,7 +26,8 @@ const appRoutes: Routes = [
             { path: 'detail', component: ProductDetailComponent },
             { path: 'detail/:id', component: ProductDetailComponent }
         ]
-    },
+    },*/
+    {path:  'retailers', component:RetailersComponent},
     { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -28,6 +35,7 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(appRoutes)
     ],
+
     exports: [
         RouterModule
     ]

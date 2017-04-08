@@ -28,11 +28,20 @@ import { ProductDetailComponent } from './products/product-detail.component';
 
 
 import { DistributorService } from './services/distributor.service';
-import { ProductListService } from './product-list/products-list.service';
+import { ProductListService } from './services/products-list.service';
 import { Angular2TokenService } from 'angular2-token';
+import { RetailersListService } from "./services/retailers-list.service";
 
 
 @NgModule({
+    imports: [
+    // NguiParallaxScrollModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent,
     LandingPageComponent,
@@ -52,20 +61,11 @@ import { Angular2TokenService } from 'angular2-token';
     RetailersComponent,
     ProductDetailComponent
   ],
-  imports: [
-    // NguiParallaxScrollModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    AppRoutingModule,
-    Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' }),
-    MaterializeModule
-  ],
   providers: [
     ProductListService,
     DistributorService,
-    Angular2TokenService
+    Angular2TokenService,
+    RetailersListService
   ],
   bootstrap: [AppComponent]
 })

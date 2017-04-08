@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RetailersListService } from '../services/retailers-list.service';
+import { Retailer } from "./retailer";
 
 @Component({
   selector: 'app-retailers',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./retailers.component.scss']
 })
 export class RetailersComponent implements OnInit {
-
-  constructor() { }
+  retailers: Retailer[] =[];
+  constructor(private retailersListService:RetailersListService) { }
 
   ngOnInit() {
+    this.getRetailers();
   }
-
+  getRetailers(){
+    this.retailersListService.getRetailers().subscribe(response => {
+      response.data.forEach(element => {
+        this.retailers.push(element);
+        console.log(element.photo.url);
+      });
+    });
+  }
 }
