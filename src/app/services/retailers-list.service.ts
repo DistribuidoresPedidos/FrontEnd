@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class RetailersListService{
-    private retailerListUrl = 'http://localhost:3000/api/v1/retailers';
+    private retailerListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/retailers';
 
     constructor(private http: Http){
         console.log("productListService");
@@ -16,7 +16,7 @@ export class RetailersListService{
     }
 
 
-    getProducts(){
+    getRetailers(){
 return this.http.get(this.retailerListUrl ).map((response: Response) => response.json())
   // return  this.http.request('http://localhost:3000/products').subscribe((response: Response ) => {})
 

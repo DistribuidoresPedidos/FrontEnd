@@ -4,7 +4,7 @@ export class Product{
         public name : string,
         public category : string,
         public weight : number,
-        public photo : string,
+        public photo : object,
         
     ){
 

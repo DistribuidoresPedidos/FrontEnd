@@ -7,7 +7,7 @@ export class Retailer{
         public description : string,
         public email : string,
         public phoneNumber:string,
-        public photo : string,
+        public photo : object,
         public latitude : number,
         public longiude :number
         

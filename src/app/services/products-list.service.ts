@@ -9,7 +9,7 @@ export class ProductListService{
     private productListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/products';
 
     constructor(private http: Http){
-        console.log("productListService");
+        //console.log("productListService");
         //this.http.request('http://localhost:3000/products').subscribe((response: Response ) => {
             //console.log(response.json());
         //})
@@ -17,8 +17,7 @@ export class ProductListService{
 
 
     getProducts(){  
-        return this.http.get(this.productListUrl).map((response: Response) => response.json())
-  // return  this.http.request('http://localhost:3000/products').subscribe((response: Response ) => {})
+        return this.http.get(this.productListUrl).map((response: Response) => response.json());
 
     }
 }

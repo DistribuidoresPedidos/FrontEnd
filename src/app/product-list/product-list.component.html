@@ -9,24 +9,51 @@
       <li class="nav-item">
           <a routerLink="/products" routerLinkActive="active" class="nav-link">Productos</a>
       </li>
+      <li class="nav-item">
+          <a routerLink="/retailers" routerLinkActive="active" class="nav-link">Minoristas</a>
+      </li>
     </ul>
     </div>
 </nav>
 
 
-<div class="container">
+
   <div class="row">
-    <div class="col">
-      search
+    <div class="col-sm-3 col-lg-2">
+      <h2>Busqueda</h2>
+      <br/><br/>
+      <div class="container">
+          <form>
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text">
+              </div>
+          </form>
+          <form>
+              <div class="form-group">
+                <label>Categoria</label>
+                <input type="text">
+              </div>
+          </form>
+          <form>
+              <div class="form-group">
+                <label>Precio</label>
+                <input type="text">
+              </div>
+          </form>
+      </div>  
+      
     </div>
-    <div class="col-9">
-        <h2>Productos</h2>
+
+    <div class="col-sm-9 col-lg-10">
+  
+      <h2>Productos</h2>
             <div class="container">
               <div class="row">
                 <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let product of products">
                   <div class="card">
                     <div class="view overlay hm-white-slight">
-                      <img src="https://static.pexels.com/photos/128402/pexels-photo-128402.jpeg" class="img-fluid" alt="">
+                      <img src="{{product.photo.url}}" alt="">
                       <a href="#">
                         <div class="mask"></div>
                       </a>
@@ -41,25 +68,4 @@
             </div>
     </div>
   </div>
-</div>
 
-    <h2>Productos</h2>
-    <!--<div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let product of products">
-          <div class="card">
-            <div class="view overlay hm-white-slight">
-              <img src="https://static.pexels.com/photos/128402/pexels-photo-128402.jpeg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <div class="card-block">
-              <h4 class="card-title">Producto : {{product.name}}</h4>
-              <p class="card-text">Categoria : {{product.category}}  
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-  

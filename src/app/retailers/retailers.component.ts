@@ -15,9 +15,11 @@ export class RetailersComponent implements OnInit {
     this.getRetailers();
   }
   getRetailers(){
-    this.retailersListService.getProducts().subscribe(data => data.forEach(element => {
-    //console.log(element);
-    this.retailers.push(element);
-    }));
+    this.retailersListService.getRetailers().subscribe(response => {
+      response.data.forEach(element => {
+        this.retailers.push(element);
+        console.log(element.photo.url);
+      });
+    });
   }
 }
