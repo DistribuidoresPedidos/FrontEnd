@@ -32,6 +32,14 @@ import { RetailersListService } from "./services/retailers-list.service";
 
 
 @NgModule({
+    imports: [
+    // NguiParallaxScrollModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent,
     LandingPageComponent,
@@ -51,14 +59,7 @@ import { RetailersListService } from "./services/retailers-list.service";
     RetailersComponent,
     ProductDetailComponent
   ],
-  imports: [
-    // NguiParallaxScrollModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    AppRoutingModule
-  ],
+
   providers: [
     ProductListService,
     DistributorService,

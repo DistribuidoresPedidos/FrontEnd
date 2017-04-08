@@ -1,20 +1,65 @@
-<h2>Product List</h2>
+<nav class="navbar navbar-toggleable-md navbar-dark "id="nav1">
+  <div class="container">
+
+    <a class="navbar-brand" href="#home">
+      <img id="logo" src="src/logo.png">
+    </a>
+
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item">
+          <a routerLink="/products" routerLinkActive="active" class="nav-link">Productos</a>
+      </li>
+    </ul>
+    </div>
+</nav>
+
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let product of products">
-      <div class="card">
-        <div class="view overlay hm-white-slight">
-          <img src="https://static.pexels.com/photos/128402/pexels-photo-128402.jpeg" class="img-fluid" alt="">
-          <a href="#">
-            <div class="mask"></div>
-          </a>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Producto : {{product.name}}</h4>
-          <p class="card-text">Categoria : {{product.category}} 
-            
-        </div>
-      </div>
+    <div class="col">
+      search
+    </div>
+    <div class="col-9">
+        <h2>Productos</h2>
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let product of products">
+                  <div class="card">
+                    <div class="view overlay hm-white-slight">
+                      <img src="https://static.pexels.com/photos/128402/pexels-photo-128402.jpeg" class="img-fluid" alt="">
+                      <a href="#">
+                        <div class="mask"></div>
+                      </a>
+                    </div>
+                    <div class="card-block">
+                      <h4 class="card-title">Producto : {{product.name}}</h4>
+                      <p class="card-text">Categoria : {{product.category}}  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
     </div>
   </div>
 </div>
+
+    <h2>Productos</h2>
+    <!--<div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let product of products">
+          <div class="card">
+            <div class="view overlay hm-white-slight">
+              <img src="https://static.pexels.com/photos/128402/pexels-photo-128402.jpeg" class="img-fluid" alt="">
+              <a href="#">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Producto : {{product.name}}</h4>
+              <p class="card-text">Categoria : {{product.category}}  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+  
