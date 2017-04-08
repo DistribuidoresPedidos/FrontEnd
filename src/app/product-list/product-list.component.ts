@@ -21,10 +21,11 @@ export class ProductListComponent implements OnInit {
   }
   getProducts(){
 
-    //this.productListService.getProducts().subscribe(data => console.log(data));
-    this.productListService.getProducts().subscribe(data => data.forEach(element => {
-      //console.log(element);
-     this.products.push(element);
-    }));
+    this.productListService.getProducts().subscribe(response => {
+      response.data.forEach(element => {
+        this.products.push(element);
+      });
+    });
+
   }
 }
