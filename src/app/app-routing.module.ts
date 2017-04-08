@@ -36,6 +36,7 @@ const appRoutes: Routes = [
         }
     },
     { path: 'products', component: ProductListComponent},
+    { path: 'products/:id', component: ProductDetailComponent },
     /*
     { path: 'products', component: ProductsComponent,
         children: [
