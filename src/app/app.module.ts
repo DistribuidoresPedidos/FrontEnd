@@ -6,7 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2MapModule } from 'ng2-map';
-import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -29,8 +28,8 @@ import { ProductDetailComponent } from './products/product-detail.component';
 
 import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
-import { Angular2TokenService } from 'angular2-token';
-import { RetailersListService } from "./services/retailers-list.service";
+//import { Angular2TokenService } from 'angular2-token';
+import { RetailersListService } from './services/retailers-list.service';
 
 
 @NgModule({
@@ -65,7 +64,6 @@ import { RetailersListService } from "./services/retailers-list.service";
   providers: [
     ProductListService,
     DistributorService,
-    Angular2TokenService,
     RetailersListService
   ],
   bootstrap: [AppComponent]
