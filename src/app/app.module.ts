@@ -33,8 +33,9 @@ import { RetailersListService } from './services/retailers-list.service';
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
-
-import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pipe';
+import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
+import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
+import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pi
   ],
   declarations: [
     FilterOfferedProductsNamePipe,
+    FilteredOfferedProductsCategoryPipe,
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
@@ -65,7 +67,8 @@ import { FilterOfferedProductsNamePipe } from './filter-offered-products-name.pi
     ProductListComponent,
     ProductsComponent,
     RetailersComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FilterOfferedProductsPricePipe
   ],
   providers: [
     ProductListService,
