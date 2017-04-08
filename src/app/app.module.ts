@@ -40,7 +40,8 @@ import { RetailersListService } from "./services/retailers-list.service";
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2MapModule
   ],
   declarations: [
     AppComponent,
