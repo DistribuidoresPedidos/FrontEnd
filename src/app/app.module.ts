@@ -30,9 +30,9 @@ import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 // import { Angular2TokenService } from 'angular2-token';
 import { RetailersListService } from './services/retailers-list.service';
-import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
+/*import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
-import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
+import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';*/
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
@@ -74,9 +74,9 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     ProductListService,
     DistributorService,
     RetailersListService,
-    DistributorDetailResolver,
+/*    DistributorDetailResolver,
     DistributorListResolver,
-    DistributorAddressResolver
+    DistributorAddressResolver*/
   ],
   bootstrap: [AppComponent]
 })
