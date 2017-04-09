@@ -21,7 +21,6 @@ import { DistributorsComponent } from './distributors/distributors.component';
 import { DistributorDetailComponent } from './distributor-detail/distributor-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductsComponent } from './products/products.component';
 import { RetailersComponent } from './retailers/retailers.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 
@@ -30,9 +29,9 @@ import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 // import { Angular2TokenService } from 'angular2-token';
 import { RetailersListService } from './services/retailers-list.service';
-/*import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
+import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
-import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';*/
+import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
@@ -65,7 +64,6 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     DistributorDetailComponent,
     PageNotFoundComponent,
     ProductListComponent,
-    ProductsComponent,
     RetailersComponent,
     ProductDetailComponent,
     FilterOfferedProductsPricePipe
@@ -74,9 +72,9 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     ProductListService,
     DistributorService,
     RetailersListService,
-/*    DistributorDetailResolver,
+    DistributorDetailResolver,
     DistributorListResolver,
-    DistributorAddressResolver*/
+    DistributorAddressResolver
   ],
   bootstrap: [AppComponent]
 })

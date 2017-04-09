@@ -1,4 +1,4 @@
-/*import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { DistributorService } from '../services/distributor.service';
@@ -13,4 +13,3 @@ export class DistributorListResolver implements Resolve<any> {
     return this.distributorService.getDistributors();
   }
 }
-*/
