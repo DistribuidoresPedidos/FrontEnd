@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Rx';
-import { Product } from './product';
-import { ProductListService } from "../services/products-list.service";
+import { Product } from '../classes/product';
+import { ProductListService } from '../services/products-list.service';
 import { FilterOfferedProductsNamePipe } from '../pipes/filter-offered-products-name.pipe';
 
 @Component({
@@ -11,17 +11,17 @@ import { FilterOfferedProductsNamePipe } from '../pipes/filter-offered-products-
 
 })
 export class ProductListComponent implements OnInit {
-   dataItems=[];
-  constructor(private productListService :ProductListService) { }
+   dataItems= [];
+  constructor(private productListService: ProductListService) { }
 
   ngOnInit() {
       this.getProducts();
   }
-  getProducts(){
+  getProducts() {
 
     this.productListService.getProducts().subscribe(response => {
       response.data.forEach(element => {
-        this.dataItems.push(element)
+        this.dataItems.push(element);
       });
     });
 

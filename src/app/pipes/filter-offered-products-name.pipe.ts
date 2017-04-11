@@ -6,14 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterOfferedProductsNamePipe implements PipeTransform {
 
   transform(dataItems: any, filtername: any): any {
-    if( filtername===undefined) return dataItems;
-    else{
+    if (filtername === undefined) {
+      return dataItems;
+    } else {
       return dataItems.filter(function(item){
-        //console.log(product);
         return item.product.name.toLowerCase().includes(filtername.toLowerCase());
       });
     }
-    
   }
 
 }

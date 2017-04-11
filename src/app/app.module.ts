@@ -1,3 +1,4 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -7,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2MapModule } from 'ng2-map';
 
+// Components
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './landing-page/navbar/navbar.component';
@@ -24,14 +26,18 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RetailersComponent } from './retailers/retailers.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 
-
+// Services
 import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
-// import { Angular2TokenService } from 'angular2-token';
 import { RetailersListService } from './services/retailers-list.service';
+// import { Angular2TokenService } from 'angular2-token';
+
+// Resolvers
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
+
+// Pipes
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
