@@ -24,7 +24,7 @@ import { DistributorDetailComponent } from './distributor-detail/distributor-det
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RetailersComponent } from './retailers/retailers.component';
-import { ProductDetailComponent } from './products/product-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 // Services
 import { DistributorService } from './services/distributor.service';

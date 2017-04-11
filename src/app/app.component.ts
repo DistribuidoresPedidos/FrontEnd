@@ -8,6 +8,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./app.component.scss'],
   providers: [Location]
 })
+
 export class AppComponent {
   location: Location;
   constructor(location: Location) { this.location = location; }
