@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  public navIsTransparent = true;
 
   ngOnInit() {
+  }
+
+  activate() {
+    this.navIsTransparent = true;
+  }
+
+  deactivate() {
+    this.navIsTransparent = false;
   }
 
 }

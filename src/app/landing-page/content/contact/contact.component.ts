@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserValidator } from './validations';
 
 
 @Component({
@@ -9,10 +8,7 @@ import { UserValidator } from './validations';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  form: FormGroup;	  
-
-  /* Expresion regular para validar correo */
-  emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
+  form: FormGroup;
 
   	constructor(private fb:FormBuilder){
  	this.form = fb.group({
@@ -20,7 +16,7 @@ export class ContactComponent implements OnInit {
   			Validators.required,
   			])], 
   		email: ['',  Validators.compose([
-  			Validators.required, Validators.pattern(this.emailRegex)
+  			Validators.required,
   			])],
   		number: ['',  Validators.compose([
   			Validators.required

@@ -1,39 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'src/assets/sass/variables';
-html,
-body,
-.view {
-  height: 100%;
+.text-center{
+  text-align: center;
 }
 
-body {
-  position: relative;
-}
-
-//scrollbar
-body {
-  &::-webkit-scrollbar {
-    width: 8px;
-    background-color: #cccccc;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #333333;
-    border-radius: 5px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #333333;
-    border: 1px solid #555;
-  }
-  &::-webkit-scrollbar-thumb:active {
-    background-color: #333333;
-    border: 1px solid #555555;
-  }
-  &::-webkit-scrollbar-track {
-    border: 1px gray solid;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 0 6px gray inset;
-  }
-}
+html, body {height:100%;}
 
 
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-64 { font-size: 64px; }
 
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+  .mdl-textfield{ input[type="text"]{ font-size: 20px; color: rgba(0,0,0, 0.87)} }
+  .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
+    font-size: 14px;
+    top: -5px; //Manages floating label fly
+  }
+  .mdl-textfield__label{ font-size: 20px; top: 20px;}

@@ -7,12 +7,19 @@
   }
 }
 
-.top-nav-collapse {
-  background-color: $primary-color;
+.mdl-navigation__link {
+  color: #FFF!important;
+  &.active{
+    background-color: rgba(0,0,0,0.3);
+  }
 }
 
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: $primary-color;
-  }
+mdl-layout-drawer{
+  border: 0px;
+}
+
+#profile-pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

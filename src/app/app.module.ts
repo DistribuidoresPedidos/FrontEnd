@@ -4,18 +4,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
+import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2MapModule } from 'ng2-map';
+import { MdlModule } from '@angular-mdl/core';
+import { SwiperModule } from 'angular2-useful-swiper';
+import { SharedModule } from './shared.module';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { ScrollSpyModule } from 'ng2-scrollspy';
 
 // Components
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { NavbarComponent } from './landing-page/navbar/navbar.component';
 import { CarouselComponent } from './landing-page/content/carousel/carousel.component';
-import { ContentComponent } from './landing-page/content/content.component';
 import { ServicesComponent } from './landing-page/content/services/services.component';
-import { FooterComponent } from './landing-page/footer/footer.component';
 import { ContactComponent } from './landing-page/content/contact/contact.component';
 import { CoverageComponent } from './landing-page/content/coverage/coverage.component';
 import { AboutUsComponent } from './landing-page/content/about-us/about-us.component';
@@ -45,12 +47,17 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
 
 @NgModule({
     imports: [
-    // NguiParallaxScrollModule,
+    NguiParallaxScrollModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    MdlModule,
+    SwiperModule,
+    SharedModule,
+    Ng2PageScrollModule.forRoot(),
+    ScrollSpyModule.forRoot(),
     Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })
   ],
   declarations: [
@@ -58,11 +65,8 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     FilteredOfferedProductsCategoryPipe,
     AppComponent,
     LandingPageComponent,
-    NavbarComponent,
     CarouselComponent,
-    ContentComponent,
     ServicesComponent,
-    FooterComponent,
     ContactComponent,
     CoverageComponent,
     AboutUsComponent,

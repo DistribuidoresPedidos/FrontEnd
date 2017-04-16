@@ -1,30 +1,23 @@
 <div *ngIf="location.path()!=''">
-    <nav id="app-nav" class="navbar navbar-toggleable-md navbar-dark grey darken-2 fixed-top">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <img id="logo" src="src/logo.png">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav1">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                       <a class="nav-link" href="#" routerLink="/distributors">Inicio</a>
-                    </li>
-                    <li class="nav-item" [class.active]="location.path()=='/distributors'">
-                        <a class="nav-link" href="#" routerLink="/distributors">Distribuidores</a>
-                    </li>
-                    <li class="nav-item" [class.active]="location.path()=='/retailers'">
-                        <a class="nav-link" href="#" routerLink="/retailers">Minoristas</a>
-                    </li>
-                    <li class="nav-item" [class.active]="location.path()=='/products'">
-                        <a class="nav-link" href="#" routerLink="/products">Productos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <mdl-layout mdl-layout-fixed-header mdl-layout-fixed-drawer>
+      <mdl-layout-header>
+         <mdl-layout-header-row>
+            <mdl-layout-spacer></mdl-layout-spacer>
+                <img src="src/logo.png" id="profile-pic">
+                <a class="mdl-navigation__link logout" href="#" routerLink="/products"><i class="material-icons md-36 md-light">exit_to_app</i></a>
+         </mdl-layout-header-row>
+      </mdl-layout-header>
+      <mdl-layout-drawer class="mdl-color--grey">
+         <mdl-layout-title><img src="src/logo.png"></mdl-layout-title>
+         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#" routerLink="/distributors">Inicio</a>
+            <a [class.active]="location.path()=='/distributors'" class="mdl-navigation__link" href="#" routerLink="/distributors">Distribuidores</a>
+            <a [class.active]="location.path()=='/retailers'" class="mdl-navigation__link" href="#" routerLink="/retailers">Minoristas</a>
+            <a [class.active]="location.path()=='/products'" class="mdl-navigation__link" href="#" routerLink="/products">Productos</a>
+         </nav>
+      </mdl-layout-drawer>
+      <mdl-layout-content>
+         <router-outlet></router-outlet>
+      </mdl-layout-content>
+   </mdl-layout>
 </div>
-<router-outlet></router-outlet>

@@ -1,101 +1,57 @@
-<div id="carousel" class="carousel slide carousel-slide white-text" data-ride="carousel" data-interval="5000">
-  <!--Indicators-->
-  <ol class="carousel-indicators"> 
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel" data-slide-to="1"></li>
-    <li data-target="#carousel" data-slide-to="2"></li>
-  </ol>
-  <!--/.Indicators-->
-
-  <!--Slides-->
-  <div class="carousel-inner" role="listbox">
-
-    <!-- First slide -->
-    <div class="carousel-item active view hm-black-light" id="slide-1">
-
-      <!-- Caption -->
-      <div class="full-bg-img flex-center white-text">
-        <ul class="animated fadeInUp col-md-12">
-          <li>
-            <h1 class="h1-responsive flex-item">DEALERS</h1>
-            <li>
-              <p class="flex-item">Bienvenido</p>
-            </li>
-            <li>
-              <a href="#" class="btn red accent-4 btn-lg flex-item waves-effect waves-light">Regístrate</a>
-            </li>
-            <li>
-              <a href="#" class="btn indigo darken-4 btn-lg flex-item waves-effect waves-light">Conocer más</a>
-            </li>
-        </ul>
+<swiper [config]="config">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" id="slide-1">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+          <h1>Bienvenido</h1>
+          <h3>Lorem ipsum amet</h3>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-tablet mdl-cell--2-phone mdl-cell--3-offset mdl-cell--1-offset">
+          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
+            Inicia Sesión
+          </button>
+          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
+            Regístrate
+          </button>
+        </div>
       </div>
-      <!-- /.Caption -->
-
     </div>
-    <!-- /.First slide -->
-
-    <!-- Second slide -->
-    <div class="carousel-item view hm-black-light" id="slide-2">
-
-      <!-- Caption -->
-      <div class="full-bg-img flex-center white-text">
-        <ul class="animated fadeInUp col-md-12">
-          <li>
-            <h1 class="h1-responsive">DEALERS</h1>
-          </li>
-          <li>
-            <p>Bienvenido</p>
-          </li>
-          <li>
-            <a href="#" class="btn red accent-4 btn-lg flex-item waves-effect waves-light">Regístrate</a>
-          </li>
-          <li>
-            <a href="#" class="btn indigo darken-4 btn-lg flex-item waves-effect waves-light">Conocer más</a>
-          </li>
-        </ul>
+    <div class="swiper-slide" id="slide-2">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+          <h1>Bienvenido</h1>
+          <h3>Lorem ipsum amet</h3>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-tablet mdl-cell--2-phone mdl-cell--3-offset mdl-cell--1-offset">
+          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
+            Inicia Sesión
+          </button>
+          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
+            Regístrate
+          </button>
+        </div>
       </div>
-      <!-- /.Caption -->
-
     </div>
-    <!-- /.Second slide -->
-
-    <!-- Third slide -->
-    <div class="carousel-item view hm-black-light" id="slide-3">
-
-      <!-- Caption -->
-      <div class="full-bg-img flex-center white-text">
-        <ul class="animated fadeInUp col-md-12">
-          <li>
-            <h1 class="h1-responsive">Bienvenido</h1>
-          </li>
-          <li>
-            <p>Bienvenido</p>
-          </li>
-          <li>
-            <a href="#" class="btn red accent-4 btn-lg flex-item waves-effect waves-light">Regístrate</a>
-          </li>
-          <li>
-            <a href="#" class="btn indigo darken-4 btn-lg flex-item waves-effect waves-light">Conocer más</a>
-          </li>
-        </ul>
+    <div class="swiper-slide" id="slide-3">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+          <h1>Bienvenido</h1>
+          <h3>Lorem ipsum amet</h3>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-tablet mdl-cell--2-phone mdl-cell--3-offset mdl-cell--1-offset">
+          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
+            Inicia Sesión
+          </button>
+          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
+            Regístrate
+          </button>
+        </div>
       </div>
-      <!-- /.Caption -->
-
     </div>
-    <!-- /.Third slide -->
-
   </div>
-  <!--/.Slides-->
-
-  <!--Controls-->
-  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  <!--/.Controls-->
-</div>
-  <!--/.Carousel Wrapper-->
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</swiper>

@@ -1,3 +1,29 @@
-<app-navbar></app-navbar>
-<app-content></app-content> 
-<app-footer></app-footer>
+<mdl-layout mdl-layout-fixed-header scroller>
+    <mdl-layout-header id="navbar" [class.transparent-nav]="navIsTransparent">
+        <mdl-layout-header-row>
+            <mdl-layout-title><img src="src/logo.png"></mdl-layout-title>
+            <mdl-layout-spacer></mdl-layout-spacer>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="400" href="#home">Inicio</a>
+                <a class="mdl-navigation__link" pageScroll [pageScrollOffset]="-2" [pageScrollDuration]="400" href="#services">Servicios</a>
+                <a class="mdl-navigation__link" pageScroll [pageScrollOffset]="55" [pageScrollDuration]="400" href="#coverage">Cobertura</a>
+                <a class="mdl-navigation__link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="400" href="#about-us">Conócenos</a>
+                <a class="mdl-navigation__link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="400" href="#contact">Contacto</a>
+            </nav>
+        </mdl-layout-header-row>
+    </mdl-layout-header>
+</mdl-layout>
+<app-carousel id="home" (scroll-in)="activate()" (scroll-out)="deactivate()"></app-carousel>
+<app-services id="services"></app-services>
+<app-coverage id="coverage"></app-coverage>
+<app-about-us id="about-us"></app-about-us>
+<app-contact id="contact"></app-contact>
+<footer class="mdl-mini-footer mdl-color--grey-700">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Title</div>
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Privacy & Terms</a></li>
+    </ul>
+  </div>
+</footer>

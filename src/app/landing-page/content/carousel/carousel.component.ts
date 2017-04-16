@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
+  config: Object = {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    loop: true,
+    speed: 400,
+    autoplay: 5000
+  };
+
   constructor() { }
 
   ngOnInit() {
