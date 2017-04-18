@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NguiParallaxScrollModule } from '@ngui/parallax-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2MapModule } from 'ng2-map';
 import { MdlModule } from '@angular-mdl/core';
@@ -47,7 +46,6 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
 
 @NgModule({
     imports: [
-    NguiParallaxScrollModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

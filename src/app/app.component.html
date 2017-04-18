@@ -21,3 +21,7 @@
       </mdl-layout-content>
    </mdl-layout>
 </div>
+
+<div *ngIf="location.path()==''">
+    <router-outlet></router-outlet>
+</div>
