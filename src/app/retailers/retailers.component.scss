@@ -1,13 +1,15 @@
-.container-fluid {
-  padding-top: 8vh;
+mdl-card{
+  margin: 0 auto;
 }
 
-.card {
-  margin-bottom: 10%;
-  img {
-    min-height: 300px;
-    max-height: 300px;
-    width: 100%;
-    object-fit: cover;
-  }
+mdl-card-title{
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFF;
+}
+
+mdl-card-menu {
+  color: #FFF;
 }

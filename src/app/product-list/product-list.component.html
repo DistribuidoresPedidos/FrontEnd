@@ -1,54 +1,37 @@
-<div class="container-fluid"> 
-  <div class="row">
-    <div class="col-sm-3 col-lg-2">
-      <h2>Busqueda</h2>
-      <br/><br/>
-      <div class="container">
-          <form>
-              <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" [(ngModel)]="filtername" [ngModelOptions]="{standalone: true}">
-              </div>
-          </form>
-          <form>
-              <div class="form-group">
-                <label>Categoria</label>
-                <input type="text" [(ngModel)]="filtercategory" [ngModelOptions]="{standalone: true}" >
-              </div>
-          </form>
-          <form>
-              <div class="form-group">
-                <label>Precio</label>
-                <input type="text" [(ngModel)]="filterprice" [ngModelOptions]="{standalone: true}">
-              </div>
-          </form>
-      </div>  
-      
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-grid">
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Nombre" floating-label [(ngModel)]="filtername" [ngModelOptions]="{standalone: true}"></mdl-textfield>
+      </div>
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Categoria" floating-label [(ngModel)]="filtercategory" [ngModelOptions]="{standalone: true}"></mdl-textfield>
+      </div>
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Precio" floating-label [(ngModel)]="filterprice" [ngModelOptions]="{standalone: true}"></mdl-textfield>
+      </div>
     </div>
-
-    <div class="col-sm-9 col-lg-10">
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let item of dataItems | filterOfferedProductsName : filtername 
+  </div>
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems | filterOfferedProductsName : filtername 
                 |filteredOfferedProductsCategory : filtercategory 
                 |filterOfferedProductsPrice :filterprice ">
-                  <div class="card">
-                    <div class="view overlay hm-white-slight" title="Visita al distribuidor de este producto">
-                      <img src="{{item.product.photo.url}}" class="img-fluid" alt="imagen distributor" >
-                      <a href="/products/{{item.id}}">
-                        <div class="mask"></div>
-                      </a>
-                    </div>
-                    <div class="card-block">
-                      <h4 class="card-title">Producto : {{item.product.name}}</h4>
-                      <p class="card-text">Categoria : {{item.product.category}}  </p>
-                      <p class="card-text">precio : {{item.price | currency}}  </p>
-                      <p class="card-text">Distribuidor: {{item.distributor.name}}</p>                         
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <mdl-card mdl-shadow="4">
+    <mdl-card-title [style.background-image]="getUrl(item.product.photo.url)">
+      <h2 mdl-card-title-text>{{item.product.name}}</h2>
+    </mdl-card-title>
+    <mdl-card-supporting-text>
+      <p class="card-text">Categoria : {{item.product.category}}  </p>
+      <p class="card-text">precio : {{item.price | currency}}  </p>
+      <p class="card-text">Distribuidor: {{item.distributor.name}}</p>  
+    </mdl-card-supporting-text>
+    <mdl-card-actions mdl-card-border>
+      <a href="/products/{{item.product.id}}" mdl-button mdl-colored mdl-ripple>Ver producto</a>
+    </mdl-card-actions>
+    <mdl-card-menu>
+      <button mdl-button mdl-button-type="icon" mdl-ripple>
+        <mdl-icon>share</mdl-icon>
+      </button>
+    </mdl-card-menu>
+  </mdl-card>
+  </div>
+</div>

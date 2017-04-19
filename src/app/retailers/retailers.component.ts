@@ -21,4 +21,7 @@ export class RetailersComponent implements OnInit {
       });
     });
   }
+  getUrl(photoUrl: string) {
+    return `url(${photoUrl})`;
+  }
 }

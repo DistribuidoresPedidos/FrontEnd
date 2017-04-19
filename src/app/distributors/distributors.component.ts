@@ -22,4 +22,8 @@ export class DistributorsComponent implements OnInit {
   ngOnInit() {
     this.distributors = this.route.snapshot.data['distributors'].data;
   }
+
+  getUrl(photoUrl: string) {
+    return `url(${photoUrl})`;
+  }
 }

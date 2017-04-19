@@ -1,50 +1,34 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 col-lg-2">
-      <h2>Busqueda</h2>
-      <br/><br/>
-      <div class="container">
-        <form>
-          <div class="form-group">
-            <label>Nombre</label>
-            <input type="text">
-          </div>
-        </form>
-        <form>
-          <div class="form-group">
-            <label>Departamento</label>
-            <input type="text">
-          </div>
-        </form>
-        <form>
-          <div class="form-group">
-            <label>Calificacion</label>
-            <input type="text">
-          </div>
-        </form>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-grid">
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Nombre" floating-label></mdl-textfield>
       </div>
-
-    </div>
-    <div class="col-sm-9 col-lg-10">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-lg-4" *ngFor="let distributor of distributors">
-            <div class="card">
-              <div class="view overlay hm-white-slight">
-                <img src={{distributor.photo.url}} class="img-fluid" alt="">
-                <a href="/distributors/{{distributor.id}}">
-                  <div class="mask"></div>
-                </a>
-              </div>
-              <div class="card-block">
-                <h4 class="card-title">{{distributor.name}}</h4>
-                <p class="card-text">{{distributor.email}} <br> {{distributor.phoneNumber}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Departamento" floating-label></mdl-textfield>
+      </div>
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Calificacion" floating-label></mdl-textfield>
       </div>
     </div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let distributor of distributors">
+    <mdl-card mdl-shadow="4">
+    <mdl-card-title [style.background-image]="getUrl(distributor.photo.url)">
+      <h2 mdl-card-title-text>{{distributor.name}}</h2>
+    </mdl-card-title>
+    <mdl-card-supporting-text>
+      <p class="card-text">{{distributor.email}} <br> {{distributor.phoneNumber}}</p>
+    </mdl-card-supporting-text>
+    <mdl-card-actions mdl-card-border>
+      <a href="/distributors/{{distributor.id}}" mdl-button mdl-colored mdl-ripple>Ver perfil</a>
+    </mdl-card-actions>
+    <mdl-card-menu>
+      <button mdl-button mdl-button-type="icon" mdl-ripple>
+        <mdl-icon>share</mdl-icon>
+      </button>
+    </mdl-card-menu>
+  </mdl-card>
   </div>
 </div>
 
