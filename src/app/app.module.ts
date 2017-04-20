@@ -38,7 +38,8 @@ import { Angular2TokenService } from 'angular2-token';
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
-
+import { ProductListResolver} from './resolvers/products-list.resolver';
+import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 // Pipes
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
@@ -85,6 +86,8 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     DistributorDetailResolver,
     DistributorListResolver,
     DistributorAddressResolver,
+    ProductListResolver,
+    ProductDetailResolver
     Angular2TokenService
   ],
   bootstrap: [AppComponent]

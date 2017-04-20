@@ -24,6 +24,7 @@ export class DistributorDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.route.snapshot.data);
     this.distributor = this.route.snapshot.data['distributor'].data;
     this.distributorAddress = this.route.snapshot.data['distributorAddress'];
   }

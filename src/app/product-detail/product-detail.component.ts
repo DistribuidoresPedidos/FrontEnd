@@ -11,8 +11,7 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  products1: Product[] = [];
-  id: number;
+   data={}
 
   constructor(
     private route: ActivatedRoute,
@@ -21,14 +20,20 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {this.id = +params['id']; });
-    this.getProductsById(this.id);
+   // this.product=this.route.snapshot;
+   console.log(this.route.snapshot.data.product.data);
+   this.data=this.route.snapshot.data.product.data;
   }
-
-  getProductsById( id: number ) {
-    let product: Product[] = [];
-    this.productListService.getProductById(id).subscribe(data => product.push(data));
-    this.products1 = product;
+  
+  getProductById(id){
+      
+      this.productListService.getProductById(id).subscribe(response =>{
+        console.log(response);
+      });
   }
+ 
 
+
+  
+  
 }
