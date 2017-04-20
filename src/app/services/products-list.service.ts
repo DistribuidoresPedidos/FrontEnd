@@ -10,27 +10,21 @@ import { Product } from '../classes/product';
 @Injectable()
 export class ProductListService {
     private productListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
-
+    
     constructor(private http: Http) { }
 
     getProducts() {
+        console.log(this.http.get(this.productListUrl));
         return this.http.get(this.productListUrl).map((response: Response) => response.json());
     }
-
-    getProductById(id: number): Observable<Product> {
+    
+    
+    getProductById(id) {
         const url = `${this.productListUrl}/${id}`;
-        return this.http.get(url).map(this.extractData).catch(this.handleError);
+        //console.log(this.http.get(url));
+        return this.http.get(url).map((response: Response) => response.json());
     }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body || {};
-    }
 
-    private handleError(error: any) {
-        let errMsg = (error.message) ? error.message :
-        error.status ? `${error.status} - ${error.statusText}` : 'Server   error';
-        return Observable.throw(errMsg);
-    }
 
 }

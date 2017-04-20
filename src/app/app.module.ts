@@ -37,7 +37,8 @@ import { RetailersListService } from './services/retailers-list.service';
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
-
+import { ProductListResolver} from './resolvers/products-list.resolver';
+import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 // Pipes
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
@@ -82,7 +83,9 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     RetailersListService,
     DistributorDetailResolver,
     DistributorListResolver,
-    DistributorAddressResolver
+    DistributorAddressResolver,
+    ProductListResolver,
+    ProductDetailResolver
   ],
   bootstrap: [AppComponent]
 })

@@ -20,6 +20,7 @@ export class DistributorsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.route.snapshot.data);
     this.distributors = this.route.snapshot.data['distributors'].data;
   }
 
