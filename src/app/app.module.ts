@@ -11,6 +11,7 @@ import { SwiperModule } from 'angular2-useful-swiper';
 import { SharedModule } from './shared.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ScrollSpyModule } from 'ng2-scrollspy';
+import { A2tUiModule } from 'angular2-token';
 
 // Components
 import { AppComponent } from './app.component';
@@ -31,7 +32,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
-// import { Angular2TokenService } from 'angular2-token';
+import { Angular2TokenService } from 'angular2-token';
 
 // Resolvers
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
@@ -54,6 +55,7 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     MdlModule,
     SwiperModule,
     SharedModule,
+    A2tUiModule,
     Ng2PageScrollModule.forRoot(),
     ScrollSpyModule.forRoot(),
     Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })
@@ -82,7 +84,8 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     RetailersListService,
     DistributorDetailResolver,
     DistributorListResolver,
-    DistributorAddressResolver
+    DistributorAddressResolver,
+    Angular2TokenService
   ],
   bootstrap: [AppComponent]
 })

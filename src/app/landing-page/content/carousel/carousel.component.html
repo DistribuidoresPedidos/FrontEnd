@@ -7,10 +7,10 @@
           <h3>Lorem ipsum amet</h3>
         </div>
         <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-tablet mdl-cell--2-phone mdl-cell--3-offset mdl-cell--1-offset">
-          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
+          <button #loginButton mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple (click)="loginDialog.show(); currentTab=0">
             Inicia Sesión
           </button>
-          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
+          <button #loginButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="loginDialog.show(); currentTab=1">
             Regístrate
           </button>
         </div>
@@ -23,10 +23,10 @@
           <h3>Lorem ipsum amet</h3>
         </div>
         <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-tablet mdl-cell--2-phone mdl-cell--3-offset mdl-cell--1-offset">
-          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
+          <button #loginButton mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple (click)="loginDialog.show(); currentTab=0">
             Inicia Sesión
           </button>
-          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
+          <button #loginButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="loginDialog.show(); currentTab=1">
             Regístrate
           </button>
         </div>
@@ -39,10 +39,10 @@
           <h3>Lorem ipsum amet</h3>
         </div>
         <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-tablet mdl-cell--2-phone mdl-cell--3-offset mdl-cell--1-offset">
-          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
+          <button #loginButton mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple (click)="loginDialog.show(); currentTab=0">
             Inicia Sesión
           </button>
-          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
+          <button #loginButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="loginDialog.show(); currentTab=1">
             Regístrate
           </button>
         </div>
@@ -55,3 +55,76 @@
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
 </swiper>
+
+
+
+<mdl-dialog #loginDialog
+            [mdl-dialog-config]="{
+              clickOutsideToClose: true,
+              styles:{'width': '30vw'},
+              isModal:true,
+              openFrom: loginButton,
+              enterTransitionDuration: 400,
+              leaveTransitionDuration: 400}"
+              >
+  <div class="mdl-dialog__content">
+      <mdl-tabs mdl-ripple [mdl-tab-active-index]="currentTab">
+        <mdl-tab-panel mdl-tab-panel-title="Inicia Sesión">
+          <br>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+              <mdl-icon class="mdl-color-text--indigo">email</mdl-icon>
+              <mdl-textfield
+                type="text"
+                label="Correo Electrónico"
+                autofocus
+                floating-label
+                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                error-msg="Correo inválido"></mdl-textfield>
+                <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
+              <mdl-textfield
+                type="password"
+                label="Contraseña"
+                floating-label
+              ></mdl-textfield>
+            </div>
+          </div>
+        </mdl-tab-panel>
+        <mdl-tab-panel mdl-tab-panel-title="Regístrate">
+          <br>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+              <mdl-icon class="mdl-color-text--indigo">email</mdl-icon>
+              <mdl-textfield
+                type="text"
+                label="Correo Electrónico"
+                autofocus
+                floating-label
+                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                error-msg="Correo inválido"></mdl-textfield>
+              <mdl-icon class="mdl-color-text--indigo">account_circle</mdl-icon>
+              <mdl-textfield
+                type="text"
+                label="Nombre"
+                floating-label
+                pattern="^[a-zA-Z\s]*$"
+                error-msg="Nombre inválido, solo letras y espacios"></mdl-textfield>
+              <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
+              <mdl-textfield
+                type="password"
+                label="Contraseña"
+                floating-label></mdl-textfield>
+              <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
+              <mdl-textfield
+                type="password"
+                label="Repetir Contraseña"
+                floating-label></mdl-textfield>
+            </div>
+          </div>
+        </mdl-tab-panel>
+    </mdl-tabs>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Enviar</button>
+  </div>
+</mdl-dialog>
