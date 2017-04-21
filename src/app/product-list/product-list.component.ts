@@ -13,16 +13,15 @@ import { ActivatedRoute , Router } from "@angular/router";
 })
 export class ProductListComponent implements OnInit {
    dataItems = [];
+   priceRange = [0,5000000];
+   categoryList = ["cat7","cat9","cat10"];
   constructor(
-     private route: ActivatedRoute,
+    private route: ActivatedRoute,
     private router: Router,
     private productListService: ProductListService) { }
 
   ngOnInit() {
-     // this.getProducts();
     this.dataItems = this.route.snapshot.data.dataItems.data;
-    //console.log(this.dataItems);
-    //console.log(this.route.snapshot.data.dataItems.data);
   }
   getProducts() {
 

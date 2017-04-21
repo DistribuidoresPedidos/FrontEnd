@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~nouislider/distribute/nouislider.min.css";
 .text-center{
   text-align: center;
 }
@@ -21,7 +22,7 @@ html, body {height:100%;}
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
-.mdl-textfield{ input[type="text"]{ font-size: 20px; color: rgba(0,0,0, 0.87)} }
+.mdl-textfield{ input[type="text"]{ font-size: 20px; color: rgb(0,0,0)} }
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
   font-size: 14px;
   top: -5px; //Manages floating label fly
