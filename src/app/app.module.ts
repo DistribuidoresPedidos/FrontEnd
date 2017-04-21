@@ -11,7 +11,8 @@ import { SwiperModule } from 'angular2-useful-swiper';
 import { SharedModule } from './shared.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ScrollSpyModule } from 'ng2-scrollspy';
-import { A2tUiModule } from 'angular2-token'; 
+import { Md2Module }  from 'md2';
+import { NouisliderModule } from 'ng2-nouislider';
 
 // Components
 import { AppComponent } from './app.component';
@@ -56,7 +57,8 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     MdlModule,
     SwiperModule,
     SharedModule,
-    A2tUiModule,
+    Md2Module,
+    NouisliderModule,
     Ng2PageScrollModule.forRoot(),
     ScrollSpyModule.forRoot(),
     Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })

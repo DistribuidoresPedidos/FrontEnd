@@ -5,10 +5,18 @@
         <mdl-textfield type="text" label="Nombre" floating-label [(ngModel)]="filtername" [ngModelOptions]="{standalone: true}"></mdl-textfield>
       </div>
       <div class="form-group mdl-cell mdl-cell--4-col">
-        <mdl-textfield type="text" label="Categoria" floating-label [(ngModel)]="filtercategory" [ngModelOptions]="{standalone: true}"></mdl-textfield>
+        <md2-tags
+          [md2-tags] = "categoryList"
+          md2-tag-text="name"
+          md2-tag-value="value"
+          [(ngModel)]="filtercategory"
+          placeholder="Añadir categoría">
+        </md2-tags>
       </div>
       <div class="form-group mdl-cell mdl-cell--4-col">
-        <mdl-textfield type="text" label="Precio" floating-label [(ngModel)]="filterprice" [ngModelOptions]="{standalone: true}"></mdl-textfield>
+        <nouislider [connect]="true" [min]="0" [max]="50000" [step]="1000" [(ngModel)]="priceRange"></nouislider>
+        <p>{{priceRange[0]}} - {{priceRange[1]}}</p>
+        <!--<mdl-textfield type="text" label="Precio" floating-label [(ngModel)]="filterprice" [ngModelOptions]="{standalone: true}"></mdl-textfield>-->
       </div>
     </div>
   </div>

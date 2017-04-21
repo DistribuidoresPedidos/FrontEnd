@@ -10,7 +10,7 @@ export class FilteredOfferedProductsCategoryPipe implements PipeTransform {
       return dataItems;
     } else {
       return dataItems.filter(function(item){
-        return item.product.category.toLowerCase().includes(filtercategory.toLowerCase());
+        return filtercategory.includes(item.product.category.toLowerCase());
       });
     }
   }
