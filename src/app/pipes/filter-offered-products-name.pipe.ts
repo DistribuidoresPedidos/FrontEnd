@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterOfferedProductsNamePipe implements PipeTransform {
 
   transform(dataItems: any, filtername: any): any {
-    if (filtername === undefined) {
+    if (filtername === "") {
       return dataItems;
     } else {
       return dataItems.filter(function(item){

@@ -13,7 +13,9 @@ import { ActivatedRoute , Router } from "@angular/router";
 })
 export class ProductListComponent implements OnInit {
    dataItems = [];
-   priceRange = [0,50000];
+   filtername = "";
+   filtercategory = [];
+   filterprice = [0,50];
    categoryList = ["cat7","cat9","cat10"];
   constructor(
     private route: ActivatedRoute,

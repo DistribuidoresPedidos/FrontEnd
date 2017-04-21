@@ -4,8 +4,12 @@
          <mdl-layout-header-row>
             <mdl-layout-spacer></mdl-layout-spacer>
                 <a class="mdl-navigation__link logout" href="#" routerLink="/"><i class="material-icons md-36 md-light"  mdl-badge="1" mdl-badge-overlap>shopping_cart</i></a>
-                <img src="src/assets/img/duck.png" id="profile-pic">
-                <a class="mdl-navigation__link logout" href="#" routerLink="/"><i class="material-icons md-36 md-light">exit_to_app</i></a>
+                <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple style="width: 50px; height:auto;"><img src="src/assets/img/duck.png" id="profile-pic"></button>
+                    <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+                       <mdl-menu-item mdl-ripple>Mi Perfil</mdl-menu-item>
+                       <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Mis Ordenes</mdl-menu-item>
+                       <mdl-menu-item mdl-ripple>Cerrar sesión</mdl-menu-item>
+                    </mdl-menu>
          </mdl-layout-header-row>
       </mdl-layout-header>
       <mdl-layout-drawer class="mdl-color--grey">
