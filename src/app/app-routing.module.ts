@@ -14,6 +14,7 @@ import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver} from'./resolvers/product-detail.resolver';
+import {RetailersListResolver} from './resolvers/retailers-list.resolver';
 
 import { AppComponent } from './app.component';
 
@@ -49,9 +50,14 @@ const appRoutes: Routes = [
             product : ProductDetailResolver
         }
     },
-    //{ path: 'products', component: ProductListComponent},
-    //{ path: 'products/:id', component: ProductDetailComponent },
-    {path:  'retailers', component: RetailersComponent},
+    {
+        path : 'retailers', 
+        component:RetailersComponent,
+        resolve :{
+            retailers : RetailersListResolver
+        }
+    },
+
     { path: '**', component: PageNotFoundComponent }
 ];
 

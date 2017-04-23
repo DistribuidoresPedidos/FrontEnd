@@ -11,6 +11,7 @@ export class RetailersListService{
     constructor(private http: Http) { }
 
     getRetailers() {
+        console.log("retailers service")
         return this.http.get(this.retailerListUrl ).map((response: Response) => response.json())
     }
 }

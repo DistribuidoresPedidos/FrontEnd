@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Ng2MapModule } from 'ng2-map';
 import { MdlModule } from '@angular-mdl/core';
 import { SwiperModule } from 'angular2-useful-swiper';
-import { SharedModule } from './shared.module';
+import { SharedModule } from './shared/shared.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ScrollSpyModule } from 'ng2-scrollspy';
 import { Md2Module }  from 'md2';
@@ -41,10 +41,12 @@ import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
+import { RetailersListResolver} from './resolvers/retailers-list.resolver'
 // Pipes
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
+import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
 
 
 @NgModule({
@@ -79,7 +81,8 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     ProductListComponent,
     RetailersComponent,
     ProductDetailComponent,
-    FilterOfferedProductsPricePipe
+    FilterOfferedProductsPricePipe,
+    RetailerDetailComponent
   ],
   providers: [
     ProductListService,
@@ -90,6 +93,7 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     DistributorAddressResolver,
     ProductListResolver,
     ProductDetailResolver,
+    RetailersListResolver,
     Angular2TokenService
   ],
   bootstrap: [AppComponent]
