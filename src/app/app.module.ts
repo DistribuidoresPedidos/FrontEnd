@@ -42,6 +42,7 @@ import { DistributorAddressResolver } from './resolvers/distributor-address.reso
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 import { RetailersListResolver} from './resolvers/retailers-list.resolver'
+import { RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
 // Pipes
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
@@ -94,6 +95,7 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
     ProductListResolver,
     ProductDetailResolver,
     RetailersListResolver,
+    RetailerDetailResolver,
     Angular2TokenService
   ],
   bootstrap: [AppComponent]

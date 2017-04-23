@@ -1,0 +1,41 @@
+#profile-banner{
+  width: 100%;
+  height: 40vmin;
+  mdl-card-title{
+    background-image: url('/src/assets/img/distributors/background2.jpg');
+    background-size: cover;
+    height: 25vmin;
+  }
+  mdl-card-menu{
+    color: #FFF;
+  }
+  mdl-card-supporting-text{
+    margin-top: 0;
+    h4{
+      margin-top: 0;
+    }
+  }
+  #profile-img{
+    width: 8vmax;
+    height: 8vmax;
+    object-fit: fill;
+    border-radius: 50%;
+    position: absolute;
+    top: 37%;
+    z-index: 150;
+    left: 2%;
+  }
+}
+
+#map-card{
+  width: 100%;
+  mdl-card-title{
+    padding: 0;
+    width: 100%;
+    #map{
+      top: 0;
+      margin: 0 0;
+      width: 100%;
+    }
+  }
+}
