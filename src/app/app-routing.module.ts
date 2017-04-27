@@ -8,13 +8,15 @@ import { DistributorDetailComponent } from './distributor-detail/distributor-det
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RetailersComponent } from './retailers/retailers.component';
+import {RetailerDetailComponent} from './retailer-detail/retailer-detail.component';
 
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver} from'./resolvers/product-detail.resolver';
-
+import {RetailersListResolver} from './resolvers/retailers-list.resolver';
+import {RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
 import { AppComponent } from './app.component';
 
 
@@ -49,9 +51,22 @@ const appRoutes: Routes = [
             product : ProductDetailResolver
         }
     },
-    //{ path: 'products', component: ProductListComponent},
-    //{ path: 'products/:id', component: ProductDetailComponent },
-    {path:  'retailers', component: RetailersComponent},
+    {
+        path : 'retailers', 
+        component:RetailersComponent,
+        resolve :{
+            retailers : RetailersListResolver
+        }
+    },
+    {
+        path :'retailers/:id',
+        component: RetailerDetailComponent,
+        resolve : {
+            retailer: RetailerDetailResolver
+    }
+
+    },
+
     { path: '**', component: PageNotFoundComponent }
 ];
 
