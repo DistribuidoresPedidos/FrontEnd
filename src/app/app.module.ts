@@ -34,6 +34,7 @@ import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
 import { Angular2TokenService } from 'angular2-token';
+import { MakeOrderService} from './services/make-order.service';
 
 // Resolvers
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
@@ -85,6 +86,7 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     ProductListService,
     DistributorService,
     RetailersListService,
+    MakeOrderService,
     DistributorDetailResolver,
     DistributorListResolver,
     DistributorAddressResolver,
