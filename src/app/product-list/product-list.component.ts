@@ -18,7 +18,11 @@ export class ProductListComponent implements OnInit {
    filterprice = [0,50];
    categoryList = ["cat7","cat9","cat10"];
    //resp = `"retailer_id":1,route_id":1,products":[{"offeredProduct":1,"quantity":3},{"offeredProduct":2,"quantity":1}],totalPrice":30`;
-   resp={retailer_id:1 , route_id:2,products:[{offeredProduct:1 , quantity:3},{offeredProdcut:2 , quantity:1}]};
+   resp={
+     retailer_id:1, 
+     route_id:2,
+     products:[{offeredProduct:1 , quantity:3},{offeredProduct:2 , quantity:1}]
+    };
    postData:string;
   constructor(
     private route: ActivatedRoute,

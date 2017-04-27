@@ -21,8 +21,6 @@ export class MakeOrderService extends BaseRequestOptions {
     let options = new RequestOptions({ headers : headers });
     console.log("bodyString " + bodyString);
     
-
-    
     return this.http.post(this.makeOrderUrl,bodyString,options).map((response : Response)=>response.json).catch(this.handleError);
   }
 
