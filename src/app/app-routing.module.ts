@@ -8,6 +8,7 @@ import { DistributorDetailComponent } from './distributor-detail/distributor-det
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RetailersComponent } from './retailers/retailers.component';
+import {MakeOrderComponent}   from './make-order/make-order.component';              
 import {RetailerDetailComponent} from './retailer-detail/retailer-detail.component';
 import {CommentsComponent} from './comments/comments.component';
 
@@ -20,6 +21,8 @@ import { RetailersListResolver } from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
 import { DistributorCommentsResolver } from './resolvers/distributor-comments.resolver';
 
+import { ProductDetailResolver} from'./resolvers/product-detail.resolver';
+import {} from '';
 import { AppComponent } from './app.component';
 
 
@@ -52,7 +55,8 @@ const appRoutes: Routes = [
         component : ProductDetailComponent,
         resolve :{
             product : ProductDetailResolver
-        }
+
+    }
     },
     {
         path : 'retailers', 
@@ -78,6 +82,12 @@ const appRoutes: Routes = [
 
     },
 
+    {
+        path : 'make_order',
+        component:  MakeOrderComponent
+        
+    },
+    {path:  'retailers', component: RetailersComponent},
     { path: '**', component: PageNotFoundComponent }
 ];
 

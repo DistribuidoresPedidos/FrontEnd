@@ -36,6 +36,7 @@ import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
 import { Angular2TokenService } from 'angular2-token';
 import { CommentService } from './services/comment.service';
+import { MakeOrderService} from './services/make-order.service';
 
 // Resolvers
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
@@ -52,6 +53,7 @@ import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-pr
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
 import { CommentsComponent } from './comments/comments.component';
+import { MakeOrderComponent } from './make-order/make-order.component';
 
 
 @NgModule({
@@ -89,11 +91,14 @@ import { CommentsComponent } from './comments/comments.component';
     FilterOfferedProductsPricePipe,
     RetailerDetailComponent,
     CommentsComponent
+    FilterOfferedProductsPricePipe,
+    MakeOrderComponent
   ],
   providers: [
     ProductListService,
     DistributorService,
     RetailersListService,
+    MakeOrderService,
     DistributorDetailResolver,
     DistributorListResolver,
     DistributorAddressResolver,

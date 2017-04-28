@@ -14,7 +14,7 @@ export class ProductListService {
     constructor(private http: Http) { }
 
     getProducts() {
-        console.log(this.http.get(this.productListUrl));
+       // console.log(this.http.get(this.productListUrl));
         return this.http.get(this.productListUrl).map((response: Response) => response.json());
     }
     
