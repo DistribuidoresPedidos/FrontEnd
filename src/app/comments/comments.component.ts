@@ -14,7 +14,6 @@ import { CommentService } from '../services/comment.service';
 export class CommentsComponent implements OnInit {
   errorMessage: string;
   comments: Comment[] = [];
-  css: string;
   @Input()
   distributor: number;
 
@@ -25,18 +24,8 @@ export class CommentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getComments(this.distributor);
-  }
-
-  getComments(distributor: number){
-  	this.commentService.getComments(distributor)
-  		.subscribe(
-        cosa => {
-          this.comments = cosa;
-        },
-        error => this.errorMessage = <any>error
-      );
-    console.log("ahorasi " + this.css);
+    this.comments = this.route.snapshot.data['distributorComments'].data;
+    console.log(this.comments);
   }
 
 }

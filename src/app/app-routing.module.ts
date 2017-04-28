@@ -15,10 +15,10 @@ import { DistributorDetailResolver } from './resolvers/distributor-detail.resolv
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
-import { ProductDetailResolver} from'./resolvers/product-detail.resolver';
-import {RetailersListResolver} from './resolvers/retailers-list.resolver';
-import {RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
-import {CommentsResolver} from './resolvers/comments.resolver';
+import { ProductDetailResolver } from './resolvers/product-detail.resolver';
+import { RetailersListResolver } from './resolvers/retailers-list.resolver';
+import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
+import { DistributorCommentsResolver } from './resolvers/distributor-comments.resolver';
 
 import { AppComponent } from './app.component';
 
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
         component: DistributorDetailComponent,
         resolve: {
             distributor: DistributorDetailResolver,
-            distributorAddress: DistributorAddressResolver
+            distributorComments: DistributorCommentsResolver
         }
     },
     {

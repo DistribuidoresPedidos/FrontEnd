@@ -4,12 +4,12 @@ import { Observable } from 'rxjs/Rx';
 import { CommentService } from '../services/comment.service';
 
 @Injectable()
-export class CommentsResolver implements Resolve<any> {
+export class DistributorCommentsResolver implements Resolve<any> {
   constructor(
     private commentService: CommentService
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.commentService.getComments();
+    return this.commentService.getComments(route.params.id);
   }
 }

@@ -11,11 +11,10 @@ export class RetailersListService{
     constructor(private http: Http) { }
 
     getRetailers() {
-        
         return this.http.get(this.retailerListUrl ).map((response: Response) => response.json())
     }
-    getRetaileById(id :number){
-        this.retailerDetailUrl=`${this.retailerListUrl}/${id}`;
+    getRetailerById(id: number) {
+        this.retailerDetailUrl = `${this.retailerListUrl}/${id}`;
         return this.http.get(this.retailerDetailUrl).map((response: Response) => response.json());
 
     }

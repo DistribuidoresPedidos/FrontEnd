@@ -43,8 +43,9 @@ import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
-import { RetailersListResolver} from './resolvers/retailers-list.resolver'
+import { RetailersListResolver} from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
+import { DistributorCommentsResolver } from './resolvers/distributor-comments.resolver';
 // Pipes
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
@@ -100,6 +101,7 @@ import { CommentsComponent } from './comments/comments.component';
     ProductDetailResolver,
     RetailersListResolver,
     RetailerDetailResolver,
+    DistributorCommentsResolver,
     Angular2TokenService,
     CommentService
   ],
