@@ -21,7 +21,6 @@ import { RetailersListResolver } from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
 import { DistributorCommentsResolver } from './resolvers/distributor-comments.resolver';
 
-import { ProductDetailResolver} from'./resolvers/product-detail.resolver';
 import {} from '';
 import { AppComponent } from './app.component';
 

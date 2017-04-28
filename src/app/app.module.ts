@@ -90,7 +90,7 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     ProductDetailComponent,
     FilterOfferedProductsPricePipe,
     RetailerDetailComponent,
-    CommentsComponent
+    CommentsComponent,
     FilterOfferedProductsPricePipe,
     MakeOrderComponent
   ],
