@@ -8,7 +8,7 @@
                     <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
                        <mdl-menu-item mdl-ripple>Mi Perfil</mdl-menu-item>
                        <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Mis Ordenes</mdl-menu-item>
-                       <mdl-menu-item mdl-ripple>Cerrar sesión</mdl-menu-item>
+                       <mdl-menu-item mdl-ripple (click)="logout()">Cerrar sesión</mdl-menu-item>
                     </mdl-menu>
          </mdl-layout-header-row>
       </mdl-layout-header>

@@ -32,20 +32,11 @@ export class CarouselComponent implements OnInit {
   }
 
   signIn() {
-    console.log(this.email);
-    console.log(this.password);
-    console.log(this.userType);
     this.authToken.signIn({email: this.email, password: this.password, userType: this.userType}).subscribe(
 
         res => {
-
-          console.log('auth response:', res);
-          console.log('auth response headers: ', res.headers.toJSON()); //log the response header to show the auth token
-          console.log('auth response body:', res.json()); //log the response body to show the user 
-          console.log(this.authToken.userSignedIn());
-          this.router.navigateByUrl('distributors');
+            this.router.navigate(['distributors']);
         },
-
         err => {
           console.error('auth error:', err);
         }

@@ -31,43 +31,47 @@ const appRoutes: Routes = [
         resolve: {
             distributors: DistributorListResolver
         },
-        //canActivate: [Angular2TokenService]
+        canActivate: [Angular2TokenService]
     },
     {
         path: 'distributors/:id',
         component: DistributorDetailComponent,
         resolve: {
             distributor: DistributorDetailResolver,
-        }
+        },
+        canActivate: [Angular2TokenService]
     },
     {
         path: 'products',
         component : ProductListComponent,
         resolve: {
             dataItems: ProductListResolver
-        }
+        },
+        canActivate: [Angular2TokenService]
     },
     {
         path:'products/:id' ,
         component : ProductDetailComponent,
         resolve :{
             product : ProductDetailResolver
-        }
+        },
+        canActivate: [Angular2TokenService]
     },
     {
         path : 'retailers', 
         component:RetailersComponent,
         resolve :{
             retailers : RetailersListResolver
-        }
+        },
+        canActivate: [Angular2TokenService]
     },
     {
         path :'retailers/:id',
         component: RetailerDetailComponent,
         resolve : {
             retailer: RetailerDetailResolver
-    }
-
+        },
+        canActivate: [Angular2TokenService]
     },
 
     { path: '**', component: PageNotFoundComponent }
