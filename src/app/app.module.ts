@@ -13,6 +13,7 @@ import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ScrollSpyModule } from 'ng2-scrollspy';
 import { Md2Module }  from 'md2';
 import { NouisliderModule } from 'ng2-nouislider';
+import { MdlSelectModule } from '@angular-mdl/select';
 
 // Components
 import { AppComponent } from './app.component';
@@ -41,7 +42,6 @@ import { MakeOrderService} from './services/make-order.service';
 // Resolvers
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
-import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 import { RetailersListResolver} from './resolvers/retailers-list.resolver';
@@ -52,6 +52,7 @@ import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-n
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
+import { RegisterComponent } from './register/register.component';
 import { CommentsComponent } from './comments/comments.component';
 import { MakeOrderComponent } from './make-order/make-order.component';
 
@@ -68,6 +69,7 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     SharedModule,
     Md2Module,
     NouisliderModule,
+    MdlSelectModule,
     Ng2PageScrollModule.forRoot(),
     ScrollSpyModule.forRoot(),
     Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })
@@ -90,6 +92,8 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     ProductDetailComponent,
     FilterOfferedProductsPricePipe,
     RetailerDetailComponent,
+    RegisterComponent
+    RetailerDetailComponent,
     CommentsComponent,
     FilterOfferedProductsPricePipe,
     MakeOrderComponent
@@ -101,7 +105,6 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     MakeOrderService,
     DistributorDetailResolver,
     DistributorListResolver,
-    DistributorAddressResolver,
     ProductListResolver,
     ProductDetailResolver,
     RetailersListResolver,
