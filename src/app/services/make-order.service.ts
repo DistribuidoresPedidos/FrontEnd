@@ -17,11 +17,11 @@ export class MakeOrderService extends BaseRequestOptions {
       { 
         'Content-Type': 'application/json',
       });
-    //headers.append('Access-Control-Allow-Origin','true');
     let options = new RequestOptions({ headers : headers });
-    console.log("bodyString " + bodyString);
     
-    return this.http.post(this.makeOrderUrl,bodyString,options).map((response : Response)=>response.json).catch(this.handleError);
+    return this.http.post(this.makeOrderUrl,bodyString,options)
+    .map((response : Response)=>console.log(response.json()))
+    .catch(this.handleError);
   }
 
 
