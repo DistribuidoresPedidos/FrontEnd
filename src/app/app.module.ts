@@ -29,11 +29,13 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RetailersComponent } from './retailers/retailers.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
+
 // Services
 import { DistributorService } from './services/distributor.service';
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
 import { Angular2TokenService } from 'angular2-token';
+import { CommentService } from './services/comment.service';
 
 // Resolvers
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
@@ -48,6 +50,7 @@ import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-n
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -83,7 +86,8 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
     RetailersComponent,
     ProductDetailComponent,
     FilterOfferedProductsPricePipe,
-    RetailerDetailComponent
+    RetailerDetailComponent,
+    CommentsComponent
   ],
   providers: [
     ProductListService,
@@ -96,7 +100,8 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
     ProductDetailResolver,
     RetailersListResolver,
     RetailerDetailResolver,
-    Angular2TokenService
+    Angular2TokenService,
+    CommentService
   ],
   bootstrap: [AppComponent]
 })
