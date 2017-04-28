@@ -13,6 +13,7 @@ import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ScrollSpyModule } from 'ng2-scrollspy';
 import { Md2Module }  from 'md2';
 import { NouisliderModule } from 'ng2-nouislider';
+import { MdlSelectModule } from '@angular-mdl/select';
 
 // Components
 import { AppComponent } from './app.component';
@@ -38,16 +39,16 @@ import { Angular2TokenService } from 'angular2-token';
 // Resolvers
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
-import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
-import { RetailersListResolver} from './resolvers/retailers-list.resolver'
+import { RetailersListResolver} from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
 // Pipes
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
     SharedModule,
     Md2Module,
     NouisliderModule,
+    MdlSelectModule,
     Ng2PageScrollModule.forRoot(),
     ScrollSpyModule.forRoot(),
     Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })
@@ -83,7 +85,8 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
     RetailersComponent,
     ProductDetailComponent,
     FilterOfferedProductsPricePipe,
-    RetailerDetailComponent
+    RetailerDetailComponent,
+    RegisterComponent
   ],
   providers: [
     ProductListService,
@@ -91,7 +94,6 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
     RetailersListService,
     DistributorDetailResolver,
     DistributorListResolver,
-    DistributorAddressResolver,
     ProductListResolver,
     ProductDetailResolver,
     RetailersListResolver,

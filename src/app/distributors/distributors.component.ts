@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DistributorService } from '../services/distributor.service';
 import { Distributor } from '../classes/distributor';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Angular2TokenService } from 'angular2-token';
 
 
 @Component({
@@ -16,12 +17,13 @@ export class DistributorsComponent implements OnInit {
   constructor(
     private distributorService: DistributorService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authToken: Angular2TokenService
   ) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.data);
     this.distributors = this.route.snapshot.data['distributors'].data;
+    console.log(this.authToken.userSignedIn());
   }
 
   getUrl(photoUrl: string) {

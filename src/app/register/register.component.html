@@ -1,0 +1,40 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+    <mdl-icon class="mdl-color-text--indigo">email</mdl-icon>
+    <mdl-textfield
+      type="text"
+      label="Correo Electrónico"
+      autofocus
+      floating-label
+      pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+      error-msg="Correo inválido"></mdl-textfield>
+  </div>
+  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+    <mdl-icon class="mdl-color-text--indigo">account_circle</mdl-icon>
+    <mdl-textfield
+      type="text"
+      label="Nombre"
+      floating-label
+      pattern="^[a-zA-Z\s]*$"
+      error-msg="Nombre inválido, solo letras y espacios"></mdl-textfield>
+  </div>
+  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+    <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
+    <mdl-textfield
+      type="password"
+      label="Contraseña"
+      floating-label></mdl-textfield>
+  </div>
+  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+    <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
+    <mdl-textfield
+      type="password"
+      label="Repetir Contraseña"
+      floating-label></mdl-textfield>
+  </div>
+  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
+    <mdl-radio name="group1" value="distributor" [(ngModel)]="userType" mdl-ripple>Distribuidor</mdl-radio>
+    <mdl-radio name="group1" value="retailer" [(ngModel)]="userType" mdl-ripple>Minorista</mdl-radio>
+  </div>
+  
+</div>
