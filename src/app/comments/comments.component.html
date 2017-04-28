@@ -1,6 +1,7 @@
 <div>
   <label>Comentarios: </label>
-  <li *ngFor="let comment of comments">
-   <span> <strong>{{comment.title}}</strong></span>
-  </li>
+  <ul *ngFor="let comment of comments">
+   <h3> <strong>{{comment.title}}</strong></h3>
+   <h6> {{comment.content}}</h6>
+  </ul>
 </div>
