@@ -8,12 +8,16 @@ import { MakeOrderService} from '../services/make-order.service';
   styleUrls: ['./make-order.component.scss']
 })
 export class MakeOrderComponent implements OnInit {
-//resp = `"retailer_id":1,route_id":1,products":[{"offeredProduct":1,"quantity":3},{"offeredProduct":2,"quantity":1}],totalPrice":30`;
-   resp={
+retailer_id : number;
+route_id:number;
+products = new Array();
+response={};
+counter = 1;
+/*  resp={
      retailer_id:1, 
      route_id:2,
      products:[{offeredProduct:1 , quantity:3},{offeredProduct:2 , quantity:1}]
-    };
+    };*/
    postData: string;
    errorMessage ;
 
@@ -24,12 +28,36 @@ export class MakeOrderComponent implements OnInit {
 
 
   ngOnInit() {
-        this.addOrder(this.resp);
+    // set up products field
+    for(let i =0;i<this.counter;i++){
+      this.products[i]= new Object();
+    }
+        //this.addOrder(this.response);
+  }
+  ngOnChange(){
+    console.log(this.retailer_id);
   }
   addOrder(body : any) :Observable<any>{
     if (!body){ return;}
     
     this.makeOrderService.createOrder(body).subscribe();
+  }
+
+  createResponse(){
+   this.response['retailer_id']=this.retailer_id;
+   this.response['route_id']=this.route_id;
+  
+   
+   this.response['products']=this.products;
+   this.addOrder(this.response);
+
+   console.log(this.response);
+
+  }
+  reset(){
+    this.counter++;
+    this.products[this.counter-1]= new Object();
+   this.response['products']=this.products;
   }
 }
 

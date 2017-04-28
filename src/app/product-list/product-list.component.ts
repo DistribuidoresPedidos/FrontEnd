@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.dataItems = this.route.snapshot.data.dataItems.data;
-    
+    console.log(this.dataItems);
     
   }
   getProducts() {
