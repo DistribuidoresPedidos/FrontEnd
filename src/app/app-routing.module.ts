@@ -34,15 +34,14 @@ const appRoutes: Routes = [
         resolve: {
             distributors: DistributorListResolver
         },
-        canActivate: [Angular2TokenService]
     },
     {
         path: 'distributors/:id',
         component: DistributorDetailComponent,
         resolve: {
             distributor: DistributorDetailResolver,
+            distributorComments: DistributorCommentsResolver
         },
-        canActivate: [Angular2TokenService]
     },
     {
         path: 'products',
@@ -50,7 +49,6 @@ const appRoutes: Routes = [
         resolve: {
             dataItems: ProductListResolver
         },
-        canActivate: [Angular2TokenService]
     },
     {
         path:'products/:id' ,
@@ -58,7 +56,6 @@ const appRoutes: Routes = [
         resolve :{
             product : ProductDetailResolver
         },
-        canActivate: [Angular2TokenService]
     },
     {
         path : 'retailers', 
@@ -66,7 +63,6 @@ const appRoutes: Routes = [
         resolve :{
             retailers : RetailersListResolver
         },
-        canActivate: [Angular2TokenService]
     },
     {
         path :'retailers/:id',
@@ -74,7 +70,6 @@ const appRoutes: Routes = [
         resolve : {
             retailer: RetailerDetailResolver
         },
-        canActivate: [Angular2TokenService]
     },
     {
         path :'distributors/:id/comments',
@@ -88,7 +83,6 @@ const appRoutes: Routes = [
     {
         path : 'make_order',
         component:  MakeOrderComponent
-        
     },
     {path:  'retailers', component: RetailersComponent},
     { path: '**', component: PageNotFoundComponent }

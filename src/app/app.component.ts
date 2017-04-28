@@ -32,7 +32,7 @@ export class AppComponent {
 
   logout() {
     this._tokenService.signOut().subscribe(
-      res => this.router.navigate(['']),
+      res => console.log(res),
       error => console.log(error)
     );
   }

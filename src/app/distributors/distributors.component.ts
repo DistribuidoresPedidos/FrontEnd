@@ -24,6 +24,7 @@ export class DistributorsComponent implements OnInit {
   ngOnInit() {
     this.distributors = this.route.snapshot.data['distributors'].data;
     console.log(this.authToken.userSignedIn());
+    console.log(this.route.snapshot.data);
 
   }
 

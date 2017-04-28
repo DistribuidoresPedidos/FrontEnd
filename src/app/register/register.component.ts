@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Angular2TokenService } from "angular2-token";
+import { Angular2TokenService } from 'angular2-token';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,15 +16,10 @@ export class RegisterComponent implements OnInit {
   passwordConfirmation = '';
   userType = '';
 
-  constructor(private authToken: Angular2TokenService) { }
+  constructor(private authToken: Angular2TokenService, private router: Router) { }
 
   ngOnInit() {
-    this.authToken.signOut().subscribe(
-      res => console.log(res),
-      error => console.log(error)
-    );
   }
-
   signUp() {
     this.authToken.registerAccount({
       name: this.name,
@@ -36,8 +32,8 @@ export class RegisterComponent implements OnInit {
       passwordConfirmation: this.passwordConfirmation,
       userType: this.userType
     }).subscribe(
-      res => console.log(res),
-      error => console.log(error)
+      res => this.router.navigateByUrl(''),
+      error => alert(error)
     )
   }
 }

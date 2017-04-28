@@ -11,7 +11,7 @@ import { SwiperModule } from 'angular2-useful-swiper';
 import { SharedModule } from './shared/shared.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ScrollSpyModule } from 'ng2-scrollspy';
-import { Md2Module }  from 'md2';
+import { Md2Module } from 'md2';
 import { NouisliderModule } from 'ng2-nouislider';
 import { MdlSelectModule } from '@angular-mdl/select';
 
