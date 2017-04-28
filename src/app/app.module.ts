@@ -92,8 +92,7 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     ProductDetailComponent,
     FilterOfferedProductsPricePipe,
     RetailerDetailComponent,
-    RegisterComponent
-    RetailerDetailComponent,
+    RegisterComponent,
     CommentsComponent,
     FilterOfferedProductsPricePipe,
     MakeOrderComponent

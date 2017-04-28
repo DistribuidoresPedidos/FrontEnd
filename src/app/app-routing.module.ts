@@ -12,9 +12,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { RetailersComponent } from './retailers/retailers.component';
 import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
 import { RegisterComponent } from './register/register.component';
-import {MakeOrderComponent}   from './make-order/make-order.component';              
-import {RetailerDetailComponent} from './retailer-detail/retailer-detail.component';
 import {CommentsComponent} from './comments/comments.component';
+import {MakeOrderComponent}   from './make-order/make-order.component';  
 
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
@@ -22,15 +21,8 @@ import { ProductListResolver } from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 import { RetailersListResolver } from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
-import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
-import { ProductListResolver} from './resolvers/products-list.resolver';
-import { ProductDetailResolver } from './resolvers/product-detail.resolver';
-import { RetailersListResolver } from './resolvers/retailers-list.resolver';
-import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
-import { DistributorCommentsResolver } from './resolvers/distributor-comments.resolver';
-
-import {} from '';
 import { AppComponent } from './app.component';
+import { DistributorCommentsResolver } from './resolvers/distributor-comments.resolver';
 
 
 const appRoutes: Routes = [
@@ -51,8 +43,6 @@ const appRoutes: Routes = [
             distributor: DistributorDetailResolver,
         },
         canActivate: [Angular2TokenService]
-            distributorComments: DistributorCommentsResolver
-        }
     },
     {
         path: 'products',
@@ -69,8 +59,6 @@ const appRoutes: Routes = [
             product : ProductDetailResolver
         },
         canActivate: [Angular2TokenService]
-
-    }
     },
     {
         path : 'retailers', 
@@ -119,4 +107,3 @@ const appRoutes: Routes = [
 export class AppRoutingModule {
 
 }
-
