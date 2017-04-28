@@ -6,7 +6,7 @@ import {Order} from '../classes/order';
 @Injectable()
 export class MakeOrderService extends BaseRequestOptions {
   private makeOrderUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/orders/make_order';
-  //private makeOrderUrl ='http://putsreq.com/finmdCN0htaUBI7uEbxs';
+
   constructor(private http: Http) { super(); }
 
 

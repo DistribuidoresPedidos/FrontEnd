@@ -8,13 +8,14 @@ import { DistributorDetailComponent } from './distributor-detail/distributor-det
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RetailersComponent } from './retailers/retailers.component';
+import {MakeOrderComponent}   from './make-order/make-order.component';              
 
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorAddressResolver } from './resolvers/distributor-address.resolver';
 import { ProductListResolver} from './resolvers/products-list.resolver';
 import { ProductDetailResolver} from'./resolvers/product-detail.resolver';
-
+import {} from '';
 import { AppComponent } from './app.component';
 
 
@@ -47,10 +48,14 @@ const appRoutes: Routes = [
         component : ProductDetailComponent,
         resolve :{
             product : ProductDetailResolver
-        }
+
+    }
     },
-    //{ path: 'products', component: ProductListComponent},
-    //{ path: 'products/:id', component: ProductDetailComponent },
+    {
+        path : 'make_order',
+        component:  MakeOrderComponent
+        
+    },
     {path:  'retailers', component: RetailersComponent},
     { path: '**', component: PageNotFoundComponent }
 ];

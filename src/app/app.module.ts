@@ -46,6 +46,7 @@ import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
+import { MakeOrderComponent } from './make-order/make-order.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
     ProductListComponent,
     RetailersComponent,
     ProductDetailComponent,
-    FilterOfferedProductsPricePipe
+    FilterOfferedProductsPricePipe,
+    MakeOrderComponent
   ],
   providers: [
     ProductListService,
