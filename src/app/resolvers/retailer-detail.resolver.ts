@@ -10,6 +10,6 @@ export class RetailerDetailResolver implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.retailersListService.getRetaileById(route.params.id);
+    return this.retailersListService.getRetailerById(route.params.id);
   }
 }
