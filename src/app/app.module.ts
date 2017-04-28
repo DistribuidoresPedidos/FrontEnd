@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Ng2MapModule } from 'ng2-map';
 import { MdlModule } from '@angular-mdl/core';
 import { SwiperModule } from 'angular2-useful-swiper';
-import { SharedModule } from './shared.module';
+import { SharedModule } from './shared/shared.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ScrollSpyModule } from 'ng2-scrollspy';
 import { Md2Module }  from 'md2';
