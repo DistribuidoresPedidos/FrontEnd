@@ -14,7 +14,7 @@ export class RetailerDetailComponent implements OnInit {
 
   ngOnInit() {
     this.retailer=this.route.snapshot.data.retailer.data;
-    console.log(this.retailer);
+    //console.log(this.retailer);
   }
 
 }
