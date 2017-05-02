@@ -56,7 +56,7 @@ const appRoutes: Routes = [
         component:  MakeOrderComponent
     },
     { path:  'retailers', component: RetailersComponent },
-    { path: 'app', loadChildren: 'app/dealers/dealers.module#DealersModule'},
+    { path: '', loadChildren: 'app/dealers/dealers.module#DealersModule'},
     { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -7,7 +7,7 @@ import { DealersComponent } from './dealers.component';
 
 const dealersRoutes = [
     {
-        path: 'app',
+        path: '',
         component: DealersComponent,
         children: [
             {
