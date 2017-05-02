@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { CommentService } from '../services/comment.service';
+import { DistributorsService } from '../../../services/distributors.service';
 
 @Injectable()
 export class DistributorCommentsResolver implements Resolve<any> {
   constructor(
-    private commentService: CommentService
+    private distributorsService: DistributorsService
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.commentService.getComments(route.params.id);
+    return this.distributorsService.getComments(route.params.id);
   }
 }

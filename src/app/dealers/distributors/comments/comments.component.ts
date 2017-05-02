@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Comment } from '../classes/comment';
+import { Comment } from '../../../classes/comment';
 import 'rxjs/add/operator/switchMap';
-
-import { CommentService } from '../services/comment.service';
 
 
 @Component({
@@ -14,13 +12,11 @@ import { CommentService } from '../services/comment.service';
 export class CommentsComponent implements OnInit {
   errorMessage: string;
   comments: Comment[] = [];
-  @Input()
-  distributor: number;
+  @Input() distributor: number;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private commentService: CommentService
   ) { }
 
   ngOnInit() {
