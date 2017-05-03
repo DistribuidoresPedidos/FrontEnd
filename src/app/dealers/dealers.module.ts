@@ -8,13 +8,15 @@ import { DealersRoutingModule } from './dealers-routing.module';
 // Component
 import { DealersComponent } from './dealers.component';
 
+
 @NgModule({
   imports: [
     SharedModule,
     DealersRoutingModule
   ],
   declarations: [
-    DealersComponent
+    DealersComponent,
+
   ]
 })
 export class DealersModule { }

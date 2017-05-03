@@ -16,13 +16,17 @@ const dealersRoutes = [
                 loadChildren: 'app/dealers/distributors/distributors.module#DistributorsModule',
             },
             {
-              path: 'products',
-              loadChildren: 'app/dealers/products/products.module#ProductsModule'
+                path : 'orders',
+                loadChildren : 'app/dealers/orders/orders.module#OrdersModule'
+            },
+            {   path: 'products',
+                loadChildren: 'app/dealers/products/products.module#ProductsModule'
             },
             {
                 path: '',
                 loadChildren: 'app/dealers/dashboard/dashboard.module#DashboardModule',
             }
+
         ]
     }
 ]
