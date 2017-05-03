@@ -19,7 +19,6 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RetailersComponent } from './retailers/retailers.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
-
 // Services
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
@@ -41,7 +40,6 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
 import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
 import { RegisterComponent } from './register/register.component';
 import { MakeOrderComponent } from './make-order/make-order.component';
-import { DealersComponent } from './dealers/dealers.component';
 
 
 @NgModule({

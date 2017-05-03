@@ -1,3 +1,64 @@
-<p>
-  distributor-detail works!
-</p>
+<div id="profile" class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <mdl-card mdl-shadow="4" id="profile-banner">
+      <mdl-card-title>
+      </mdl-card-title>
+      <mdl-card-supporting-text>
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col">
+            <img id="profile-img" src={{distributor.photo.url}} class="img-fluid z-depth-4" alt="profile image">
+          </div>
+          <div class="mdl-cell mdl-cell--10-col">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col">
+                <h4>{{distributor.name}}</h4>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col">
+                <h4>Número de celular</h4>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col">
+                <h4>Miembro desde</h4>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col">
+                {{distributor.email}}
+              </div>
+              <div class="mdl-cell mdl-cell--4-col">
+                {{distributor.phoneNumber}}
+              </div>
+              <div class="mdl-cell mdl-cell--4-col">
+                AQUI DEBE IR LA FECHA
+              </div>
+            </div>
+          </div>
+        </div>
+      </mdl-card-supporting-text>
+      <mdl-card-menu>
+        <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+        <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+           <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+           <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+           <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+           <mdl-menu-item>Yet Another Action</mdl-menu-item>
+        </mdl-menu>
+      </mdl-card-menu>
+    </mdl-card>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <mdl-card mdl-shadow="4" id="map-card">
+    <mdl-card-title mdl-card-expand>
+      <ng2-map id="map" center="{{distributor.latitude}} {{distributor.longitude}}" zoom="17" scrollwheel="false" >
+        <marker position="{{distributor.latitude}} {{distributor.longitude}}"></marker>
+      </ng2-map>
+    </mdl-card-title>
+    <mdl-card-supporting-text>
+      {{distributor.location}}
+    </mdl-card-supporting-text>
+    <mdl-card-menu>
+      <!--<button mdl-button mdl-button-type="icon" mdl-ripple>
+        <mdl-icon>share</mdl-icon>
+      </button>-->
+    </mdl-card-menu>
+  </mdl-card>
+  </div>
+  <distributor-comments></distributor-comments>
+</div>
