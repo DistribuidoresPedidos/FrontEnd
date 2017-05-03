@@ -23,22 +23,9 @@ import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent},
+  
     {
-        path: 'products',
-        component : ProductListComponent,
-        resolve: {
-            dataItems: ProductListResolver
-        },
-    },
-    {
-        path:'products/:id' ,
-        component : ProductDetailComponent,
-        resolve :{
-            product : ProductDetailResolver
-        },
-    },
-    {
-        path : 'retailers', 
+        path : 'retailers',
         component:RetailersComponent,
         resolve :{
             retailers : RetailersListResolver
