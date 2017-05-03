@@ -29,9 +29,6 @@ import { RetailersListResolver} from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
 
 // Pipes
-import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
-import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
-import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 
 import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
 import { RegisterComponent } from './register/register.component';
@@ -46,15 +43,13 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     AppRoutingModule
   ],
   declarations: [
-    FilterOfferedProductsNamePipe,
-    FilteredOfferedProductsCategoryPipe,
     AppComponent,
     PageNotFoundComponent,
     RetailersComponent,
-    FilterOfferedProductsPricePipe,
+
     RetailerDetailComponent,
     RegisterComponent,
-    FilterOfferedProductsPricePipe,
+
     MakeOrderComponent
   ],
   providers: [

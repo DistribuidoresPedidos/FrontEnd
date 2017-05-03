@@ -10,13 +10,14 @@ const dealersRoutes = [
         path: '',
         component: DealersComponent,
         children: [
-            {
-              path: 'products',
-              loadChildren: 'app/dealers/products/products.module#ProductsModule'
-            },
+
             {
                 path: 'distributors',
                 loadChildren: 'app/dealers/distributors/distributors.module#DistributorsModule',
+            },
+            {
+              path: 'products',
+              loadChildren: 'app/dealers/products/products.module#ProductsModule'
             },
             {
                 path: '',
