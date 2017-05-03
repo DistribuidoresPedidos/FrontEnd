@@ -5,14 +5,12 @@ import 'rxjs/add/operator/switchMap';
 
 
 @Component({
-  selector: 'app-comments',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.scss']
+  selector: 'distributor-comments',
+  templateUrl: './distributor-comments.component.html',
+  styleUrls: ['./distributor-comments.component.scss']
 })
-export class CommentsComponent implements OnInit {
-  errorMessage: string;
+export class DistributorCommentsComponent implements OnInit {
   comments: Comment[] = [];
-  @Input() distributor: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,7 +19,6 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
     this.comments = this.route.snapshot.data['distributorComments'].data;
-    console.log(this.comments);
   }
 
 }

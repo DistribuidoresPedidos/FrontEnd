@@ -20,17 +20,17 @@ const distributorsRoutes = [
             {
                 path: ':id',
                 component: DistributorDetailComponent,
-                /*resolve: {
+                resolve: {
                     distributor: DistributorDetailResolver,
                     distributorComments: DistributorCommentsResolver
-                }*/
+                }
             },
             {
                 path: '',
                 component: DistributorListComponent,
-                /*resolve: {
+                resolve: {
                     distributors: DistributorListResolver
-                }*/
+                }
             }
         ]
     }

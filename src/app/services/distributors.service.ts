@@ -5,8 +5,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
-import { Distributor } from '../../classes/distributor';
-import { Comment } from '../../classes/comment';
+import { Distributor } from '../classes/distributor';
+import { Comment } from '../classes/comment';
 
 @Injectable()
 export class DistributorsService {
