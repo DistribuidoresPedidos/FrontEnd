@@ -5,7 +5,6 @@ import { Angular2TokenService } from 'angular2-token';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LandingPageComponent} from './landing-page/landing-page.component';
-import { DistributorDetailComponent } from './distributor-detail/distributor-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RetailersComponent } from './retailers/retailers.component';
@@ -43,6 +42,7 @@ const appRoutes: Routes = [
         component:  MakeOrderComponent
     },
     { path:  'retailers', component: RetailersComponent },
+    { path: 'landing', loadChildren: 'app/landing-page/landing-page.module#LandingPageModule'},
     { path: '', loadChildren: 'app/dealers/dealers.module#DealersModule'},
     { path: '**', component: PageNotFoundComponent }
 ];
