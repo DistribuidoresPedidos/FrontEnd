@@ -15,9 +15,7 @@ import { DealersModule } from './dealers/dealers.module';
 // Components
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductListComponent } from './product-list/product-list.component';
 import { RetailersComponent } from './retailers/retailers.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 // Services
 import { ProductListService } from './services/products-list.service';
@@ -27,8 +25,6 @@ import { MakeOrderService} from './services/make-order.service';
 import { DistributorsService } from './services/distributors.service';
 
 // Resolvers
-import { ProductListResolver} from './resolvers/products-list.resolver';
-import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 import { RetailersListResolver} from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
 
@@ -54,9 +50,7 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     FilteredOfferedProductsCategoryPipe,
     AppComponent,
     PageNotFoundComponent,
-    ProductListComponent,
     RetailersComponent,
-    ProductDetailComponent,
     FilterOfferedProductsPricePipe,
     RetailerDetailComponent,
     RegisterComponent,
@@ -67,8 +61,6 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     ProductListService,
     RetailersListService,
     MakeOrderService,
-    ProductListResolver,
-    ProductDetailResolver,
     RetailersListResolver,
     RetailerDetailResolver,
     Angular2TokenService,

@@ -20,8 +20,8 @@
       </div>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems | filterOfferedProductsName : filtername 
-                |filteredOfferedProductsCategory : filtercategory 
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems | filterOfferedProductsName : filtername
+                |filteredOfferedProductsCategory : filtercategory
                 |filterOfferedProductsPrice :filterprice ">
     <mdl-card mdl-shadow="4">
     <mdl-card-title [style.background-image]="getUrl(item.product.photo.url)">
@@ -33,7 +33,7 @@
     <mdl-card-supporting-text>
       <p class="card-text">Categoria : {{item.product.category}}  </p>
       <p class="card-text">precio : {{item.price | currency}}  </p>
-      <p class="card-text">Distribuidor: {{item.distributor.name}}</p>  
+      <p class="card-text">Distribuidor: {{item.distributor.name}}</p>
     </mdl-card-supporting-text>
     <mdl-card-actions mdl-card-border>
       <a href="/products/{{item.id}}"  mdl-button mdl-colored mdl-ripple>Ver producto</a>
