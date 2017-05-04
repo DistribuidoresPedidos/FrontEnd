@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Angular2TokenService } from 'angular2-token';
 
 @Component({
   selector: 'app-dealers',
@@ -7,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DealersComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authToken: Angular2TokenService
+  ) { }
 
   ngOnInit() {
     console.log('dealers');
+  }
+
+  logout() {
+    this.authToken.signOut().subscribe(
+      res => console.log(res),
+      error => console.log(error)
+    );
   }
 
 }
