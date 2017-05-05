@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import { ActivatedRoute , Router } from "@angular/router";
-import { MakeOrderService} from '../services/make-order.service';
+import { OrdersService } from '../../../services/orders.service';
 @Component({
   selector: 'app-make-order',
   templateUrl: './make-order.component.html',
@@ -24,7 +24,7 @@ counter = 1;
    constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private makeOrderService : MakeOrderService) { }
+    private makeOrderService : OrdersService) { }
 
 
   ngOnInit() {
