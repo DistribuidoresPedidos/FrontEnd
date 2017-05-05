@@ -18,7 +18,7 @@ export class AppComponent {
     this._tokenService.init({
       apiPath: 'http://infinite-river-92156.herokuapp.com/api/v1',
       signInPath: 'sign_in',
-      signInRedirect: '/register',
+      signInRedirect: '/landing',
       signOutPath: 'sign_out',
       validateTokenPath: 'validate_token',
       registerAccountPath: '',

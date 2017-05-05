@@ -14,13 +14,11 @@ export class ProductListService {
     constructor(private http: Http) { }
 
     getProducts(retailer_id: number, q: string) {
-        // console.log(this.http.get(this.productListUrl));
         const url = this.offeredProductListUrl + `/${retailer_id}/offered_products_by_param_retailer_match?q=${q}`;
         return this.http.get(url).map((response: Response) => response.json());
     }
     getProductById(id) {
         const url = `${this.offeredProductListUrl}/${id}`;
-        //console.log(this.http.get(url));
         return this.http.get(url).map((response: Response) => response.json());
     }
 
@@ -29,7 +27,6 @@ export class ProductListService {
          for(var category of categories)
             url += 'categories[]=' + category + "&";
         url = url.slice(0, -1);
-        //console.log(this.http.get(url));
         return this.http.get(url).map((response: Response) => response.json());
     }
 

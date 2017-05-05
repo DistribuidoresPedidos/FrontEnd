@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute , Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
+
 import { Product } from '../../../classes/product';
+
 import { ProductListService } from '../../../services/products-list.service';
+import { MakeOrderService} from '../../../services/make-order.service';
+
 import { FilterOfferedProductsNamePipe } from '../../../pipes/filter-offered-products-name.pipe';
 import { FilterOfferedProductsPricePipe } from '../../../pipes/filter-offered-products-price.pipe';
 import { FilteredOfferedProductsCategoryPipe } from '../../../pipes/filtered-offered-products-category.pipe';
 
-import { ActivatedRoute , Router } from "@angular/router";
-import { MakeOrderService} from '../../../services/make-order.service';
+
 @Component({
-  selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 
@@ -17,10 +20,10 @@ import { MakeOrderService} from '../../../services/make-order.service';
 export class ProductListComponent implements OnInit {
 
   dataItems = [];
-  filtername = "";
+  filtername = '';
   filtercategory = [];
-  filterprice = [0,50];
-  categoryList = ["cat7","cat9","cat10"];
+  filterprice = [0, 50];
+  categoryList = ['cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6', 'cat7', 'cat8', 'cat9', 'cat10'];
 
   constructor(
     private router: Router,
@@ -37,32 +40,17 @@ export class ProductListComponent implements OnInit {
     nameObservable.debounceTime(200).subscribe(
       event => {
         let value = event.target.value;
-        if (value=='') value = '*';
+        if (value === '') {
+          value = '*';
+        }
         this.productListService.getProducts(localStorage['userId'], value).subscribe(
           data => this.dataItems = data.data
-        )
+        );
       }
-    )
+    );
   }
-
-  getProducts() {
-
-    /*this.productListService.getProducts(1, '*').subscribe(response => {
-      response.data.forEach(element => {
-        this.dataItems.push(element);
-      });
-    });*/
-
-  }
-
 
   getUrl(photoUrl: string) {
     return `url(${photoUrl})`;
   }
-
-  onInputChange(event: any): void {
-    console.log(event.target.value);
-  }
-
-
 }
