@@ -23,8 +23,17 @@ import { Angular2TokenService } from 'angular2-token';
 import { MdlDialogService } from '@angular-mdl/core';
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
-import { MakeOrderService} from './services/make-order.service';
+
+import { OrdersService} from './services/orders.service';
 import { DistributorsService } from './services/distributors.service';
+
+
+// Pipes
+
+import { RetailersListResolver } from "./dealers/retailers/resolvers/retailers-list.resolver";
+import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-detail.resolver";
+
+
 
 
 @NgModule({
@@ -43,7 +52,14 @@ import { DistributorsService } from './services/distributors.service';
     Angular2TokenService,
     ProductListService,
     RetailersListService,
-    MakeOrderService,
+
+
+    OrdersService,
+    RetailersListResolver,
+    RetailerDetailResolver,
+
+    Angular2TokenService,
+
     DistributorsService
   ],
   bootstrap: [AppComponent]

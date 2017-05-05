@@ -29,8 +29,11 @@ export class ProductListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productListService: ProductListService,
-    private makeOrderService: MakeOrderService
-  ) { }
+
+    private ordersService : OrdersService) { }
+
+  
+
 
   ngOnInit() {
     this.dataItems = this.route.snapshot.data.dataItems.data;
