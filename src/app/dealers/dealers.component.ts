@@ -17,12 +17,14 @@ export class DealersComponent implements OnInit {
 
   ngOnInit() {
     console.log('dealers');
+    console.log('User id: ' + localStorage['userId']);
   }
 
   logout() {
     this.authToken.signOut().subscribe(
       res => {
-        this.router.navigateByUrl('/')
+        localStorage['userId'] = '';
+        this.router.navigateByUrl('/');
       },
       error => {
         let message = JSON.parse(error._body).errors.full_messages[0];

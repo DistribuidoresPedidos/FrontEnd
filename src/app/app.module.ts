@@ -15,6 +15,7 @@ import { DealersModule } from './dealers/dealers.module';
 // Components
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
 
 
 // Services
@@ -24,11 +25,6 @@ import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
 import { MakeOrderService} from './services/make-order.service';
 import { DistributorsService } from './services/distributors.service';
-
-
-
-// Pipes
-import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({

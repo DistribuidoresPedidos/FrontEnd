@@ -16,7 +16,6 @@
       <div class="form-group mdl-cell mdl-cell--4-col">
         <nouislider [connect]="true" [min]="0" [max]="50" [step]="1" [(ngModel)]="filterprice" style="margin-top: 10px;"></nouislider>
         <p>{{filterprice[0]}} - {{filterprice[1]}}</p>
-        <!--<mdl-textfield type="text" label="Precio" floating-label [(ngModel)]="filterprice" [ngModelOptions]="{standalone: true}"></mdl-textfield>-->
       </div>
     </div>
   </div>
@@ -25,8 +24,6 @@
                 |filterOfferedProductsPrice :filterprice ">
     <mdl-card mdl-shadow="4">
     <mdl-card-title [style.background-image]="getUrl(item.photo.url)">
-<!--        <img src="{{item.product.photo.url}}" class="md-card-image" alt="">-->
-
       <h2 mdl-card-title-text>{{item.product.name}}</h2>
     </mdl-card-title>
 

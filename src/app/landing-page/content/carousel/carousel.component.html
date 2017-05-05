@@ -100,7 +100,7 @@
       </div>
     </div>
     <div class="mdl-dialog__actions">
-      <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="signIn()">Entrar</button>
+      <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="signIn(); loginDialog.close()">Entrar</button>
       <button mdl-button mdl-colored="primary" mdl-ripple (click)="loginDialog.close()">Cancelar</button>
     </div>
   </div>
