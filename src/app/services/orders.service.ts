@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, BaseRequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
+import { Angular2TokenService } from 'angular2-token';
 
 import {Order} from '../classes/order';
 @Injectable()
@@ -8,12 +9,18 @@ export class OrdersService {
   private ordersURL='http://infinite-river-92156.herokuapp.com/api/v1/retailers';
   private makeOrderUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/orders/make_order';
 
-  constructor(private http:Http){}
+  constructor(private http:Http , private authToken: Angular2TokenService){}
 
-
+ getOrders(){
+  const id  = this.authToken.currentUserData.id;
+  console.log ("service ");
+  console.log (this.authToken.currentUserData);
+  
+  const OrdersURL_ID = `${this.ordersURL}/${id}/orders`;
+  return this.http.get(OrdersURL_ID).map((response: Response) => response.json());
+ }
 
   getOrdersById( id : number ){
-    id = 1; 
     const OrdersURL_ID = `${this.ordersURL}/${id}/orders`;
     return this.http.get(OrdersURL_ID).map((response: Response) => response.json());
   }

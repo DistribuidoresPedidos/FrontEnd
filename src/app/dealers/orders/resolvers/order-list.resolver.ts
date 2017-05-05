@@ -6,10 +6,14 @@ import { OrdersService } from '../../../services/orders.service';
 @Injectable()
 export class OrderListResolver implements Resolve<any> {
   constructor(
-    private ordersService: OrdersService
+    private ordersService: OrdersService,
+   
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.ordersService.getOrdersById(route.params.id);
-  }
+    //console.log("resolver" + this.authToken.currentUserData.id);
+
+    //return this.ordersService.getOrdersById(this.authToken.currentUserData.id);
+    return this.ordersService.getOrders();
+}
 }
