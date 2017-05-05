@@ -12,10 +12,10 @@ export class OrdersService {
   constructor(private http:Http , private authToken: Angular2TokenService){}
 
  getOrders(){
-  const id  = this.authToken.currentUserData.id;
-  console.log ("service ");
-  console.log (this.authToken.currentUserData);
-  
+  //const id  = this.authToken.currentUserData.id;
+  //console.log ("service ");
+  //console.log (this.authToken.currentUserData);
+  const id = localStorage['userId'];
   const OrdersURL_ID = `${this.ordersURL}/${id}/orders`;
   return this.http.get(OrdersURL_ID).map((response: Response) => response.json());
  }
