@@ -44,7 +44,7 @@ export class ProductListComponent implements OnInit {
 
 
   getUrl(photoUrl: string) {
-    return `url(${photoUrl})`;
+    //return `url(${photoUrl})`;
   }
 
 

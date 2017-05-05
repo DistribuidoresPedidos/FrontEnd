@@ -6,11 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {ProductsComponent } from './products.component';
 import {ProductListComponent } from './product-list/product-list.component';
 import {ProductDetailComponent } from './product-detail/product-detail.component';
+import {ProductPostComponent} from "./product-post/product-post.component";
 //import {ProductPostResolver}
 
 //Resolvers
 import {ProductDetailResolver} from './resolvers/product-detail.resolver'
 import {ProductListResolver} from './resolvers/products-list.resolver'
+
 //import {ProductPostResolver}
 
 const productsRoutes=[
@@ -30,6 +32,13 @@ const productsRoutes=[
         component: ProductListComponent,
         resolve:{
           dataItems: ProductListResolver
+        }
+      },
+      {
+        path: 'post',
+        component: ProductPostComponent,
+        resolve:{
+          //dataItems: ProductListResolver
         }
       }
 

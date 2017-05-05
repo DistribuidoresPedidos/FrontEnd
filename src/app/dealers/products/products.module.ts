@@ -11,6 +11,8 @@ import { ProductsRoutingModule } from './products-routing.module';
 import {ProductsComponent} from './products.component';
 import {ProductListComponent} from './product-list/product-list.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
+import {ProductPostComponent} from './product-post/product-post.component';
+import { ng2stepper } from 'ng2stepper/ng2stepper.component';
 //resolvers
 import { FilterOfferedProductsNamePipe } from '../../pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from '../../pipes/filtered-offered-products-category.pipe';
@@ -29,9 +31,11 @@ import {ProductDetailResolver} from './resolvers/product-detail.resolver';
     ProductsComponent,
     ProductListComponent,
     ProductDetailComponent,
+    ProductPostComponent,
     FilterOfferedProductsPricePipe,
     FilteredOfferedProductsCategoryPipe,
-    FilterOfferedProductsNamePipe
+    FilterOfferedProductsNamePipe,
+    ng2stepper
   ],
   providers: [
     ProductListResolver,
