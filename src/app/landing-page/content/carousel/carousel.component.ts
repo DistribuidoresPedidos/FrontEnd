@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { MdlDialogService } from '@angular-mdl/core';
 
 @Component({
   selector: 'app-carousel',
@@ -25,7 +26,8 @@ export class CarouselComponent implements OnInit {
 
   constructor(
     private authToken: Angular2TokenService,
-    private router: Router
+    private router: Router,
+    private dialogService: MdlDialogService
     ) { }
 
   ngOnInit() {
@@ -35,10 +37,11 @@ export class CarouselComponent implements OnInit {
     this.authToken.signIn({email: this.email, password: this.password, userType: this.userType}).subscribe(
 
         res => {
-            this.router.navigate(['app']);
+          this.router.navigate(['app']);
         },
-        err => {
-          console.error('auth error:', err);
+        error => {
+          let message = JSON.parse(error._body).errors[0];
+          this.dialogService.alert(message, 'Aceptar', 'Error iniciando sesión');
         }
     )
   }

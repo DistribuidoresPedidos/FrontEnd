@@ -18,11 +18,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 // Services
+import { Angular2TokenService } from 'angular2-token';
+import { MdlDialogService } from '@angular-mdl/core';
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
-import { Angular2TokenService } from 'angular2-token';
 import { MakeOrderService} from './services/make-order.service';
 import { DistributorsService } from './services/distributors.service';
+
 
 
 // Pipes
@@ -41,10 +43,11 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent,
   ],
   providers: [
+    MdlDialogService,
+    Angular2TokenService,
     ProductListService,
     RetailersListService,
     MakeOrderService,
-    Angular2TokenService,
     DistributorsService
   ],
   bootstrap: [AppComponent]
