@@ -6,7 +6,6 @@ import { Angular2TokenService } from 'angular2-token';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LandingPageComponent} from './landing-page/landing-page.component';
 import { RegisterComponent } from './register/register.component';
-import { MakeOrderComponent } from './make-order/make-order.component';
 
 
 
@@ -14,16 +13,28 @@ import { AppComponent } from './app.component';
 
 
 const appRoutes: Routes = [
-    { path: 'register', component: RegisterComponent},
-
     {
-        path : 'make_order',
-        component:  MakeOrderComponent
+        path: 'register',
+        component: RegisterComponent
     },
-
-    { path: 'landing', loadChildren: 'app/landing-page/landing-page.module#LandingPageModule'},
-    { path: '', loadChildren: 'app/dealers/dealers.module#DealersModule'},
-    { path: '**', component: PageNotFoundComponent }
+    {
+        path: 'landing',
+        loadChildren: 'app/landing-page/landing-page.module#LandingPageModule'
+    },
+    {
+        path: 'app',
+        loadChildren: 'app/dealers/dealers.module#DealersModule',
+        canActivate: [Angular2TokenService]
+    },
+    {
+        path: '',
+        redirectTo: 'landing',
+        pathMatch: 'full'
+    },
+    {
+        path: '**',
+        component: PageNotFoundComponent
+    }
 ];
 
 @NgModule({

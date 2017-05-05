@@ -27,22 +27,18 @@ import { DistributorsService } from './services/distributors.service';
 
 // Pipes
 import { RegisterComponent } from './register/register.component';
-import { MakeOrderComponent } from './make-order/make-order.component';
 
 
 @NgModule({
     imports: [
     BrowserModule,
     SharedModule,
-    DealersModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     RegisterComponent,
-
-    MakeOrderComponent
   ],
   providers: [
     ProductListService,

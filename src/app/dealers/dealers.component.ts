@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dealers',
   templateUrl: './dealers.component.html',
   styleUrls: ['./dealers.component.scss']
 })
 export class DealersComponent implements OnInit {
 
   constructor(
-    private authToken: Angular2TokenService
+    private authToken: Angular2TokenService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -18,7 +19,7 @@ export class DealersComponent implements OnInit {
 
   logout() {
     this.authToken.signOut().subscribe(
-      res => console.log(res),
+      res => this.router.navigateByUrl('/'),
       error => console.log(error)
     );
   }
