@@ -57,7 +57,7 @@ export class ProductListComponent implements OnInit {
 
 
   getUrl(photoUrl: string) {
-    //return `url(${photoUrl})`;
+    return `url(${photoUrl})`;
   }
 
   onInputChange(event: any): void {

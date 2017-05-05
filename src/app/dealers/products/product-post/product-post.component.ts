@@ -23,6 +23,6 @@ export class ProductPostComponent implements OnInit {
   ngOnInit() {
    // this.product=this.route.snapshot;
    console.log("post product");
-
+   
   }
 }

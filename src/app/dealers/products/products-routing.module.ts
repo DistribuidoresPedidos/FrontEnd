@@ -12,7 +12,7 @@ import {ProductPostComponent} from "./product-post/product-post.component";
 //Resolvers
 import {ProductDetailResolver} from './resolvers/product-detail.resolver'
 import {ProductListResolver} from './resolvers/products-list.resolver'
-
+import {ProductPostResolver} from './resolvers/products-post.resolver'
 //import {ProductPostResolver}
 
 const productsRoutes=[
@@ -45,7 +45,7 @@ const productsRoutes=[
         path: 'post',
         component: ProductPostComponent,
         resolve:{
-          //dataItems: ProductListResolver
+          data: ProductPostResolver
         }
       }
 

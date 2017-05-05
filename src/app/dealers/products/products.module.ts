@@ -17,7 +17,7 @@ import { ng2stepper } from 'ng2stepper/ng2stepper.component';
 import { FilterOfferedProductsNamePipe } from '../../pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from '../../pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from '../../pipes/filter-offered-products-price.pipe';
-
+import {ProductPostResolver} from './resolvers/products-post.resolver'
 import {ProductListResolver} from './resolvers/products-list.resolver';
 import {ProductDetailResolver} from './resolvers/product-detail.resolver';
 
@@ -39,7 +39,8 @@ import {ProductDetailResolver} from './resolvers/product-detail.resolver';
   ],
   providers: [
     ProductListResolver,
-    ProductDetailResolver
+    ProductDetailResolver,
+    ProductPostResolver
   ]
 })
 export class ProductsModule { }
