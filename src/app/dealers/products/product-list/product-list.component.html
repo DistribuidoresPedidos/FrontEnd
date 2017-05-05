@@ -2,7 +2,7 @@
   <div class="mdl-cell mdl-cell--12-col">
     <div class="mdl-grid">
       <div class="form-group mdl-cell mdl-cell--4-col">
-        <mdl-textfield type="text" placeholder="Nombre" [(ngModel)]="filtername" [ngModelOptions]="{standalone: true}"></mdl-textfield>
+        <mdl-textfield #nameInput id="nameInput" type="text" placeholder="Nombre" [(ngModel)]="filtername" [ngModelOptions]="{standalone: true}"></mdl-textfield>
       </div>
       <div class="form-group mdl-cell mdl-cell--4-col">
         <md2-tags
@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems | filterOfferedProductsName : filtername
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems 
                 |filteredOfferedProductsCategory : filtercategory
                 |filterOfferedProductsPrice :filterprice ">
     <mdl-card mdl-shadow="4">
