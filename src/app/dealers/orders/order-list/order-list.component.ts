@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {Order} from '../../../classes/order';
 import { Angular2TokenService } from 'angular2-token';
+
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit {
-    orders : Order[]=[]
+    //orders : Order[]=[]
+    orders=[]
    constructor(
     private router: Router,
     private route: ActivatedRoute,

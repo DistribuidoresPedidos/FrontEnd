@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 //components
 import { OrdersComponent} from './orders.component';
 import { OrderListComponent} from './order-list/order-list.component';
-
+import {MakeOrderComponent} from './make-order/make-order.component';
 //resolver
 import {OrderListResolver} from './resolvers/order-list.resolver';
 const ordersRoutes = [
@@ -18,6 +18,11 @@ const ordersRoutes = [
             resolve :{
               order : OrderListResolver
             }
+          },
+          {
+            path :'makeOrder',
+            component :MakeOrderComponent,
+            
           }
         ]
 

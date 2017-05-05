@@ -11,7 +11,50 @@
   </div>
 
   <div class = "table mdl-shadow--8dp mdl-cell mdl-cell--12-col mdl -grid">
-      hehe xd
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">#</th>
+        <th>Estado</th>
+        <th>Lista</th>
+        <th>Costo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of orders; let i = index">
+        <td class="mdl-data-table__cell--non-numeric" >{{i}}</td>
+        <td>{{item.state}}</td>
+
+        <td>
+                  <!--nested table-->
+<!--                  {{item.orderProducts.length}}-->
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" *ngIf="item.orderProducts.length>0">
+                  <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric">#</th>
+                          <th>producto</th>
+                          <th>cantidad</th>
+                          <th>precio</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                    <tr  *ngFor="let order of item.orderProducts; let j = index">
+                     <td> {{j}} </td>
+                      <td>nombre</td>
+                      <td>{{order.quantity}}</td>
+                      <td>{{order.price}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+        </td>
+
+        <td>{{item.totalPrice}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
   </div>
   
 
