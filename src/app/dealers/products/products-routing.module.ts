@@ -35,6 +35,13 @@ const productsRoutes=[
         }
       },
       {
+        path: ':category',
+        component: ProductListComponent,
+        resolve:{
+          products: ProductListResolver
+        }
+      },
+      {
         path: 'post',
         component: ProductPostComponent,
         resolve:{

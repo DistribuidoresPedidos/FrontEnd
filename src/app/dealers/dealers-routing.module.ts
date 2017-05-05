@@ -12,8 +12,13 @@ const dealersRoutes = [
         children: [
 
             {
+                path: 'retailers',
+                loadChildren: 'app/dealers/retailers/retailers.module#RetailersModule',
+            },
+            {
                 path: 'distributors',
                 loadChildren: 'app/dealers/distributors/distributors.module#DistributorsModule',
+
             },
             {
                 path : 'orders',

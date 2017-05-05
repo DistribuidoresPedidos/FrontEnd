@@ -2,7 +2,7 @@
   <div class="mdl-cell mdl-cell--12-col">
     <div class="mdl-grid">
       <div class="form-group mdl-cell mdl-cell--4-col">
-        <mdl-textfield type="text" placeholder="Nombre" [(ngModel)]="filtername" [ngModelOptions]="{standalone: true}"></mdl-textfield>
+        <mdl-textfield #nameInput id="nameInput" type="text" placeholder="Nombre" [(ngModel)]="filtername" [ngModelOptions]="{standalone: true}"></mdl-textfield>
       </div>
       <div class="form-group mdl-cell mdl-cell--4-col">
         <md2-tags
@@ -16,17 +16,14 @@
       <div class="form-group mdl-cell mdl-cell--4-col">
         <nouislider [connect]="true" [min]="0" [max]="50" [step]="1" [(ngModel)]="filterprice" style="margin-top: 10px;"></nouislider>
         <p>{{filterprice[0]}} - {{filterprice[1]}}</p>
-        <!--<mdl-textfield type="text" label="Precio" floating-label [(ngModel)]="filterprice" [ngModelOptions]="{standalone: true}"></mdl-textfield>-->
       </div>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems | filterOfferedProductsName : filtername
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems 
                 |filteredOfferedProductsCategory : filtercategory
                 |filterOfferedProductsPrice :filterprice ">
     <mdl-card mdl-shadow="4">
-    <mdl-card-title [style.background-image]="getUrl(item.product.photo.url)">
-<!--        <img src="{{item.product.photo.url}}" class="md-card-image" alt="">-->
-
+    <mdl-card-title [style.background-image]="getUrl(item.photo.url)">
       <h2 mdl-card-title-text>{{item.product.name}}</h2>
     </mdl-card-title>
 
@@ -36,8 +33,8 @@
       <p class="card-text">Distribuidor: {{item.distributor.name}}</p>
     </mdl-card-supporting-text>
     <mdl-card-actions mdl-card-border>
-      <a href="/products/{{item.id}}"  mdl-button mdl-colored mdl-ripple>Ver producto</a>
-      <a href="/products/{{item.id}}"  mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple>Pedir</a>
+      <a routerLink="{{item.id}}"  mdl-button mdl-colored mdl-ripple>Ver producto</a>
+      <a routerLink="{{item.id}}"  mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple>Pedir</a>
     </mdl-card-actions>
     <mdl-card-menu>
       <button mdl-button mdl-button-type="icon" mdl-ripple>

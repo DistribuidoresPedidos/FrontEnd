@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { Router } from '@angular/router';
+import { MdlDialogService } from '@angular-mdl/core';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,11 @@ export class RegisterComponent implements OnInit {
   passwordConfirmation = '';
   userType = '';
 
-  constructor(private authToken: Angular2TokenService, private router: Router) { }
+  constructor(
+    private authToken: Angular2TokenService,
+    private router: Router,
+    private dialogService: MdlDialogService
+  ) { }
 
   ngOnInit() {
   }
@@ -33,7 +38,10 @@ export class RegisterComponent implements OnInit {
       userType: this.userType
     }).subscribe(
       res => this.router.navigateByUrl(''),
-      error => alert(error)
-    )
+      error => {
+        let message = JSON.parse(error._body).errors.full_messages[0];
+        this.dialogService.alert(message, 'Aceptar', 'Error en registro');
+      }
+    );
   }
 }
