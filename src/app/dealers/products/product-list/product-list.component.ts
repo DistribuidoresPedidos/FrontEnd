@@ -7,7 +7,7 @@ import { FilterOfferedProductsPricePipe } from '../../../pipes/filter-offered-pr
 import { FilteredOfferedProductsCategoryPipe } from '../../../pipes/filtered-offered-products-category.pipe';
 
 import { ActivatedRoute , Router } from "@angular/router";
-import { MakeOrderService} from '../../../services/make-order.service';
+import { OrdersService} from '../../../services/orders.service';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -25,7 +25,7 @@ export class ProductListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productListService: ProductListService,
-    private makeOrderService : MakeOrderService) { }
+    private ordersService : OrdersService) { }
 
   ngOnInit() {
     this.dataItems = this.route.snapshot.data.dataItems.data;

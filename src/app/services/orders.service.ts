@@ -4,10 +4,23 @@ import {Observable} from 'rxjs/Rx';
 
 import {Order} from '../classes/order';
 @Injectable()
-export class MakeOrderService extends BaseRequestOptions {
+export class OrdersService {
+  private ordersURL='http://infinite-river-92156.herokuapp.com/api/v1/retailers';
   private makeOrderUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/orders/make_order';
 
-  constructor(private http: Http) { super(); }
+  constructor(private http:Http){}
+
+
+
+  getOrdersById( id : number ){
+    id = 1; 
+    const OrdersURL_ID = `${this.ordersURL}/${id}/orders`;
+    return this.http.get(OrdersURL_ID).map((response: Response) => response.json());
+  }
+
+ 
+
+  
 
 
   createOrder( body : Object):Observable<any>{

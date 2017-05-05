@@ -8,6 +8,10 @@ import {OrdersRoutingModule} from './orders-routing.module';
 import {OrdersComponent} from './orders.component';
 import { OrderListComponent } from './order-list/order-list.component';
 
+
+// resolver
+
+import {OrderListResolver} from './resolvers/order-list.resolver';
 @NgModule({
   imports: [
     OrdersRoutingModule
@@ -15,6 +19,9 @@ import { OrderListComponent } from './order-list/order-list.component';
   declarations: [
     OrdersComponent,
     OrderListComponent
+  ],
+  providers:[
+    OrderListResolver
   ]
 })
 export class OrdersModule { }

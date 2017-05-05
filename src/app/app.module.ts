@@ -21,7 +21,7 @@ import { RetailersComponent } from './retailers/retailers.component';
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
 import { Angular2TokenService } from 'angular2-token';
-import { MakeOrderService} from './services/make-order.service';
+import { OrdersService} from './services/orders.service';
 import { DistributorsService } from './services/distributors.service';
 
 // Resolvers
@@ -55,7 +55,7 @@ import { MakeOrderComponent } from './make-order/make-order.component';
   providers: [
     ProductListService,
     RetailersListService,
-    MakeOrderService,
+    OrdersService,
     RetailersListResolver,
     RetailerDetailResolver,
     Angular2TokenService,
