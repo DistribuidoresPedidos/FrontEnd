@@ -16,11 +16,8 @@ export class ProductListService {
     getProducts(retailer_id: number, q: string) {
         // console.log(this.http.get(this.productListUrl));
         const url = this.offeredProductListUrl + `/${retailer_id}/offered_products_by_param_retailer_match?q=${q}`;
-        console.log(url);
         return this.http.get(url).map((response: Response) => response.json());
     }
-    
-    
     getProductById(id) {
         const url = `${this.offeredProductListUrl}/${id}`;
         //console.log(this.http.get(url));
