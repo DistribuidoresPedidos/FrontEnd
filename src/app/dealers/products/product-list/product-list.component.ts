@@ -5,7 +5,6 @@ import { Observable } from 'rxjs/Rx';
 import { Product } from '../../../classes/product';
 
 import { ProductListService } from '../../../services/products-list.service';
-import { MakeOrderService} from '../../../services/make-order.service';
 
 import { FilterOfferedProductsNamePipe } from '../../../pipes/filter-offered-products-name.pipe';
 import { FilterOfferedProductsPricePipe } from '../../../pipes/filter-offered-products-price.pipe';
@@ -29,11 +28,7 @@ export class ProductListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productListService: ProductListService,
-
-    private ordersService : OrdersService) { }
-
-  
-
+    ) { }
 
   ngOnInit() {
     this.dataItems = this.route.snapshot.data.dataItems.data;
@@ -46,6 +41,7 @@ export class ProductListComponent implements OnInit {
         if (value === '') {
           value = '*';
         }
+        console.log(value);
         this.productListService.getProducts(localStorage['userId'], value).subscribe(
           data => this.dataItems = data.data
         );

@@ -1,44 +1,33 @@
 <div class="mdl-grid">
-
-	   <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--4-col">
-	<img src="{{data.photo.url}}" alt="">
-
-	<ul class='mdl-list'>
-		  	<li class="mdl-list__item">
-				    <span class="mdl-list__item-primary-content">
-					<i class="material-icons mdl-list__item-avatar">person</i>
-					<span>{{data.distributor.name}}</span>
-    				</span>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--3-offset">
+		<img src="{{product.photo.url}}" alt="">
+		<ul class='mdl-list'>
+				<li class="mdl-list__item">
+					<span class="mdl-list__item-primary-content">
+						<i class="material-icons mdl-list__item-avatar">person</i>
+						<span>{{product.distributor.name}}</span>
+					</span>
 					<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-			  </li>
-			<li class="mdl-list__item">
-				<span class="mdl-list__item-primary-content">
-					<i class="material-icons">list</i>
-					<span>Categoria: {{data.product.category}}</span>
-    				</span>
-			</li>
-			<li class="mdl-list__item">
-				<span class="mdl-list__item-primary-content">
-					<i class="material-icons ">attach_money</i>
-					<span>Precio: {{data.price | currency}}</span>
-    				</span>
-
-			</li>
-			<li class="mdl-list__item">
-				<span class="mdl-list__item-primary-content">
-					<i class="material-icons">bookmark</i>
-					<span>Peso: {{data.product.weight | number}}</span>
-    				</span>
-
-			</li>
-
-	</ul>
-
-
+				</li>
+				<li class="mdl-list__item">
+					<span class="mdl-list__item-primary-content">
+						<i class="material-icons">list</i>
+						<span>Categoria: {{product.product.category}}</span>
+					</span>
+				</li>
+				<li class="mdl-list__item">
+					<span class="mdl-list__item-primary-content">
+						<i class="material-icons ">attach_money</i>
+						<span>Precio: {{product.product.price | currency}}</span>
+					</span>
+				</li>
+				<li class="mdl-list__item">
+					<span class="mdl-list__item-primary-content">
+						<i class="material-icons">bookmark</i>
+						<span>Peso: {{product.product.weight | number}}</span>
+					</span>
+				</li>
+		</ul>
 	</div>
-	
-    <div class="mdl-layout-spacer"></div>
-
 </div>
 

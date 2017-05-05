@@ -33,4 +33,13 @@ export class DealersComponent implements OnInit {
     );
   }
 
+  goToProfile() {
+    let userType = this.authToken.currentUserType.toLowerCase() + 's';
+    this.router.navigate(['app', userType, localStorage['userId']]);
+  }
+
+  goToOrders() {
+    this.router.navigate(['app', 'orders']);
+  }
+
 }
