@@ -11,6 +11,6 @@ export class ProductListResolver implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.productService.getProducts();
+    return this.productService.getProducts(localStorage['userId'], 'e');
   }
 }

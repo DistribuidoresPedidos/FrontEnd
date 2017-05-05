@@ -9,13 +9,15 @@ import { Product } from '../classes/product';
 
 @Injectable()
 export class ProductListService {
-    private offeredProductListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
+    private offeredProductListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/retailers';
     private productUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/products';
     constructor(private http: Http) { }
 
-    getProducts() {
-       // console.log(this.http.get(this.productListUrl));
-        return this.http.get(this.offeredProductListUrl).map((response: Response) => response.json());
+    getProducts(retailer_id: number, q: string) {
+        // console.log(this.http.get(this.productListUrl));
+        const url = this.offeredProductListUrl + `/${retailer_id}/offered_products_by_param_retailer_match?q=${q}`;
+        console.log(url);
+        return this.http.get(url).map((response: Response) => response.json());
     }
     
     
