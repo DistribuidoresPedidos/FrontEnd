@@ -29,11 +29,4 @@ export class AppComponent {
     });
     this.location = location;
   }
-
-  logout() {
-    this._tokenService.signOut().subscribe(
-      res => console.log(res),
-      error => console.log(error)
-    );
-  }
 }

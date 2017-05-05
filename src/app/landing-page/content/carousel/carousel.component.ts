@@ -35,7 +35,7 @@ export class CarouselComponent implements OnInit {
     this.authToken.signIn({email: this.email, password: this.password, userType: this.userType}).subscribe(
 
         res => {
-            this.router.navigate(['distributors']);
+            this.router.navigate(['app']);
         },
         err => {
           console.error('auth error:', err);
