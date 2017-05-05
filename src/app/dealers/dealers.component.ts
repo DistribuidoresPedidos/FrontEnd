@@ -24,13 +24,22 @@ export class DealersComponent implements OnInit {
     this.authToken.signOut().subscribe(
       res => {
         localStorage['userId'] = '';
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/landing');
       },
       error => {
         let message = JSON.parse(error._body).errors.full_messages[0];
         this.dialogService.alert(message, 'Aceptar', 'Error');
       }
     );
+  }
+
+  goToProfile() {
+    let userType = this.authToken.currentUserType.toLowerCase() + 's';
+    this.router.navigate(['app', userType, localStorage['userId']]);
+  }
+
+  goToOrders() {
+    this.router.navigate(['app', 'orders']);
   }
 
 }

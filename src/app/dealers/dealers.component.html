@@ -5,8 +5,8 @@
             <a class="mdl-navigation__link logout" href="#" routerLink="/"><i class="material-icons md-36 md-light"  mdl-badge="1" mdl-badge-overlap>shopping_cart</i></a>
             <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple style="width: 50px; height:auto;"><img src="src/assets/img/duck.png" id="profile-pic"></button>
                 <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
-                    <mdl-menu-item mdl-ripple>Mi Perfil</mdl-menu-item>
-                    <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Mis Ordenes</mdl-menu-item>
+                    <mdl-menu-item mdl-ripple (click)="goToProfile()">Mi Perfil</mdl-menu-item>
+                    <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider (click)="goToOrders()">Mis Ordenes</mdl-menu-item>
                     <mdl-menu-item mdl-ripple (click)="logout()">Cerrar sesión</mdl-menu-item>
                 </mdl-menu>
       </mdl-layout-header-row>
@@ -14,11 +14,11 @@
   <mdl-layout-drawer class="mdl-color--grey">
       <mdl-layout-title><img src="src/assets/img/logo.png"></mdl-layout-title>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="#" routerLink="/app" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Inicio</a>
-        <a class="mdl-navigation__link" href="#" routerLink="distributors" routerLinkActive='active'>Distribuidores</a>
-        <a class="mdl-navigation__link" href="#" routerLink="retailers" routerLinkActive='active'>Minoristas</a>
-        <a class="mdl-navigation__link" href="#" routerLink="products" routerLinkActive='active'>Productos</a>
-        <a class="mdl-navigation__link" href="#" routerLink="orders" routerLinkActive='active'>Ordenes</a>
+        <a class="mdl-navigation__link" routerLink="/app" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+        <a class="mdl-navigation__link" routerLink="distributors" routerLinkActive='active'>Distribuidores</a>
+        <a class="mdl-navigation__link" routerLink="retailers" routerLinkActive='active'>Minoristas</a>
+        <a class="mdl-navigation__link" routerLink="products" routerLinkActive='active'>Productos</a>
+        <a class="mdl-navigation__link" routerLink="orders" routerLinkActive='active'>Ordenes</a>
       </nav>
   </mdl-layout-drawer>
   <mdl-layout-content>

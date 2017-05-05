@@ -15,7 +15,7 @@ import {ProductListResolver} from './resolvers/products-list.resolver'
 import {ProductPostResolver} from './resolvers/products-post.resolver'
 //import {ProductPostResolver}
 
-const productsRoutes=[
+const productsRoutes = [
   {
     path: '',
     component: ProductsComponent,
@@ -23,22 +23,22 @@ const productsRoutes=[
       {
         path: ':id',
         component: ProductDetailComponent,
-        resolve:{
+        resolve: {
           product: ProductDetailResolver
-        }
-      },
-      {
-        path: '',
-        component: ProductListComponent,
-        resolve:{
-          dataItems: ProductListResolver
         }
       },
       {
         path: ':category',
         component: ProductListComponent,
-        resolve:{
+        resolve: {
           products: ProductListResolver
+        }
+      },
+      {
+        path: '',
+        component: ProductListComponent,
+        resolve: {
+          dataItems: ProductListResolver
         }
       },
       {
@@ -48,10 +48,9 @@ const productsRoutes=[
           data: ProductPostResolver
         }
       }
-
     ]
   }
-]
+];
 
 
 @NgModule({

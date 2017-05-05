@@ -11,7 +11,7 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-   data={}
+   product: Product;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,9 +20,8 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   // this.product=this.route.snapshot;
    console.log(this.route.snapshot.data.product.data);
-   this.data=this.route.snapshot.data.product.data;
+   this.product = this.route.snapshot.data.product.data;
   }
 
   getProductById(id){
