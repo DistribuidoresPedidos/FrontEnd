@@ -31,6 +31,13 @@ const productsRoutes=[
         resolve:{
           dataItems: ProductListResolver
         }
+      },
+      {
+        path: ':category',
+        component: ProductListComponent,
+        resolve:{
+          products: ProductListResolver
+        }
       }
 
     ]
