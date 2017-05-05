@@ -15,20 +15,25 @@ import { DealersModule } from './dealers/dealers.module';
 // Components
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
 
 
 // Services
+import { Angular2TokenService } from 'angular2-token';
+import { MdlDialogService } from '@angular-mdl/core';
 import { ProductListService } from './services/products-list.service';
 import { RetailersListService } from './services/retailers-list.service';
-import { Angular2TokenService } from 'angular2-token';
+
 import { OrdersService} from './services/orders.service';
 import { DistributorsService } from './services/distributors.service';
 
 
 // Pipes
-import { RegisterComponent } from './register/register.component';
+
 import { RetailersListResolver } from "./dealers/retailers/resolvers/retailers-list.resolver";
 import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-detail.resolver";
+
+
 
 
 @NgModule({
@@ -43,14 +48,18 @@ import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-d
     RegisterComponent,
   ],
   providers: [
+    MdlDialogService,
+    Angular2TokenService,
     ProductListService,
     RetailersListService,
+
 
     OrdersService,
     RetailersListResolver,
     RetailerDetailResolver,
 
     Angular2TokenService,
+
     DistributorsService
   ],
   bootstrap: [AppComponent]

@@ -34,7 +34,7 @@ export class ProductListComponent implements OnInit {
   }
   getProducts() {
 
-    this.productListService.getProducts().subscribe(response => {
+    this.productListService.getProducts(1, this.filtername).subscribe(response => {
       response.data.forEach(element => {
         this.dataItems.push(element);
       });

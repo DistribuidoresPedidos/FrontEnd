@@ -5,12 +5,12 @@ import { ProductListService } from '../../../services/products-list.service';
 
 
 @Injectable()
-export class ProductListResolver implements Resolve<any> {
+export class ProductsByCategoryResolver implements Resolve<any> {
   constructor(
     private productService: ProductListService
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.productService.getProducts(localStorage['userId'], 'e');
+    return this.productService.getByCategory(route.params.category);
   }
 }
