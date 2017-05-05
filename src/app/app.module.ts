@@ -15,7 +15,7 @@ import { DealersModule } from './dealers/dealers.module';
 // Components
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RetailersComponent } from './retailers/retailers.component';
+
 
 // Services
 import { ProductListService } from './services/products-list.service';
@@ -24,40 +24,32 @@ import { Angular2TokenService } from 'angular2-token';
 import { OrdersService} from './services/orders.service';
 import { DistributorsService } from './services/distributors.service';
 
-// Resolvers
-import { RetailersListResolver} from './resolvers/retailers-list.resolver';
-import { RetailerDetailResolver} from './resolvers/retailer-detail.resolver';
 
 // Pipes
-
-import { RetailerDetailComponent } from './retailer-detail/retailer-detail.component';
 import { RegisterComponent } from './register/register.component';
-import { MakeOrderComponent } from './make-order/make-order.component';
+import { RetailersListResolver } from "./dealers/retailers/resolvers/retailers-list.resolver";
+import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-detail.resolver";
 
 
 @NgModule({
     imports: [
     BrowserModule,
     SharedModule,
-    DealersModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    RetailersComponent,
-
-    RetailerDetailComponent,
     RegisterComponent,
-
-    MakeOrderComponent
   ],
   providers: [
     ProductListService,
     RetailersListService,
+
     OrdersService,
     RetailersListResolver,
     RetailerDetailResolver,
+
     Angular2TokenService,
     DistributorsService
   ],
