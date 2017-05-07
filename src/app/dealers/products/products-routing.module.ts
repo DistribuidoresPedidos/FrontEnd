@@ -6,13 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {ProductsComponent } from './products.component';
 import {ProductListComponent } from './product-list/product-list.component';
 import {ProductDetailComponent } from './product-detail/product-detail.component';
-import {ProductPostComponent} from "./product-post/product-post.component";
+import {ProductCreateComponent} from './product-create/product-create.component'
 //import {ProductPostResolver}
 
 //Resolvers
 import {ProductDetailResolver} from './resolvers/product-detail.resolver'
 import {ProductListResolver} from './resolvers/products-list.resolver'
-import {ProductPostResolver} from './resolvers/products-post.resolver'
+import {ProductCreateResolver} from './resolvers/products-create.resolver'
 //import {ProductPostResolver}
 
 const productsRoutes = [
@@ -20,6 +20,14 @@ const productsRoutes = [
     path: '',
     component: ProductsComponent,
     children:[
+
+      {
+        path: 'create',
+        component: ProductCreateComponent,
+        resolve:{
+          categories: ProductCreateResolver
+        }
+      },
       {
         path: ':id',
         component: ProductDetailComponent,
@@ -41,13 +49,7 @@ const productsRoutes = [
           dataItems: ProductListResolver
         }
       },
-      {
-        path: 'post',
-        component: ProductPostComponent,
-        resolve:{
-          data: ProductPostResolver
-        }
-      }
+
     ]
   }
 ];

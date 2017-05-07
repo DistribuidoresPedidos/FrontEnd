@@ -10,9 +10,21 @@ import { Product } from '../classes/product';
 @Injectable()
 export class ProductListService {
     private offeredProductListUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/retailers';
+    private distributorsUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/distributors'
     private offeredProductUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
     private productUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/products';
+    private categoriesUrl= 'http://infinite-river-92156.herokuapp.com/api/v1/products/categories'
     constructor(private http: Http) {
+    }
+    getCategories(){
+      const url = this.categoriesUrl;
+      console.log(url);
+      return this.http.get(url).map((response: Response)=> response.json());
+
+    }
+    getDistributorProducts(distributorId: number) {
+      const url = this.distributorsUrl + `/${distributorId}/offered_products`;
+      return this.http.get(url).map((response => response.json()));
     }
 
     getProducts(retailer_id: number, q: string) {
@@ -37,12 +49,6 @@ export class ProductListService {
         url += 'categories[]=' + category;
         //console.log(this.http.get(url));
         return this.http.get(url).map((response: Response) => response.json());
-    }
-
-    getCategories(){
-        var url = `http://infinite-river-92156.herokuapp.com/api/v1/products/categories`;
-        return this.http.get(url).map((response: Response) => response.json());
-
     }
 
 }
