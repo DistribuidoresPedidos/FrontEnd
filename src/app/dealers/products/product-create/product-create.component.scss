@@ -1,7 +1,7 @@
 #card{
   margin-left: 100px;
   margin-top: 25px;
-  width: 800px;
+  width: 900px;
 }
 #card-title{
   color: purple;
@@ -9,7 +9,14 @@
   background: url('../../../../assets/img/products/background.png');
 
 }
-mdl-textfield{
-  width: 100%;
-  color: #fff;
+.my-drop-zone {
+  border: dotted 3px lightgray;
 }
+.nv-file-over {
+  border: dotted 3px red;
+} /* Default class applied to drop zones on over */
+.another-file-over-class {
+  border: dotted 3px green;
+ }
+
+ html, body { height: 100%; }

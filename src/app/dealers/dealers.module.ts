@@ -7,7 +7,7 @@ import { DealersRoutingModule } from './dealers-routing.module';
 
 // Component
 import { DealersComponent } from './dealers.component';
-//import { FileUploaderComponent } from './../../file-uploader/file-uploader/file-uploader.component';
+
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { DealersComponent } from './dealers.component';
     DealersRoutingModule
   ],
   declarations: [
-    DealersComponent
+    DealersComponent,
+  
 
 
   ]

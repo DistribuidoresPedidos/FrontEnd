@@ -6,9 +6,9 @@ import { Product } from '../../../classes/product';
 
 import { ProductListService } from '../../../services/products-list.service';
 
-import { FilterOfferedProductsNamePipe } from '../../../pipes/filter-offered-products-name.pipe';
-import { FilterOfferedProductsPricePipe } from '../../../pipes/filter-offered-products-price.pipe';
-import { FilteredOfferedProductsCategoryPipe } from '../../../pipes/filtered-offered-products-category.pipe';
+import { FilterOfferedProductsNamePipe } from '../pipes/filter-offered-products-name.pipe';
+import { FilterOfferedProductsPricePipe } from '../pipes/filter-offered-products-price.pipe';
+import { FilteredOfferedProductsCategoryPipe } from '../pipes/filtered-offered-products-category.pipe';
 
 
 @Component({

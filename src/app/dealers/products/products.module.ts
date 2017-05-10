@@ -22,13 +22,15 @@ import {ProductListResolver} from './resolvers/products-list.resolver';
 import {ProductDetailResolver} from './resolvers/product-detail.resolver';
 import {ProductCreateResolver} from './resolvers/products-create.resolver';
 
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
 
 
 @NgModule({
   imports: [
     SharedModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+
   ],
   declarations: [
     ProductsComponent,
@@ -39,7 +41,12 @@ import {ProductCreateResolver} from './resolvers/products-create.resolver';
     FilteredOfferedProductsCategoryPipe,
     FilterOfferedProductsNamePipe,
     ng2stepper,
-    ProductCreateComponent
+    ProductCreateComponent,
+
+    FileDropDirective,
+
+    FileSelectDirective
+
   ],
   providers: [
     ProductListResolver,

@@ -8,6 +8,10 @@ import { OfferedProduct } from '../../../classes/offeredProduct';
 import { ProductListService } from '../../../services/products-list.service';
 //class
 
+import {FileUploader} from 'ng2-file-upload/ng2-file-upload'
+
+// const URL = '/api/';
+const URL = 'https://localhost:3000/api/v1';
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
@@ -20,10 +24,13 @@ export class ProductCreateComponent implements OnInit {
   public price: number
   public name: string
   public weight: number
+  public category_select: string
 
+  public uploader:FileUploader = new FileUploader({url: URL});
+  public hasBaseDropZoneOver:boolean = false;
+  public hasAnotherDropZoneOver:boolean = false;
   distributor_id = localStorage['userId']
-
-  categories;
+  public categories: string[]
 
   constructor(
     private router: Router,
@@ -31,12 +38,23 @@ export class ProductCreateComponent implements OnInit {
     private productListService: ProductListService,
   ) { }
 
+
+
+
   ngOnInit() {
     console.log('products-create');
 
     this.categories= this.route.snapshot.data.categories
     console.log(this.categories);
     //nameObservable.debounceTime(200).subscribe(
+  }
+  //FileUploader
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+  }
+
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
   }
 
   saveProduct(model: Product, isValidProd: Boolean){
