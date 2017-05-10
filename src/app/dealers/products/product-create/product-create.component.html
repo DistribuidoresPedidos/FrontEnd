@@ -1,3 +1,38 @@
-<p>
-  product-create works!
-</p>
+
+
+  <div id='card' class="mdl-card mdl-shadow--2dp">
+    <div id='card-title' class="mdl-card__title mdl-color--light-blue mdl-color-text--white">
+      <h2 class="mdl-card__title-text ">Crear un Producto</h2>
+    </div>
+    <form action="#">
+    <div class="mdl-card__supporting-text">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+          Upload photo
+        </div>
+        <div class="mdl-cell mdl-cell--6-col">
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+              <mdl-textfield type="text" label="Nombre" id="name1" name1="name1" #name1= "ngModel" required
+                              [(ngModel)]="name" floating-label [ngModelOptions]="{standalone: true}">
+              </mdl-textfield>
+
+              <mdl-textfield currencyMask type="text" label="Precio"  id="price1" price1="price1" #price1= "ngModel" required
+                              [(ngModel)]="price" floating-label [ngModelOptions]="{standalone: true}"
+                                >
+              </mdl-textfield>
+
+              <mdl-textfield type="text" label="Peso" id="peso1" peso1="peso1" #peso1= "ngModel" required
+                              [(ngModel)]="weight" floating-label [ngModelOptions]="{standalone: true}">
+              </mdl-textfield>
+              <p>{{weight}}</p>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+</form>
+</div>

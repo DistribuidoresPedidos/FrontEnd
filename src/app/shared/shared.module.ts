@@ -12,11 +12,13 @@ import { MdlModule } from '@angular-mdl/core';
 import { NouisliderModule } from 'ng2-nouislider';
 import { MdlSelectModule } from '@angular-mdl/select';
 import { Ng2MapModule } from 'ng2-map';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
     imports: [
         ScrollEventModule,
-        Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' })
+        Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' }),
+        CurrencyMaskModule
     ],
     exports: [
         CommonModule,
