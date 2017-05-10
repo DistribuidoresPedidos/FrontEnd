@@ -14,9 +14,9 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {ProductCreateComponent } from './product-create/product-create.component';
 import { ng2stepper } from 'ng2stepper/ng2stepper.component';
 //resolvers
-import { FilterOfferedProductsNamePipe } from '../../pipes/filter-offered-products-name.pipe';
-import { FilteredOfferedProductsCategoryPipe } from '../../pipes/filtered-offered-products-category.pipe';
-import { FilterOfferedProductsPricePipe } from '../../pipes/filter-offered-products-price.pipe';
+import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
+import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
+import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 
 import {ProductListResolver} from './resolvers/products-list.resolver';
 import {ProductDetailResolver} from './resolvers/product-detail.resolver';
