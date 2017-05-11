@@ -16,11 +16,14 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
 import { RetailersListResolver } from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
 
+//Pagination Module
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     SharedModule,
-    RetailersRoutingModule
+    RetailersRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [
     RetailersComponent,
