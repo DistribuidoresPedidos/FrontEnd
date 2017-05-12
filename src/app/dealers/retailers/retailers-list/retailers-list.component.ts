@@ -10,6 +10,7 @@ import { ActivatedRoute , Router } from "@angular/router";
 })
 export class RetailersListComponent implements OnInit {
   retailers: Retailer[] = [];
+  page : number =1;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
