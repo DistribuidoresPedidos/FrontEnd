@@ -10,7 +10,7 @@ import { ActivatedRoute , Router } from "@angular/router";
 })
 export class RetailersListComponent implements OnInit {
   retailers: Retailer[] = [];
-  page : number =1;
+  page : number = 1;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -20,6 +20,7 @@ export class RetailersListComponent implements OnInit {
   ngOnInit() {
     this.retailers=this.route.snapshot.data.retailers.data;
   }
+
   getRetailers() {
     this.retailersListService.getRetailers().subscribe(response => {
       response.data.forEach(element => {
@@ -27,6 +28,7 @@ export class RetailersListComponent implements OnInit {
       });
     });
   }
+
   getUrl(photoUrl: string) {
     return `url(${photoUrl})`;
   }

@@ -5,6 +5,19 @@
 
 html, body {height:100%;}
 
+.ngx-pagination {
+  li{
+    cursor: pointer;
+    :hover{
+      border-radius: 5px;
+    }
+  }
+  .current{
+    background: #283593!important;
+    border-radius: 5px;
+  }
+}
+
 
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
