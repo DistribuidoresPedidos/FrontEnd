@@ -27,6 +27,7 @@ import { Ng2SelectModule } from 'ng2-material-select';
     ],
     exports: [
         CommonModule,
+        
         FormsModule,
         ReactiveFormsModule,
         HttpModule,

@@ -15,11 +15,12 @@
               [dropBoxMessage]="'Arrastra tu imagen aqui!'"
 
           ></image-upload>
+          <input type="file" (change)="selectFile($event)">
           </div>
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--1-offset">
-          
+
           <br>
           <br>
           <mdl-textfield type="text" label="Nombre" id="name1" name1="name1" #name1= "ngModel" type="text"

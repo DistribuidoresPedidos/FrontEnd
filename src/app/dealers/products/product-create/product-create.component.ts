@@ -23,13 +23,16 @@ export class ProductCreateComponent implements OnInit {
   public name: string
   public weight: number
   public category_select: string
-
   public uploader;
-  public hasBaseDropZoneOver:boolean = false;
+  public file;
+  //xmlhttpRequest
+  public data_post: FormData = new FormData();
+
   public disableSelectCategories :boolean= false;
 
-  distributor_id = localStorage['userId']
   public categories: string[]
+
+  distributor_id = localStorage['userId']
 
   constructor(
     private router: Router,
@@ -52,7 +55,11 @@ export class ProductCreateComponent implements OnInit {
   newCategory(){
     return this.disableSelectCategories;
   }
-
+  selectFile($event): void {
+  		var inputValue = $event.target;
+  		this.file = inputValue.files[0];
+  		console.debug("Input File name: " + this.file.name + " type:" + this.file.size + " size:" + this.file.size);
+  	}
   saveProduct(model: Product, isValidProd: Boolean){
 
   }
