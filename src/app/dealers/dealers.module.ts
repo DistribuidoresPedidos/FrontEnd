@@ -17,7 +17,7 @@ import { DealersComponent } from './dealers.component';
   ],
   declarations: [
     DealersComponent,
-  
+
 
 
   ]

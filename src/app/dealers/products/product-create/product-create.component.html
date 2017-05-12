@@ -1,78 +1,64 @@
 
 
-  <div id='card' class="mdl-card mdl-shadow--2dp">
+  <div id='card' class="mdl-card mdl-shadow--8dp">
     <div id='card-title' class="mdl-card__title mdl-color--light-blue mdl-color-text--white">
-      <h2 class="mdl-card__title-text ">Crear un Producto</h2>
+      <h2 class="mdl-card__title-text ">Nuevo Producto</h2>
     </div>
 
     <form action="#">
-    <div class="mdl-card__supporting-text">
+    <div class="mdl-card__supporting-text " >
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--6-col">
-          Photo:
-            <div ng2FileDrop
-                 [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
-                 (fileOver)="fileOverBase($event)"
-                 [uploader]="uploader"
-                 class="well my-drop-zone">
-                mater
-            </div>
-      <div class="" style="margin-bottom: 40px">
+          <div id="image-upload">
 
-            <h3>Upload queue</h3>
-            <p>Queue length: {{ uploader?.queue?.length }}</p>
+          <image-upload
+              [dropBoxMessage]="'Arrastra tu imagen aqui!'"
 
-            <div>
-                <div>
-                    Queue progress:
-                    <div class="progress" style="">
-                        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-success btn-s"
-                        (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-                    <span class="glyphicon glyphicon-upload"></span> Upload all
-                </button>
-                <button type="button" class="btn btn-warning btn-s"
-                        (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
-                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
-                </button>
-                <button type="button" class="btn btn-danger btn-s"
-                        (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
-                    <span class="glyphicon glyphicon-trash"></span> Remove all
-                </button>
-            </div>
-
+          ></image-upload>
+          </div>
         </div>
 
-    </div>
-
-        <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--1-offset">
+          
+          <br>
           <br>
           <mdl-textfield type="text" label="Nombre" id="name1" name1="name1" #name1= "ngModel" type="text"
 
                   [(ngModel)]="name" floating-label [ngModelOptions]="{standalone: true}" >
           </mdl-textfield>
-
-          <mdl-textfield currencyMask type="number" label="Precio"  id="price1" price1="price1" #price1="ngModel"
-                          [(ngModel)]="price" floating-label [ngModelOptions]="{standalone: true}" error-msg="Input is not a number!" min="0"
-                            >
+          <br>
+          <mdl-textfield  type="number" label="Precio"  id="price1" price1="price1" #price1="ngModel"
+                          [(ngModel)]="price" floating-label [ngModelOptions]="{standalone: true}" error-msg="Input is not a number!">
           </mdl-textfield>
-
+          <br>
           <mdl-textfield type="number" label="Peso" id="peso1" peso1="peso1" #peso1= "ngModel"
                           [(ngModel)]="weight" floating-label [ngModelOptions]="{standalone: true}" error-msg="Input is not a number!" >
           </mdl-textfield>
-          <select [(ngModel)]="category_select" [ngModelOptions]="{standalone: true}">
-            <option *ngFor="let c of categories" [ngValue]="c">{{c}}</option>
-          </select>
 
+          <br>
+          <br>
+          <ng2-select [placeholder]="'Selecciona la categoria'"
+                      [options]="categories"
+                      [(ngModel)]="category_select"
+                      [ngModelOptions]="{standalone: true}"
+                      >
 
-          <p>{{weight}}</p>
+          </ng2-select>
+          <br>
+          <br>
+          <mdl-checkbox [mdl-ripple]="true" [(ngModel)]="disableSelectCategories" [ngModelOptions]="{standalone: true}">
+                      Otra Categoria
+          </mdl-checkbox>
+          <br>
+          <br>
+
+          <mdl-textfield type="text" label="Nueva Categoria" id="cat" cat="cat" #cat= "ngModel" type="text"
+
+                [disabled]="!newCategory()"  [(ngModel)]="category_select" floating-label [ngModelOptions]="{standalone: true}" >
+          </mdl-textfield>
 
         </div>
-
         </div>
-        </div>
-
-</form>
+      </div>
+    </form>
 </div>

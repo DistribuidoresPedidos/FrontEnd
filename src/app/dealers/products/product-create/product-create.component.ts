@@ -8,10 +8,8 @@ import { OfferedProduct } from '../../../classes/offeredProduct';
 import { ProductListService } from '../../../services/products-list.service';
 //class
 
-import {FileUploader} from 'ng2-file-upload/ng2-file-upload'
-
 // const URL = '/api/';
-const URL = 'https://localhost:3000/api/v1';
+const URL = 'http://infinite-river-92156.herokuapp.com/api/v1';
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
@@ -26,9 +24,10 @@ export class ProductCreateComponent implements OnInit {
   public weight: number
   public category_select: string
 
-  public uploader:FileUploader = new FileUploader({url: URL});
+  public uploader;
   public hasBaseDropZoneOver:boolean = false;
-  public hasAnotherDropZoneOver:boolean = false;
+  public disableSelectCategories :boolean= false;
+
   distributor_id = localStorage['userId']
   public categories: string[]
 
@@ -46,15 +45,12 @@ export class ProductCreateComponent implements OnInit {
 
     this.categories= this.route.snapshot.data.categories
     console.log(this.categories);
+
     //nameObservable.debounceTime(200).subscribe(
   }
-  //FileUploader
-  public fileOverBase(e:any):void {
-    this.hasBaseDropZoneOver = e;
-  }
 
-  public fileOverAnother(e:any):void {
-    this.hasAnotherDropZoneOver = e;
+  newCategory(){
+    return this.disableSelectCategories;
   }
 
   saveProduct(model: Product, isValidProd: Boolean){

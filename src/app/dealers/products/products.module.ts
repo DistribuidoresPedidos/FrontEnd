@@ -12,7 +12,7 @@ import {ProductsComponent} from './products.component';
 import {ProductListComponent} from './product-list/product-list.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {ProductCreateComponent } from './product-create/product-create.component';
-import { ng2stepper } from 'ng2stepper/ng2stepper.component';
+
 //resolvers
 import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
@@ -22,15 +22,15 @@ import {ProductListResolver} from './resolvers/products-list.resolver';
 import {ProductDetailResolver} from './resolvers/product-detail.resolver';
 import {ProductCreateResolver} from './resolvers/products-create.resolver';
 
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
-
-
+import { Ng2SelectModule } from 'ng2-material-select';
+import {ImageUploadModule} from "angular2-image-upload";
 @NgModule({
   imports: [
     SharedModule,
     ProductsRoutingModule,
-
+    ImageUploadModule.forRoot(),
+    Ng2SelectModule
   ],
   declarations: [
     ProductsComponent,
@@ -40,12 +40,8 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
     FilterOfferedProductsPricePipe,
     FilteredOfferedProductsCategoryPipe,
     FilterOfferedProductsNamePipe,
-    ng2stepper,
-    ProductCreateComponent,
 
-    FileDropDirective,
-
-    FileSelectDirective
+    ProductCreateComponent
 
   ],
   providers: [
