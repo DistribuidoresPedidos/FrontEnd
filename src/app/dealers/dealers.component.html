@@ -1,4 +1,4 @@
-<mdl-layout mdl-layout-fixed-header mdl-layout-fixed-drawer>
+<!--<mdl-layout mdl-layout-fixed-header>
   <mdl-layout-header class="mdl-color--indigo-700">
       <mdl-layout-header-row>
         <mdl-layout-spacer></mdl-layout-spacer>
@@ -10,18 +10,67 @@
                     <mdl-menu-item mdl-ripple (click)="logout()">Cerrar sesión</mdl-menu-item>
                 </mdl-menu>
       </mdl-layout-header-row>
-  </mdl-layout-header>
-  <mdl-layout-drawer class="mdl-color--grey">
-      <mdl-layout-title><img src="src/assets/img/logo.png"></mdl-layout-title>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" routerLink="/app" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Inicio</a>
-        <a class="mdl-navigation__link" routerLink="distributors" routerLinkActive='active'>Distribuidores</a>
-        <a class="mdl-navigation__link" routerLink="retailers" routerLinkActive='active'>Minoristas</a>
-        <a class="mdl-navigation__link" routerLink="products" routerLinkActive='active'>Productos</a>
-        <a class="mdl-navigation__link" routerLink="orders" routerLinkActive='active'>Ordenes</a>
-      </nav>
-  </mdl-layout-drawer>
-  <mdl-layout-content>
-      <router-outlet></router-outlet>
-  </mdl-layout-content>
-</mdl-layout>
+-->
+<div class="container">
+    <div class="app-header" mdl-shadow="2">
+        <div class="nav-logo">
+            <img src="src/assets/img/logo.png">
+        </div>
+        <div class="floating-right">
+            <a class="mdl-navigation__link logout" href="#" routerLink="/"><i class="material-icons md-48 md-light"  mdl-badge="1" mdl-badge-overlap>notifications</i></a>
+            <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple style="width: 60px; height:auto;"><img src="src/assets/img/duck.png" id="profile-pic"></button>
+            <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+                <mdl-menu-item mdl-ripple (click)="goToProfile()">Mi Perfil</mdl-menu-item>
+                <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider (click)="goToOrders()">Mis Ordenes</mdl-menu-item>
+                <mdl-menu-item mdl-ripple (click)="logout()">Cerrar sesión</mdl-menu-item>
+            </mdl-menu>
+        </div>
+    </div>
+    <div class="app-body mdl-grid">
+        <div class="app-sidenav mdl-cell mdl-cell--2-col" mdl-shadow="4">
+            <nav class="vertical">
+                <ul>
+                    <li>
+                        <a class="mdl-navigation__link" routerLink="/app" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">
+                            <i class="material-icons md-36">home</i>
+                            <h4>Inicio</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mdl-navigation__link" routerLink="products" routerLinkActive='active'>
+                            <i class="material-icons md-36">shopping_basket</i>
+                            <h4>Productos</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mdl-navigation__link" routerLink="orders" routerLinkActive='active'>
+                            <i class="material-icons md-36">receipt</i>
+                            <h4>Ordenes</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mdl-navigation__link" routerLink="distributors" routerLinkActive='active'>
+                            <i class="material-icons md-36">account_circle</i>
+                            <h4>Distribuidores</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mdl-navigation__link" routerLink="routes" routerLinkActive='active'>
+                            <i class="material-icons md-36">place</i>
+                            <h4>Rutas</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mdl-navigation__link" routerLink="statistics" routerLinkActive='active'>
+                            <i class="material-icons md-36">show_chart</i>
+                            <h4>Estadísticas</h4>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="app-content mdl-cell mdl-cell--10-col" id="custom-scroll" mdl-shadow="4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

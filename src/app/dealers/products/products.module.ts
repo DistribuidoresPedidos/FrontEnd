@@ -7,20 +7,20 @@ import { SharedModule } from '../../shared/shared.module';
 // Routing Module
 import { ProductsRoutingModule } from './products-routing.module';
 
-//Components
-import {ProductsComponent} from './products.component';
-import {ProductListComponent} from './product-list/product-list.component';
-import {ProductDetailComponent} from './product-detail/product-detail.component';
-import {ProductCreateComponent } from './product-create/product-create.component';
+// Components
+import { ProductsComponent} from './products.component';
+import { ProductListComponent} from './product-list/product-list.component';
+import { ProductDetailComponent} from './product-detail/product-detail.component';
+import { ProductCreateComponent } from './product-create/product-create.component';
 import { ng2stepper } from 'ng2stepper/ng2stepper.component';
-//resolvers
+// Resolvers
 import { FilterOfferedProductsNamePipe } from '../../pipes/filter-offered-products-name.pipe';
 import { FilteredOfferedProductsCategoryPipe } from '../../pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from '../../pipes/filter-offered-products-price.pipe';
 
-import {ProductListResolver} from './resolvers/products-list.resolver';
-import {ProductDetailResolver} from './resolvers/product-detail.resolver';
-import {ProductCreateResolver} from './resolvers/products-create.resolver';
+import { ProductListResolver } from './resolvers/products-list.resolver';
+import { ProductDetailResolver } from './resolvers/product-detail.resolver';
+import { ProductCreateResolver } from './resolvers/products-create.resolver';
 
 
 
