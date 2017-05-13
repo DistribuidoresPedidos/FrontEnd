@@ -12,6 +12,7 @@ import 'rxjs/add/operator/switchMap';
 export class RetailerDetailComponent implements OnInit {
 
   retailer :Retailer;
+  page :number =1;
   constructor(
   	private route: ActivatedRoute,
   	private router: Router,

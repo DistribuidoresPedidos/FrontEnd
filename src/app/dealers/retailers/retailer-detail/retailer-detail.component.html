@@ -14,12 +14,14 @@
                 <h4>{{retailer.name}}</h4>
               </div>
               <div class="mdl-cell mdl-cell--4-col">
-                <h4>Número de celular</h4>
+                <h4><i class="material-icons">contact_phone</i>
+                  Número de celular</h4>
               </div>
               <div class="mdl-cell mdl-cell--4-col">
                 <h4>Miembro desde</h4>
               </div>
               <div class="mdl-cell mdl-cell--4-col">
+                <i class="material-icons">contact_mail</i>
                 {{retailer.email}}
               </div>
               <div class="mdl-cell mdl-cell--4-col">
@@ -43,8 +45,46 @@
       </mdl-card-menu>
     </mdl-card>
   </div>
-  <div class="mdl-cell mdl-cell--4-col">
-    <mdl-card mdl-shadow="4" id="map-card">
+
+<div class = "mdl-cell mdl-cell--6-col" id="cardComment">
+<h3>Comentarios</h3>
+  
+  <div class ="mdl-grid">
+     <pagination-controls (pageChange)="page = $event"
+                          previousLabel= "Anterior"
+                          nextLabel = "Siguiente"
+     >
+     </pagination-controls> 
+  </div>
+  <div class="mdl-card" *ngFor="let comment of retailer.comments | paginate: { itemsPerPage: 4, currentPage: page }">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">{{comment.title}}</h2>
+    </div>
+    <div class="mdl-card__suporting-text">
+        {{comment.content}}
+    </div>
+    
+  </div>
+
+<!--  <table class="mdl-data-table mdl-js-data-table">
+  <thead>
+    <tr>
+      <th>
+        Comentario
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comment of retailer.comments">
+      <td> {{comment.content}}</td>
+
+    </tr>
+  </tbody>
+</table>-->
+
+</div>
+<div class = "mdl-cell mdl-cell--6-col">
+ <mdl-card mdl-shadow="4" id="map-card">
     <mdl-card-title mdl-card-expand>
       <ng2-map id="map" center="{{retailer.latitude}} {{retailer.longitude}}" zoom="17" scrollwheel="false" >
         <marker position="{{retailer.latitude}} {{retailer.longitude}}"></marker>
@@ -54,10 +94,9 @@
       {{retailer.location}}
     </mdl-card-supporting-text>
     <mdl-card-menu>
-      <!--<button mdl-button mdl-button-type="icon" mdl-ripple>
-        <mdl-icon>share</mdl-icon>
-      </button>-->
     </mdl-card-menu>
   </mdl-card>
-  </div>
+</div>
+
+
 </div>
