@@ -63,7 +63,7 @@
     <div class="mdl-card__suporting-text">
         {{comment.content}}
     </div>
-    
+    <rating [(ngModel)]="comment.calification" [readonly]="true"></rating>
   </div>
 
 <!--  <table class="mdl-data-table mdl-js-data-table">

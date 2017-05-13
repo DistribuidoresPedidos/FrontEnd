@@ -18,12 +18,14 @@ import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
 
 //Pagination Module
 import {NgxPaginationModule} from 'ngx-pagination';
+import {RatingModule} from 'ngx-rating';
 
 @NgModule({
   imports: [
     SharedModule,
     RetailersRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RatingModule
   ],
   declarations: [
     RetailersComponent,
