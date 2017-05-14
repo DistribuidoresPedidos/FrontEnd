@@ -12,6 +12,7 @@ import { OrderListComponent } from './order-list/order-list.component';
 // resolver
 
 import { OrderListResolver } from './resolvers/order-list.resolver';
+import {OfferedProductResolver} from './resolvers/offeredProduct.resolver';
 import { MakeOrderComponent } from './make-order/make-order.component';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     MakeOrderComponent
   ],
   providers:[
-    OrderListResolver
+    OrderListResolver,
+    OfferedProductResolver
   ]
 })
 export class OrdersModule { }

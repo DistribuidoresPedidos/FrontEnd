@@ -8,6 +8,7 @@ import {Order} from '../classes/order';
 export class OrdersService {
   private ordersURL='http://infinite-river-92156.herokuapp.com/api/v1/retailers';
   private makeOrderUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/orders/make_order';
+  private offeredProductsURL = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
 
   constructor(private http:Http , private authToken: Angular2TokenService){}
 
@@ -26,7 +27,9 @@ export class OrdersService {
   }
 
  
-
+ getOfferedProduct(){
+   return this.http.get(this.offeredProductsURL).map((response : Response)=> response.json());
+ }
   
 
 

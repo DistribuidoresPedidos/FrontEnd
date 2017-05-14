@@ -11,16 +11,28 @@ import { Angular2TokenService } from 'angular2-token';
 export class OrderListComponent implements OnInit {
     //orders : Order[]=[]
     orders=[]
+    offeredProducts=[]
+    ofpbpi={};
    constructor(
     private router: Router,
     private route: ActivatedRoute,
     private authToken: Angular2TokenService
   
   ) { }
+ 
+ solveOfferedProductsByProductId(){
 
+   for(let i = 0 ; i<this.offeredProducts.length;i++){
+      this.ofpbpi[this.offeredProducts[i].product.id]=this.offeredProducts[i].product.name;
+   }
+   console.log(this.ofpbpi);
+ }
   ngOnInit() {
     this.orders = this.route.snapshot.data.order.data;
-    console.log(this.orders);
+    //console.log(this.orders);
+    this.offeredProducts=this.route.snapshot.data.offeredProduct.data;
+    this.solveOfferedProductsByProductId();
+    //console.log(this.offeredProducts)
     //console.log(this.route.snapshot.data);
    //console.log("current user ");
    //console.log(this.authToken.currentUserData);

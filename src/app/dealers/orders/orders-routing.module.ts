@@ -7,6 +7,7 @@ import { OrderListComponent} from './order-list/order-list.component';
 import {MakeOrderComponent} from './make-order/make-order.component';
 //resolver
 import {OrderListResolver} from './resolvers/order-list.resolver';
+import {OfferedProductResolver} from './resolvers/offeredProduct.resolver';
 const ordersRoutes = [
     {
         path: '',
@@ -16,8 +17,10 @@ const ordersRoutes = [
             path : '',
             component : OrderListComponent,
             resolve :{
-              order : OrderListResolver
+              order : OrderListResolver,
+              offeredProduct : OfferedProductResolver
             }
+
           },
           {
             path :'makeOrder',
