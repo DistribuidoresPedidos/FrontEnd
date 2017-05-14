@@ -25,20 +25,20 @@ export class OrdersService {
     return this.http.get(OrdersURL_ID).map((response: Response) => response.json());
   }
 
- 
 
-  
+
+
 
 
   createOrder( body : Object):Observable<any>{
     let bodyString = JSON.stringify(body);
-    
+
     let headers = new Headers(
-      { 
+      {
         'Content-Type': 'application/json',
       });
     let options = new RequestOptions({ headers : headers });
-    
+
     return this.http.post(this.makeOrderUrl,bodyString,options)
     .map((response : Response)=>console.log(response.json()))
     .catch(this.handleError);

@@ -26,7 +26,7 @@ export class ProductCreateComponent implements OnInit {
   public uploader;
   public file;
   //xmlhttpRequest
-  public data_post: FormData = new FormData();
+  public data_post: FormData;
 
   public disableSelectCategories :boolean= false;
 
@@ -38,6 +38,7 @@ export class ProductCreateComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productListService: ProductListService,
+
   ) { }
 
 
@@ -55,11 +56,29 @@ export class ProductCreateComponent implements OnInit {
   newCategory(){
     return this.disableSelectCategories;
   }
+  imageUploaded($event){
+    this.file= $event.file;
+  }
+
+  onSubmit(){
+    this.data_post = new FormData();
+    this.data_post.append('offered_product[photo]', this.file);
+    this.data_post.append('offered_product[price]', this.price.toString() );
+    this.data_post.append('offered_product[distributor_id]', this.distributor_id );
+
+    this.data_post.append('product[name]', this.name);
+    this.data_post.append('product[weight]', this.weight.toString());
+    this.data_post.append('product[category]', this.category_select);
+
+    this.productListService.createProduct(this.data_post).subscribe();
+
+  }
+  /**
   selectFile($event): void {
   		var inputValue = $event.target;
   		this.file = inputValue.files[0];
   		console.debug("Input File name: " + this.file.name + " type:" + this.file.size + " size:" + this.file.size);
-  	}
+  	}**/
   saveProduct(model: Product, isValidProd: Boolean){
 
   }

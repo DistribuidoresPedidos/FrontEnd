@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response} from '@angular/http';
+import { Http, Response,Headers, RequestOptions, BaseRequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -51,4 +51,26 @@ export class ProductListService {
         return this.http.get(url).map((response: Response) => response.json());
     }
 
+    createProduct( dataform : Object):Observable<any>{
+      let head = new Headers({});
+      let options = new RequestOptions({ headers : head });
+      let url= 'http://localhost:3000/api/v1/products'
+      return this.http.post(url, dataform, options)
+      .map((response : Response)=> console.log(response.json()))
+      .catch(this.handleError);
+
+    }
+
+      private handleError (error: Response | any) {
+        let errMsg: string;
+        if (error instanceof Response) {
+          const body = error.json() || '';
+          const err = body.error || JSON.stringify(body);
+          errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+        } else {
+          errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return Observable.throw(errMsg);
+      }
 }
