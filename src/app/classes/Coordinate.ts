@@ -1,9 +1,7 @@
+import { Distributor } from '../classes/distributor';
 export class Coordinate {
-    constructor(
-        public id: number,
-        public latitude: number,
-        public longitude: number
-    ) {
-
-    }
+    public id: number;
+    public lat: number;
+    public lng: number;
+    public distributor: Distributor;
 }

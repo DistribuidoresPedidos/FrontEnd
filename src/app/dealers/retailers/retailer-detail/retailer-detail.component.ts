@@ -16,6 +16,7 @@ export class RetailerDetailComponent implements OnInit {
   retailer: Retailer;
   coordinates: Coordinate[];
   distributor: Distributor;
+  selectedCoordinate: Coordinate;
   page :number = 1;
   constructor(
   	private route: ActivatedRoute,
@@ -28,5 +29,16 @@ export class RetailerDetailComponent implements OnInit {
     this.coordinates = this.route.snapshot.data.coordinates.data;
     console.log(this.coordinates)
   }
+
+  openInfoWindow(event, coordinate) : void {
+    console.log(event.target);
+    var marker = event.target;
+    marker.ng2MapComponent.openInfoWindow('iw', marker, {
+          lat: marker.getPosition().lat(),
+          lng: marker.getPosition().lng(),
+      });
+    this.selectedCoordinate = coordinate;
+  }
+  
 
 }
