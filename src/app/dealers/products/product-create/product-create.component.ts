@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute , Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import { Product } from '../../../classes/product';
 import { OfferedProduct } from '../../../classes/offeredProduct';
 
@@ -27,7 +29,7 @@ export class ProductCreateComponent implements OnInit {
   public file;
   //xmlhttpRequest
   public data_post: FormData;
-
+  
   public disableSelectCategories :boolean= false;
 
   public categories: string[]
@@ -70,7 +72,11 @@ export class ProductCreateComponent implements OnInit {
     this.data_post.append('product[weight]', this.weight.toString());
     this.data_post.append('product[category]', this.category_select);
 
-    this.productListService.createProduct(this.data_post).subscribe();
+    this.productListService.createProduct(this.data_post).subscribe(
+      res => res.map((response : Response)=> console.log(response.json()))
+      .catch(this.handleError);
+
+    );
 
   }
   /**
