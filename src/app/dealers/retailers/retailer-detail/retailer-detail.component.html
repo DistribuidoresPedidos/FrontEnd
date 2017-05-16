@@ -90,19 +90,20 @@
         <marker position="{{retailer.latitude}} {{retailer.longitude}}" icon='http://maps.google.com/mapfiles/kml/pal2/icon10.png'></marker>
         <marker *ngFor="let coordinate of coordinates" 
           id="{{coordinate.id}}"
-          (click)="openInfoWindow($event, coordinate)"
+          (click)="onClickCoordinate(coordinate, $event)"
           position="{{coordinate.lat}} {{coordinate.lng}}" 
           icon='http://maps.google.com/mapfiles/ms/micons/truck.png'>  
-          <info-window id="iw">
-            {{selectedCoordinate}}
-          </info-window>
         </marker>
+        <info-window id="iw" content="">
+          {{selectedCoordinate.id}}
+        </info-window>
           
       </ng2-map>
       
     </mdl-card-title>
     <mdl-card-supporting-text>
       {{retailer.location}}
+      {{selectedCoordinate.id}}
     </mdl-card-supporting-text>
     <mdl-card-menu>
     </mdl-card-menu>
