@@ -1,18 +1,18 @@
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--12-col">
     <div class="mdl-grid">
-      <div class="form-group mdl-cell mdl-cell--3-col">
+      <div class="form-group mdl-cell mdl-cell--4-col">
         <mdl-textfield type="text" label="Nombre" floating-label></mdl-textfield>
       </div>
-      <div class="form-group mdl-cell mdl-cell--3-col">
+      <div class="form-group mdl-cell mdl-cell--4-col">
         <mdl-textfield type="text" label="Departamento" floating-label></mdl-textfield>
       </div>
-      <div class="form-group mdl-cell mdl-cell--3-col">
+      <div class="form-group mdl-cell mdl-cell--4-col">
         <mdl-textfield type="text" label="Calificacion" floating-label></mdl-textfield>
       </div>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col" *ngFor="let retailer of retailers">
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let retailer of retailers | paginate: { itemsPerPage: 9, currentPage: page }">
     <mdl-card mdl-shadow="4">
     <mdl-card-title [style.background-image]="getUrl(retailer.photo.url)">
       <h2 mdl-card-title-text>{{retailer.name}}</h2>
@@ -29,6 +29,15 @@
       </button>
     </mdl-card-menu>
   </mdl-card>
+    
+  </div>
+  <div class ="mdl-grid">
+     <pagination-controls (pageChange)="page = $event"
+                          previousLabel= "Anterior"
+                          nextLabel = "Siguiente"
+     >
+     </pagination-controls> 
   </div>
 </div>
+
 

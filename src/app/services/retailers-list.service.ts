@@ -18,4 +18,9 @@ export class RetailersListService{
         return this.http.get(this.retailerDetailUrl).map((response: Response) => response.json());
 
     }
+    getRetailerCoordinates(id: number): Observable<Comment[]> {
+      const url = `${this.retailerListUrl}/${id}/coordinates`;
+      console.log(url);
+      return this.http.get(url).map((response: Response) => response.json());
+  }
 }
