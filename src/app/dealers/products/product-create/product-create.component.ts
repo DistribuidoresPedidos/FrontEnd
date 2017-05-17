@@ -29,7 +29,7 @@ export class ProductCreateComponent implements OnInit {
   public file;
   //xmlhttpRequest
   public data_post: FormData;
-  
+
   public disableSelectCategories :boolean= false;
 
   public categories: string[]
@@ -74,7 +74,6 @@ export class ProductCreateComponent implements OnInit {
 
     this.productListService.createProduct(this.data_post).subscribe(
       res => res.map((response : Response)=> console.log(response.json()))
-      .catch(this.handleError);
 
     );
 
