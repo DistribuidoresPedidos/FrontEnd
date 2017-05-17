@@ -57,13 +57,13 @@
      </pagination-controls> 
   </div>
   <div class="mdl-card" *ngFor="let comment of retailer.comments | paginate: { itemsPerPage: 4, currentPage: page }">
+    <rating [(ngModel)]="comment.calification" [readonly]="true"></rating>
     <div class="mdl-card__title">
       <h2 class="mdl-card__title-text">{{comment.title}}</h2>
     </div>
     <div class="mdl-card__suporting-text">
         {{comment.content}}
     </div>
-    <rating [(ngModel)]="comment.calification" [readonly]="true"></rating>
   </div>
 
 <!--  <table class="mdl-data-table mdl-js-data-table">
@@ -102,7 +102,7 @@
                 {{coordinate.distributor.phoneNumber}}</p>
               </div>
               <div class="action-btns">
-                <i class="tour fa fa-check-square-o"  (click)="seeDistributor();">Ver</i>
+                <i name="iw" class="tour fa fa-check-square-o"  (click)="console.log('asdsad')">Ver</i>
               </div>
             </div>
           </info-window>

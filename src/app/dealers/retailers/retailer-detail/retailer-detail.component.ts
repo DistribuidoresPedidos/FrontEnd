@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { RetailersListService } from '../../../services/retailers-list.service';
 import { Retailer } from "../../../classes/retailer";
@@ -15,7 +15,7 @@ export class RetailerDetailComponent implements OnInit {
 
   retailer: Retailer;
   coordinates: Coordinate[];
-  distributor: Distributor;
+  distributorId: number;
   page :number = 1;
   constructor(
   	private route: ActivatedRoute,
@@ -30,14 +30,20 @@ export class RetailerDetailComponent implements OnInit {
 
   openInfoWindow(event, coordinate){
     console.log(coordinate);
+    this.distributorId = coordinate.distributor.id;
     var marker = event.target;
     marker.ng2MapComponent.openInfoWindow(coordinate.id, marker, {
           lat: marker.getPosition().lat(),
           lng: marker.getPosition().lng(),
       });
   }
-  seeDistributor(){
-    console.log("assas");
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClicked(ev) {
+      if(ev.target.innerText === "Ver"){
+        this.router.navigate(['app','distributors',this.distributorId]);
+        console.log(this.distributorId);
+      }
   }
 
 }
