@@ -38,6 +38,7 @@ export class CarouselComponent implements OnInit {
 
         response => {
           localStorage['userId'] = response.json().data.id;
+          localStorage['userType'] = this.userType;
           this.router.navigate(['app']);
         },
         error => {

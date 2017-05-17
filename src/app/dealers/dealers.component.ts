@@ -9,6 +9,8 @@ import { MdlDialogService } from '@angular-mdl/core';
 })
 export class DealersComponent implements OnInit {
 
+  userType = localStorage['userType'];
+
   constructor(
     private authToken: Angular2TokenService,
     private router: Router,
