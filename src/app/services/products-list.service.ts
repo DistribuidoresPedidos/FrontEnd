@@ -50,7 +50,9 @@ export class ProductListService {
         //console.log(this.http.get(url));
         return this.http.get(url).map((response: Response) => response.json());
     }
-
+    getProductCoordinates(){
+      return this.http.get(this.productUrl).map((response: Response)=> response.json());
+    }
     createProduct( dataform : Object):Observable<any>{
       let head = new Headers({});
       let options = new RequestOptions({ headers : head });

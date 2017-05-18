@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Product } from '../../../classes/product';
+
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductListService } from '../../../services/products-list.service';
 import 'rxjs/add/operator/switchMap';
@@ -22,6 +23,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
    console.log(this.route.snapshot.data.product.data);
    this.product = this.route.snapshot.data.product.data;
+   
   }
 
   getProductById(id){
