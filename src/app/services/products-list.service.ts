@@ -54,9 +54,9 @@ export class ProductListService {
     createProduct( dataform : Object):Observable<any>{
       let head = new Headers({});
       let options = new RequestOptions({ headers : head });
-      let url= 'http://localhost:3000/api/v1/products'
-      return this.http.post(url, dataform, options)
-      
+      let url= this.productUrl;
+      return this.http.post(url, dataform, options).map((response: Response) => response.json());
+
     }
 
       private handleError (error: Response | any) {

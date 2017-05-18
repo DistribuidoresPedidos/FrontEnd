@@ -73,17 +73,12 @@ export class ProductCreateComponent implements OnInit {
     this.data_post.append('product[category]', this.category_select);
 
     this.productListService.createProduct(this.data_post).subscribe(
-      res => res.map((response : Response)=> console.log(response.json()))
+      res => this.router.navigate(['app', 'products', res.data.id])
 
     );
 
   }
-  /**
-  selectFile($event): void {
-  		var inputValue = $event.target;
-  		this.file = inputValue.files[0];
-  		console.debug("Input File name: " + this.file.name + " type:" + this.file.size + " size:" + this.file.size);
-  	}**/
+
   saveProduct(model: Product, isValidProd: Boolean){
 
   }
