@@ -2,6 +2,7 @@
   margin-left: 100px;
   margin-top: 25px;
   width: 900px;
+  height: auto;
 }
 #card-title{
   color: purple;
@@ -9,8 +10,22 @@
   background: url('../../../../assets/img/products/background.png');
 
 }
+#image-upload{
+  padding-top: 150px;
+
+}
+#icon-load-img{
+
+  text-align: center;
+  margin-top: 115px;
+  margin-left: 122px;
+  font-size: 50px;
+}
 .my-drop-zone {
   border: dotted 3px lightgray;
+  width: 300px;
+  height: 250px;
+
 }
 .nv-file-over {
   border: dotted 3px red;

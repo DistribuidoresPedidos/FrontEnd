@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute , Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import { Product } from '../../../classes/product';
 import { OfferedProduct } from '../../../classes/offeredProduct';
 
 import { ProductListService } from '../../../services/products-list.service';
 //class
 
-import {FileUploader} from 'ng2-file-upload/ng2-file-upload'
-
 // const URL = '/api/';
-const URL = 'https://localhost:3000/api/v1';
+const URL = 'http://infinite-river-92156.herokuapp.com/api/v1';
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
@@ -25,17 +25,22 @@ export class ProductCreateComponent implements OnInit {
   public name: string
   public weight: number
   public category_select: string
+  public uploader;
+  public file;
+  //xmlhttpRequest
+  public data_post: FormData;
 
-  public uploader:FileUploader = new FileUploader({url: URL});
-  public hasBaseDropZoneOver:boolean = false;
-  public hasAnotherDropZoneOver:boolean = false;
-  distributor_id = localStorage['userId']
+  public disableSelectCategories :boolean= false;
+
   public categories: string[]
+
+  distributor_id = localStorage['userId']
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private productListService: ProductListService,
+
   ) { }
 
 
@@ -46,15 +51,32 @@ export class ProductCreateComponent implements OnInit {
 
     this.categories= this.route.snapshot.data.categories
     console.log(this.categories);
+
     //nameObservable.debounceTime(200).subscribe(
   }
-  //FileUploader
-  public fileOverBase(e:any):void {
-    this.hasBaseDropZoneOver = e;
+
+  newCategory(){
+    return this.disableSelectCategories;
+  }
+  imageUploaded($event){
+    this.file= $event.file;
   }
 
-  public fileOverAnother(e:any):void {
-    this.hasAnotherDropZoneOver = e;
+  onSubmit(){
+    this.data_post = new FormData();
+    this.data_post.append('offered_product[photo]', this.file);
+    this.data_post.append('offered_product[price]', this.price.toString() );
+    this.data_post.append('offered_product[distributor_id]', this.distributor_id );
+
+    this.data_post.append('product[name]', this.name);
+    this.data_post.append('product[weight]', this.weight.toString());
+    this.data_post.append('product[category]', this.category_select);
+
+    this.productListService.createProduct(this.data_post).subscribe(
+      res => this.router.navigate(['app', 'products', res.data.id])
+
+    );
+
   }
 
   saveProduct(model: Product, isValidProd: Boolean){

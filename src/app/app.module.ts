@@ -33,14 +33,16 @@ import { DistributorsService } from './services/distributors.service';
 import { RetailersListResolver } from "./dealers/retailers/resolvers/retailers-list.resolver";
 import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-detail.resolver";
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
     imports: [
+
     BrowserModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,

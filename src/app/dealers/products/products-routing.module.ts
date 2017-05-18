@@ -13,6 +13,7 @@ import {ProductCreateComponent} from './product-create/product-create.component'
 import {ProductDetailResolver} from './resolvers/product-detail.resolver'
 import {ProductListResolver} from './resolvers/products-list.resolver'
 import {ProductCreateResolver} from './resolvers/products-create.resolver'
+import {ProductCoordinateResolver} from './resolvers/product-coordinates.resolver'
 //import {ProductPostResolver}
 
 const productsRoutes = [
@@ -32,7 +33,8 @@ const productsRoutes = [
         path: ':id',
         component: ProductDetailComponent,
         resolve: {
-          product: ProductDetailResolver
+          product: ProductDetailResolver,
+          productCoordinate: ProductCoordinateResolver
         }
       },
       {
