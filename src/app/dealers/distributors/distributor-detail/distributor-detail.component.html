@@ -43,6 +43,28 @@
       </mdl-card-menu>
     </mdl-card>
   </div>
+  <div class = "mdl-cell mdl-cell--6-col" id="cardComment">
+<h3>Comentarios</h3>
+  
+  <div class ="mdl-grid">
+     <pagination-controls (pageChange)="page = $event"
+                          previousLabel= "Anterior"
+                          nextLabel = "Siguiente"
+     >
+     </pagination-controls> 
+  </div>
+  <div class="mdl-card" *ngFor="let comment of distributorComments | paginate: { itemsPerPage: 4, currentPage: page }">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">{{comment.title}}</h2>
+    </div>
+    <div class="mdl-card__suporting-text">
+        {{comment.content}}
+    </div>
+    <rating [(ngModel)]="comment.calification" [readonly]="true"></rating>
+  </div>
+
+
+  </div>
   <div class="mdl-cell mdl-cell--4-col">
     <mdl-card mdl-shadow="4" id="map-card">
     <mdl-card-title mdl-card-expand>
@@ -60,5 +82,4 @@
     </mdl-card-menu>
   </mdl-card>
   </div>
-  <distributor-comments></distributor-comments>
 </div>
