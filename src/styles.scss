@@ -3,7 +3,23 @@
   text-align: center;
 }
 
-html, body {height:100%;}
+html, body {
+  height:100%;
+  overflow-x: hidden;
+}
+
+.ngx-pagination {
+  li{
+    cursor: pointer;
+    :hover{
+      border-radius: 5px;
+    }
+  }
+  .current{
+    background: #283593!important;
+    border-radius: 5px;
+  }
+}
 
 
 /* Rules for sizing the icon. */

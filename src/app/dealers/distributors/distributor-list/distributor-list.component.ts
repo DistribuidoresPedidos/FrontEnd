@@ -9,7 +9,7 @@ import { Angular2TokenService } from 'angular2-token';
   styleUrls: ['./distributor-list.component.scss']
 })
 export class DistributorListComponent implements OnInit {
-
+  page :number =1;
   distributors: Distributor[];
 
   constructor(

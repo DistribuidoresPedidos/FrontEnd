@@ -10,6 +10,7 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
 // Resolvers
 import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
 import { RetailersListResolver } from './resolvers/retailers-list.resolver';
+import { RetailerCoordinatesResolver } from './resolvers/retailer-coordinates.resolver';
 
 const retailersRoutes = [
     {
@@ -20,6 +21,7 @@ const retailersRoutes = [
                 path: ':id',
                 component: RetailerDetailComponent,
                 resolve: {
+                    coordinates: RetailerCoordinatesResolver,              
                     retailer: RetailerDetailResolver
                 }
             },

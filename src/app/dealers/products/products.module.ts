@@ -18,9 +18,9 @@ import { FilterOfferedProductsNamePipe } from './pipes/filter-offered-products-n
 import { FilteredOfferedProductsCategoryPipe } from './pipes/filtered-offered-products-category.pipe';
 import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-price.pipe';
 
-import {ProductListResolver} from './resolvers/products-list.resolver';
-import {ProductDetailResolver} from './resolvers/product-detail.resolver';
-import {ProductCreateResolver} from './resolvers/products-create.resolver';
+import { ProductListResolver } from './resolvers/products-list.resolver';
+import { ProductDetailResolver } from './resolvers/product-detail.resolver';
+import { ProductCreateResolver } from './resolvers/products-create.resolver';
 
 
 import { Ng2SelectModule } from 'ng2-material-select';

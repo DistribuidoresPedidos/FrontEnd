@@ -15,12 +15,18 @@ import { RetailerDetailComponent } from './retailer-detail/retailer-detail.compo
 // Resolvers
 import { RetailersListResolver } from './resolvers/retailers-list.resolver';
 import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
+import { RetailerCoordinatesResolver } from './resolvers/retailer-coordinates.resolver';
 
+//Pagination Module
+import {NgxPaginationModule} from 'ngx-pagination';
+import {RatingModule} from 'ngx-rating';
 
 @NgModule({
   imports: [
     SharedModule,
-    RetailersRoutingModule
+    RetailersRoutingModule,
+    NgxPaginationModule,
+    RatingModule
   ],
   declarations: [
     RetailersComponent,
@@ -29,7 +35,8 @@ import { RetailerDetailResolver } from './resolvers/retailer-detail.resolver';
   ],
   providers: [
     RetailersListResolver,
-    RetailerDetailResolver
+    RetailerDetailResolver,
+    RetailerCoordinatesResolver
   ]
 })
 export class RetailersModule { }

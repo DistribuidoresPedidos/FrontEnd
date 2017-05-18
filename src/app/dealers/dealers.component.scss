@@ -1,25 +1,97 @@
 @import 'src/assets/sass/variables';
 
-.navbar-brand {
-  height: 2.5em;
-  #logo {
-    height: 100%;
-  }
-}
-
-.mdl-navigation__link {
-  color: #FFF!important;
-  &.active{
-    background-color: rgba(0,0,0,0.3);
-  }
-}
-
-mdl-layout-drawer{
-  border: 0px;
-}
-
 #profile-pic{
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+
+.app-header{
+  top: 0;
+  width: 100vw;
+  height: 25vh;
+  position: absolute;
+  background-image: url('/src/assets/img/layout/header-background.jpg');
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .nav-logo{
+    img{
+      margin-left: 2.5vmax;
+      margin-top: 2vmax;
+      width: 13vmax;
+    }
+  }
+  .floating-right{
+    position: absolute;
+    left: 87vmax;
+    bottom: 6vmax;
+    button{
+      margin-left: 10px;
+    }
+  }
+}
+
+.app-body{
+  width: 99vw;
+  top: 15vh;
+  position: absolute;
+  bottom: 0;
+  .app-sidenav{
+    background-color: #FFF;
+    height: 300px;
+    .vertical{
+      margin: 0;
+      padding: 0;
+      ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li{
+          height: 50px;
+          text-align: left;
+          a{
+            height: 100%;
+            width: 100%;
+            display:flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.3);
+            background-color: rgb(255,255,255);
+            color: #333331;
+            &.active{
+              background-color: #333;
+              color: #FFF;
+            }
+            h4{
+              display: inline;
+              font-size: 1.5vmax;
+              margin: auto 0;
+            }
+            i{
+              margin: 3%;
+              font-size: 1.5vmax;
+            }
+          }
+        }
+      }
+    }
+  }
+  .app-content{
+    overflow-y: scroll;
+    background-color: #FFF;
+  }
+}
+
+
+#custom-scroll::-webkit-scrollbar-track {
+  background-color: #FFF;
+}
+
+#custom-scroll::-webkit-scrollbar {
+  width: 6px;
+  background-color: #FFF;
+}
+
+#custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #555;
 }

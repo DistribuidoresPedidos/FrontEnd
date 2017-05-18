@@ -1,5 +1,5 @@
 <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--12-col">
+  <div class="mdl-cell mdl-cell--12-col search">
     <div class="mdl-grid">
       <div class="form-group mdl-cell mdl-cell--4-col">
         <mdl-textfield type="text" label="Nombre" floating-label></mdl-textfield>
@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col" *ngFor="let distributor of distributors">
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let distributor of distributors | paginate: { itemsPerPage: 9, currentPage: page }">
     <mdl-card mdl-shadow="4">
     <mdl-card-title [style.background-image]="getUrl(distributor.photo.url)">
       <h2 mdl-card-title-text>{{distributor.name}}</h2>
@@ -29,5 +29,12 @@
       </button>
     </mdl-card-menu>
   </mdl-card>
+  </div>
+    <div class ="mdl-grid">
+     <pagination-controls (pageChange)="page = $event"
+                          previousLabel= "Anterior"
+                          nextLabel = "Siguiente"
+     >
+     </pagination-controls> 
   </div>
 </div>
