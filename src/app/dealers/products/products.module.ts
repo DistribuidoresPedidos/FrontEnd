@@ -21,10 +21,13 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
 import { ProductListResolver } from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 import { ProductCreateResolver } from './resolvers/products-create.resolver';
-
+import { ProductCoordinateResolver } from './resolvers/product-coordinates.resolver';
+import { UserResolver} from './resolvers/user.resolver'
 
 import { Ng2SelectModule } from 'ng2-material-select';
 import {ImageUploadModule} from "angular2-image-upload";
+import { ProductUserComponent } from './product-user/product-user.component';
+
 @NgModule({
   imports: [
     SharedModule,
@@ -41,13 +44,17 @@ import {ImageUploadModule} from "angular2-image-upload";
     FilteredOfferedProductsCategoryPipe,
     FilterOfferedProductsNamePipe,
 
-    ProductCreateComponent
+    ProductCreateComponent,
+
+    ProductUserComponent
 
   ],
   providers: [
     ProductListResolver,
     ProductDetailResolver,
-    ProductCreateResolver
+    ProductCreateResolver,
+    ProductCoordinateResolver,
+    UserResolver
 
   ]
 })

@@ -1,5 +1,5 @@
 <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-col mdl-cell--3-offset">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--1-offset">
 		<img src="{{product.photo.url}}" alt="">
 		<ul class='mdl-list'>
 				<li class="mdl-list__item">
@@ -29,4 +29,40 @@
 				</li>
 		</ul>
 	</div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <mdl-card mdl-shadow="4" id="map-card">
+     <mdl-card-title mdl-card-expand>
+       <ng2-map id="map" center="{{retailer.latitude}} {{retailer.longitude}}" zoom="17" scrollwheel="false" >
+         <marker position="{{retailer.latitude}} {{retailer.longitude}}" icon='http://maps.google.com/mapfiles/kml/pal2/icon10.png'></marker>
+         <marker *ngFor="let coordinate of coordinates"
+           id="{{coordinate.id}}"
+           (click)="openInfoWindow($event, coordinate)"
+           position="{{coordinate.lat}} {{coordinate.lng}}"
+           icon='http://maps.google.com/mapfiles/ms/micons/truck.png'>
+           <info-window id="{{coordinate.id}}">
+             <div class="info-box-wrap">
+               <img src="{{coordinate.distributor.photo.url}}" />
+               <div class="info-box-text-wrap">
+                 <h6 class="address">{{coordinate.distributor.name}}</h6>
+                 <p class="price">{{coordinate.distributor.email}}<br>
+                 {{coordinate.distributor.phoneNumber}}</p>
+               </div>
+               <div class="action-btns">
+                 <i name="iw" class="tour fa fa-check-square-o"  (click)="console.log('asdsad')">Ver</i>
+               </div>
+             </div>
+           </info-window>
+         </marker>
+
+
+       </ng2-map>
+
+     </mdl-card-title>
+     <mdl-card-supporting-text>
+       {{retailer.location}}
+     </mdl-card-supporting-text>
+     <mdl-card-menu>
+     </mdl-card-menu>
+    </mdl-card>
+  </div>
 </div>
