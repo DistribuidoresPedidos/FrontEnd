@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Angular2TokenService } from 'angular2-token';
 import { Observable } from 'rxjs/Rx';
 import { Product } from '../../../classes/product';
 import { Coordinate } from "../../../classes/Coordinate";
@@ -13,30 +14,29 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-   product: Product;
-   coordinate;
-
+    product: Product;
+    userFlag: boolean= false;
+    detailsUser: boolean= false; 
   constructor(
+    private authToken: Angular2TokenService,
     private route: ActivatedRoute,
     private router: Router,
     private productListService :ProductListService
   ) { }
 
   ngOnInit() {
-   console.log(this.route.snapshot.data.product.data);
-   this.product = this.route.snapshot.data.product.data;
-   this.coordinate = this.route.snapshot.data.productCoordinate.data;
-
-
-
+    console.log(this.route.snapshot.data.product.data);
+    this.product = this.route.snapshot.data.product.data;
+    if(this.authToken.currentUserType === 'RETAILER'){
+        this.userFlag= true;
+    }
   }
 
 
   getProductById(id){
-
-      this.productListService.getProductById(id).subscribe(response =>{
+    this.productListService.getProductById(id).subscribe(response =>{
         console.log(response);
-      });
+    });
   }
 
 

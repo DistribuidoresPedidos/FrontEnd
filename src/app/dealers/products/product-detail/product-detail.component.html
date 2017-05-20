@@ -1,69 +1,74 @@
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-col mdl-cell--1-offset">
-		<img src="{{product.photo.url}}" alt="">
-		<ul class='mdl-list'>
-				<li class="mdl-list__item">
-					<span class="mdl-list__item-primary-content">
-						<i class="material-icons mdl-list__item-avatar">person</i>
-						<span>{{product.distributor.name}}</span>
-					</span>
-					<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-list__item-primary-content">
-						<i class="material-icons">list</i>
-						<span>Categoria: {{product.product.category}}</span>
-					</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-list__item-primary-content">
-						<i class="material-icons ">attach_money</i>
-						<span>Precio: {{product.product.price | currency}}</span>
-					</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-list__item-primary-content">
-						<i class="material-icons">bookmark</i>
-						<span>Peso: {{product.product.weight | number}}</span>
-					</span>
-				</li>
-		</ul>
-	</div>
-  <app-productd-retailer></app-productd-retailer>
-  <div class="mdl-cell mdl-cell--4-col">
-    <mdl-card mdl-shadow="4" id="map-card">
-     <mdl-card-title mdl-card-expand>
-       <ng2-map id="map" center="{{retailer.latitude}} {{retailer.longitude}}" zoom="17" scrollwheel="false" >
-         <marker position="{{retailer.latitude}} {{retailer.longitude}}" icon='http://maps.google.com/mapfiles/kml/pal2/icon10.png'></marker>
-         <marker *ngFor="let coordinate of coordinates"
-           id="{{coordinate.id}}"
-           (click)="openInfoWindow($event, coordinate)"
-           position="{{coordinate.lat}} {{coordinate.lng}}"
-           icon='http://maps.google.com/mapfiles/ms/micons/truck.png'>
-           <info-window id="{{coordinate.id}}">
-             <div class="info-box-wrap">
-               <img src="{{coordinate.distributor.photo.url}}" />
-               <div class="info-box-text-wrap">
-                 <h6 class="address">{{coordinate.distributor.name}}</h6>
-                 <p class="price">{{coordinate.distributor.email}}<br>
-                 {{coordinate.distributor.phoneNumber}}</p>
-               </div>
-               <div class="action-btns">
-                 <i name="iw" class="tour fa fa-check-square-o"  (click)="console.log('asdsad')">Ver</i>
-               </div>
-             </div>
-           </info-window>
-         </marker>
 
+  <div class="mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__supporting-text " >
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--5-col">
 
-       </ng2-map>
+    		<ul class='mdl-list'>
+    				<li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+    						<i class="material-icons mdl-list__item-avatar">person</i>
+    						<span>{{product.distributor.name}}</span>
+    					</span>
 
-     </mdl-card-title>
-     <mdl-card-supporting-text>
-       {{retailer.location}}
-     </mdl-card-supporting-text>
-     <mdl-card-menu>
-     </mdl-card-menu>
-    </mdl-card>
+    					<a class="mdl-list__item-secondary-action" href="/app/distributors/{{product.distributor.id}}"><i class="material-icons">star</i></a>
+    				</li>
+
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">bookmark</i>
+                <span>Nombre </span>
+                <span class="mdl-list__item-text-body">
+                  {{product.product.name}}
+                </span>
+              </span>
+
+            </li>
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">list</i>
+                <span>Categoria </span>
+                <span class="mdl-list__item-text-body">
+                 {{product.product.category}}
+                </span>
+              </span>
+            </li>
+
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">attach_money</i>
+                <span>Precio </span>
+                <span class="mdl-list__item-text-body">
+                  {{product.price | currency}}
+                </span>
+              </span>
+            </li>
+
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">panorama_fish_eye</i>
+                <span>Peso </span>
+                <span class="mdl-list__item-text-body">
+                  {{product.product.weight | number}}
+                </span>
+              </span>
+            </li>
+            <li>
+               <a mdl-button mdl-button-type="raised" mdl-ripple mdl-colored="accent" (click)= 'detailsUser=!detailsUser' >
+                      {{detailsUser ? 'Ocultar ruta' : 'Mostrar ruta'}}</a>
+            </li>
+    		</ul>
+    	</div>
+      <div class="mdl-cell mdl-cell-6-col mdl-cell--1-offset">
+        <img src="{{product.photo.url}}" alt="">
+      </div>
+    </div>
   </div>
 </div>
+<div class="" *ngIf='detailsUser'>
+  <div class="mdl-card mdl-shadow--6dp">
+    <app-productd-retailer id='map' *ngIf='userFlag'></app-productd-retailer>
+  </div>
+</div>
+
+  <app-productd-distributor *ngIf='!userFlag'></app-productd-distributor>
