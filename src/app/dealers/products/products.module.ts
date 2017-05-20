@@ -26,7 +26,9 @@ import { UserResolver} from './resolvers/user.resolver'
 
 import { Ng2SelectModule } from 'ng2-material-select';
 import {ImageUploadModule} from "angular2-image-upload";
-import { ProductUserComponent } from './product-user/product-user.component';
+
+import { ProductdRetailerComponent } from './productd-retailer/productd-retailer.component';
+import { ProductdDistributorComponent } from './productd-distributor/productd-distributor.component';
 
 @NgModule({
   imports: [
@@ -45,8 +47,8 @@ import { ProductUserComponent } from './product-user/product-user.component';
     FilterOfferedProductsNamePipe,
 
     ProductCreateComponent,
-
-    ProductUserComponent
+    ProductdRetailerComponent,
+    ProductdDistributorComponent
 
   ],
   providers: [

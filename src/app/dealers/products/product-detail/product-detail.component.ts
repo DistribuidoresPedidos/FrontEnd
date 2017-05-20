@@ -15,7 +15,7 @@ import 'rxjs/add/operator/switchMap';
 export class ProductDetailComponent implements OnInit {
    product: Product;
    coordinate;
-   dataUser;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -27,8 +27,8 @@ export class ProductDetailComponent implements OnInit {
    this.product = this.route.snapshot.data.product.data;
    this.coordinate = this.route.snapshot.data.productCoordinate.data;
 
-   this.dataUser = this.route.snapshot.data.user.data;
-   console.log(this.dataUser);
+
+
   }
 
 
