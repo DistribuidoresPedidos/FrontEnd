@@ -1,5 +1,5 @@
 // Angular Modules
-import { NgModule, ApplicationRef  } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -21,7 +21,7 @@ import { Ng2SelectModule } from 'ng2-material-select';
     imports: [
         ScrollEventModule,
         Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' }),
-        
+
         Ng2SelectModule
     ],
     exports: [
