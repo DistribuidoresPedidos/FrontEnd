@@ -6,7 +6,8 @@ export class Distributor {
     public phoneNumber: string,
     public photo: string,
     public latitude: number,
-    public longitude: number
+    public longitude: number,
+    public favorite: boolean
   ) {
 
   }
