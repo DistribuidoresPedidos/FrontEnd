@@ -10,7 +10,7 @@ import { DistributorsService } from '../../../services/distributors.service';
   styleUrls: ['./distributor-list.component.scss']
 })
 export class DistributorListComponent implements OnInit {
-  page :number =1;
+  page :number = 1;
   distributors: Distributor[];
 
   constructor(
@@ -32,15 +32,16 @@ export class DistributorListComponent implements OnInit {
   addFavorite(distributor){
     this.distributorsService.addFavorite(distributor.id).subscribe(
           msg => {
-            var index = this.findIndex(distributor);
-            console.log(index);
-            this.distributors[index].favorite = true;
-            if(msg.msg === 'Favorite already exists'){
-              
-              console.log('¡Ya estaba en favoritos!');
+            if(msg.msg === 'Favorite removed'){
+              var index = this.findIndex(distributor);
+              this.distributors[index].favorite = false;
+              console.log('¡Removido de tus favoritos!');
             }
-            else if(msg.data)
+            else if(msg.data){
+              var index = this.findIndex(distributor);
+              this.distributors[index].favorite = true;
               console.log("Se ha añadido a favoritos");
+            }
           }
       );
   }
