@@ -3,8 +3,10 @@ import { ActivatedRoute , Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
 import { Product } from '../../../classes/product';
+import { CartProduct } from '../../../classes/cartProduct';
 
 import { ProductListService } from '../../../services/products-list.service';
+import { ShoppingCartService } from '../../../services/shopping-cart.service';
 
 import { FilterOfferedProductsNamePipe } from '../../../pipes/filter-offered-products-name.pipe';
 import { FilterOfferedProductsPricePipe } from '../../../pipes/filter-offered-products-price.pipe';
@@ -29,6 +31,7 @@ export class ProductListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productListService: ProductListService,
+    private shoppingCartService: ShoppingCartService
     ) { }
 
   ngOnInit() {
@@ -52,5 +55,17 @@ export class ProductListComponent implements OnInit {
 
   getUrl(photoUrl: string) {
     return `url(${photoUrl})`;
+  }
+
+  addProduct(product) {
+    let newProduct: CartProduct = {
+      id: product.product.id,
+      name: product.product.name,
+      category: product.product.category,
+      weight: product.product.weight,
+      photo: product.photo,
+      quantity: 10
+    };
+    this.shoppingCartService.addProduct(newProduct);
   }
 }

@@ -2,24 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { Router } from '@angular/router';
 import { MdlDialogService } from '@angular-mdl/core';
+import { ShoppingCartService } from '../services/shopping-cart.service';
+import { CartProduct } from '../classes/cartProduct';
 
 @Component({
   templateUrl: './dealers.component.html',
   styleUrls: ['./dealers.component.scss']
 })
+
 export class DealersComponent implements OnInit {
 
   userType = localStorage['userType'];
+  shoppingCart = false;
+  cartProducts: CartProduct[] = [];
 
   constructor(
     private authToken: Angular2TokenService,
     private router: Router,
-    private dialogService: MdlDialogService
+    private dialogService: MdlDialogService,
+    private shoppingCartService: ShoppingCartService
   ) { }
 
   ngOnInit() {
-    console.log('dealers');
-    console.log('User id: ' + localStorage['userId']);
+    this.getCartProducts();
   }
 
   logout() {
@@ -36,12 +41,37 @@ export class DealersComponent implements OnInit {
   }
 
   goToProfile() {
-    let userType = this.authToken.currentUserType.toLowerCase() + 's';
+    let userType = this.userType.toLowerCase() + 's';
     this.router.navigate(['app', userType, localStorage['userId']]);
   }
 
   goToOrders() {
     this.router.navigate(['app', 'orders']);
+  }
+
+  openCart() {
+    this.shoppingCart = true;
+  }
+
+  closeCart() {
+    this.shoppingCart = false;
+  }
+
+  getCartProducts() {
+    this.shoppingCartService.getProducts().subscribe(
+      res => {
+        this.cartProducts = res;
+        console.log(res);
+      }
+    );
+  }
+
+  deleteProduct(product) {
+   this.shoppingCartService.deleteProduct(product);
+  }
+
+  emptyCart() {
+    this.shoppingCartService.emptyCart();
   }
 
 }

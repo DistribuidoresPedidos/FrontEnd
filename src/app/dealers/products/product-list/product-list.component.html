@@ -34,7 +34,7 @@
     </mdl-card-supporting-text>
     <mdl-card-actions mdl-card-border>
       <a routerLink="{{item.id}}"  mdl-button mdl-colored mdl-ripple>Ver producto</a>
-      <a routerLink="{{item.id}}"  mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple>Pedir</a>
+      <a mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple (click)="addProduct(item)">Pedir</a>
     </mdl-card-actions>
     <mdl-card-menu>
       <button mdl-button mdl-button-type="icon" mdl-ripple>

@@ -10,7 +10,6 @@ const dealersRoutes = [
         path: '',
         component: DealersComponent,
         children: [
-
             {
                 path: 'retailers',
                 loadChildren: 'app/dealers/retailers/retailers.module#RetailersModule',
@@ -31,7 +30,6 @@ const dealersRoutes = [
                 path: '',
                 loadChildren: 'app/dealers/dashboard/dashboard.module#DashboardModule',
             }
-
         ]
     }
 ]
