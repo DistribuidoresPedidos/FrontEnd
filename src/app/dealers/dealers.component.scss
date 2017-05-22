@@ -111,8 +111,8 @@
 .cart-products{
   background-color: #FFF;
   position: absolute; 
-  height: 20vh;
-  width: 81.1%;
+  height: 30vh;
+  width: 81.5%;
   z-index: 1000;
   border-top: 0.2px solid #CCC;
   bottom: 6.5vh;
@@ -123,11 +123,31 @@
   background-color: #CCC;
   position: absolute;
   height: 4.5vh;
-  width: 81.1%;
+  width: 81.5%;
   z-index: 1000;
   border-top: 0.2px solid #CCC;
   bottom: 2vh;
   button{
     float: right;
+  }
+}
+
+.individual-product{
+  height: 90px;
+  width: 100%;
+  border-bottom: 0.2px solid #CCC;
+  .product-photo{
+    padding: 5px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+  }
+  .name{
+    padding: auto;
+    font-size: 40px;
+  }
+  .delete-button{
+    float: right;
+    font-size: 40px !important;
   }
 }

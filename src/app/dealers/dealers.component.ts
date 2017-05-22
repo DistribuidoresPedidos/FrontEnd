@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Angular2TokenService } from 'angular2-token';
 import { Router } from '@angular/router';
+
+import { Angular2TokenService } from 'angular2-token';
 import { MdlDialogService } from '@angular-mdl/core';
 import { ShoppingCartService } from '../services/shopping-cart.service';
+
 import { CartProduct } from '../classes/cartProduct';
 
 @Component({

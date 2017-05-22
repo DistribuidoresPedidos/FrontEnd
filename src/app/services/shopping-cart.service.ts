@@ -26,13 +26,19 @@ export class ShoppingCartService {
         return Observable.of(this.products);
     }
 
-    addProduct(product: CartProduct) {
+    addProduct(product: CartProduct): boolean {
         if (localStorage['shoppingCart'] === '') {
             this.products = [product];
         } else {
+            for (let i = 0; i < this.products.length; i++) {
+                if (this.products[i].id === product.id) {
+                    return false;
+                }
+            }
             this.products.push(product);
         }
         localStorage.setItem('shoppingCart', JSON.stringify(this.products));
+        return true;
     }
 
     deleteProduct(product: CartProduct) {

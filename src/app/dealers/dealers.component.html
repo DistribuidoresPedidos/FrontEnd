@@ -67,8 +67,9 @@
             <div class="shopping-cart" *ngIf="shoppingCart">
                 <div class="cart-products custom-scroll">
                     <div class="individual-product" *ngFor="let product of cartProducts">
-                        {{product.name}}
-                        <i (click)="deleteProduct(product)">x</i>
+                        <img src={{product.photo.url}} class="product-photo">
+                        <span class="name">{{product.name}} x {{product.quantity}} unidades</span>
+                        <a class="icon-button delete-button" (click)="deleteProduct(product)"><i class="material-icons md-48 md-dark">delete</i></a>
                     </div>
                 </div>
                 <div class="cart-actions">
