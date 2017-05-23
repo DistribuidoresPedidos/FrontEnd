@@ -4,13 +4,28 @@ import {Observable} from 'rxjs/Rx';
 import { Angular2TokenService } from 'angular2-token';
 
 import {Order} from '../classes/order';
+import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
 @Injectable()
 export class OrdersService {
   private ordersURL='http://infinite-river-92156.herokuapp.com/api/v1/retailers';
   private makeOrderUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/orders/make_order';
   private offeredProductsURL = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
+  private makeCommentUrl= 'http://infinite-river-92156.herokuapp.com/api/v1/orders';
 
+  //shared variable between orderList and makeCOment
+  private orderSubject = new BehaviorSubject <any>(0);
+  
   constructor(private http:Http , private authToken: Angular2TokenService){}
+
+  sendOrderSubject(data){
+   // console.log("service",{data});
+    this.orderSubject.next({data});
+  }
+  getOrderSubject(): Observable<any>{
+    
+    return this.orderSubject.getValue();
+  }
 
  getOrders(){
   //const id  = this.authToken.currentUserData.id;
@@ -45,6 +60,20 @@ export class OrdersService {
     return this.http.post(this.makeOrderUrl,bodyString,options)
     .map((response : Response)=>console.log(response.json()))
     .catch(this.handleError);
+  }
+  
+  createComment(body :Object , id : number ): Observable<any>{
+    const createCommentURL_ID= `${this.makeCommentUrl}/${id}/comments`;
+    let bodyString = JSON.stringify(body);
+    console.log("post",bodyString);
+    //console.log("url",createCommentURL_ID);
+       let headers = new Headers(
+      { 
+        'Content-Type': 'application/json',
+      });
+     let options = new RequestOptions({ headers : headers });
+    return this.http.post(createCommentURL_ID,body,options) .map((response : Response)=>console.log(response.json()))
+    .catch(this.handleError); 
   }
 
 

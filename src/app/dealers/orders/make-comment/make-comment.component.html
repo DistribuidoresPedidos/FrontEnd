@@ -12,10 +12,11 @@
     <tbody>
       <tr  >
         <td class="mdl-data-table__cell--non-numeric" >1</td>
-        <td>{{selectedorder}}</td>
+        <td>{{selectedorder.state}}</td>
 
         <td>
-<!--                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+          
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                   <thead>
                         <tr>
                           <th class="mdl-data-table__cell--non-numeric">#</th>
@@ -25,19 +26,18 @@
                         </tr>
                   </thead>
                   <tbody>
-                    <tr  *ngFor="let order of selectedorder; let j = index ;">
+                    <tr  *ngFor="let order of selectedorder.orderProducts; let j = index ;">
                      <td> {{j}} </td>
-                    <td>{{ofpbpi[item.offeredProducts[j].id]}}</td>
-                    <td> nombre</td>
+                    <td>name</td>
                       <td>{{order.quantity}}</td>
                       <td>{{order.price}}</td>
                     </tr>
                   </tbody>
-                </table>-->
+                </table>
 
         </td>
 
-        <td><!--{{selectedorder.totalPrice}}--></td>
+        <td>{{selectedorder.totalPrice}}</td>
       </tr>
 
     </tbody>

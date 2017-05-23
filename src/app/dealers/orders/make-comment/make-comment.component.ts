@@ -34,13 +34,15 @@ export class MakeCommentComponent implements OnInit , OnDestroy{
        this.selectedorder=value;
   });*/
   this.selectedorder=this.orderService.getOrderSubject();
+  this.selectedorder=this.selectedorder.data;
   }
 
   ngOnInit() {
-  console.log("selectedOrder",this.selectedorder.data)
+  console.log("selectedOrder",this.selectedorder);
+  this.order_id=this.selectedorder.id;
   }
 
-  addOrder(body : any) :Observable<any>{
+  addComment(body : any) :Observable<any>{
     if (!body){ return;}
     this.orderService.createComment(body,this.order_id).subscribe();
   }
@@ -50,6 +52,7 @@ export class MakeCommentComponent implements OnInit , OnDestroy{
     this.response['content']=this.content;
     this.response['calification']=this.calification;
     this.response['order_id']=this.order_id;
+    this.addComment(this.response);
     console.log(this.response);
   }
   ngOnDestroy() {

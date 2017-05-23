@@ -36,11 +36,13 @@ import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-d
 
 
 
+
 @NgModule({
     imports: [
     BrowserModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   declarations: [
     AppComponent,
@@ -52,14 +54,10 @@ import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-d
     Angular2TokenService,
     ProductListService,
     RetailersListService,
-
-
     OrdersService,
     RetailersListResolver,
     RetailerDetailResolver,
-
     Angular2TokenService,
-
     DistributorsService
   ],
   bootstrap: [AppComponent]
