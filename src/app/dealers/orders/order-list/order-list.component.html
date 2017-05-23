@@ -1,5 +1,5 @@
 <div class =" mdl-grid">
-  <div class="charts  mdl-shadow--8dp mdl-cell mdl-cell--12-col mdl-grid">
+  <!--<div class="charts  mdl-shadow--8dp mdl-cell mdl-cell--12-col mdl-grid">
             <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
               <use xlink:href="#piechart" mask="url(#piemask)" />
               <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan font-size="0.2" dy="-0.07">%</tspan></text>
@@ -8,7 +8,9 @@
               <use xlink:href="#piechart" mask="url(#piemask)" />
               <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan font-size="0.2" dy="-0.07">%</tspan></text>
             </svg>
-  </div>
+  </div>-->
+
+
 
   <div class = "table mdl-shadow--8dp mdl-cell mdl-cell--12-col mdl -grid">
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
@@ -18,16 +20,15 @@
         <th>Estado</th>
         <th>Lista</th>
         <th>Costo</th>
+        <td>Acciones</td>
       </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let item of orders; let i = index; ">
+      <tr  *ngFor="let item of orders; let i = index; " >
         <td class="mdl-data-table__cell--non-numeric" >{{i}}</td>
         <td>{{item.state}}</td>
 
         <td>
-                  <!--nested table-->
-<!--                  {{item.orderProducts.length}}-->
                 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" *ngIf="item.orderProducts.length>0">
                   <thead>
                         <tr>
@@ -50,6 +51,7 @@
         </td>
 
         <td>{{item.totalPrice}}</td>
+        <td><button type="" routerLink="makeComment" (click)="send(item)">comentar</button></td>
       </tr>
 
     </tbody>
@@ -60,16 +62,3 @@
 
 </div>
 
-
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
-        <defs>
-          <mask id="piemask" maskContentUnits="objectBoundingBox">
-            <circle cx=0.5 cy=0.5 r=0.49 fill="white" />
-            <circle cx=0.5 cy=0.5 r=0.40 fill="black" />
-          </mask>
-          <g id="piechart">
-            <circle cx=0.5 cy=0.5 r=0.5 />
-            <path d="M 0.5 0.5 0.5 0 A 0.5 0.5 0 0 1 0.95 0.28 z" stroke="none" fill="rgba(255,255,255, 0.75)" />
-          </g>
-        </defs>
-      </svg>

@@ -1,0 +1,73 @@
+<div class = "mdl-grid">
+  <div class = "table mdl-shadow--8dp mdl-cell mdl-cell--12-col mdl -grid">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">#</th>
+        <th>Estado</th>
+        <th>Lista</th>
+        <th>Costo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  >
+        <td class="mdl-data-table__cell--non-numeric" >1</td>
+        <td>{{selectedorder}}</td>
+
+        <td>
+<!--                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                  <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric">#</th>
+                          <th>producto</th>
+                          <th>cantidad</th>
+                          <th>precio</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                    <tr  *ngFor="let order of selectedorder; let j = index ;">
+                     <td> {{j}} </td>
+                    <td>{{ofpbpi[item.offeredProducts[j].id]}}</td>
+                    <td> nombre</td>
+                      <td>{{order.quantity}}</td>
+                      <td>{{order.price}}</td>
+                    </tr>
+                  </tbody>
+                </table>-->
+
+        </td>
+
+        <td><!--{{selectedorder.totalPrice}}--></td>
+      </tr>
+
+    </tbody>
+    </table>
+  </div>
+   <div  class=" mdl-shadow--8dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class=" comment mdl-card mdl-shadow--4dp">
+            <div class="mdl-card__title mdl-card--expand">
+              <h4>
+                    Realiza tu comentario
+              </h4>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" required [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+                <label class="mdl-textfield__label" >Titulo</label>
+              </div>
+            </form>
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" required [(ngModel)]="content" [ngModelOptions]="{standalone: true}" >
+                <label class="mdl-textfield__label" >Contenido</label>
+              </div>
+            </form>
+            <rating [(ngModel)]="calification"></rating>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="createResponse()">
+                Comentar
+              </button>
+            </div>
+        </div>
+   </div>
+</div>

@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { OrdersComponent} from './orders.component';
 import { OrderListComponent} from './order-list/order-list.component';
 import {MakeOrderComponent} from './make-order/make-order.component';
+import {MakeCommentComponent} from './make-comment/make-comment.component';
 //resolver
 import {OrderListResolver} from './resolvers/order-list.resolver';
 import {OfferedProductResolver} from './resolvers/offeredProduct.resolver';
@@ -25,6 +26,11 @@ const ordersRoutes = [
           {
             path :'makeOrder',
             component :MakeOrderComponent,
+            
+          },
+          {
+            path : 'makeComment',
+            component : MakeCommentComponent,
             
           }
         ]
