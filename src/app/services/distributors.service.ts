@@ -11,12 +11,14 @@ import { Comment } from '../classes/comment';
 @Injectable()
 export class DistributorsService {
   private distributorsUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/distributors';
-
+  private distributorsByRetailer = 'http://infinite-river-92156.herokuapp.com/api/v1/retailers';
   constructor(private http: Http) { }
 
 
   getDistributors() {
-    return this.http.get(this.distributorsUrl).map((response: Response) => response.json());
+    const url = `${this.distributorsByRetailer}/${localStorage['userId']}/distributors`;
+    console.log(url);
+    return this.http.get(url).map((response: Response) => response.json());
   }
 
   getDistributorById(id: number) {

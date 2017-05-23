@@ -18,11 +18,13 @@ import { DistributorListResolver } from './resolvers/distributor-list.resolver';
 import { DistributorDetailResolver } from './resolvers/distributor-detail.resolver';
 import { DistributorCommentsResolver } from './resolvers/distributor-comments.resolver';
 
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
     SharedModule,
-    DistributorsRoutingModule
+    DistributorsRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [
     DistributorsComponent,
