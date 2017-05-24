@@ -7,14 +7,14 @@ import { Coordinate } from "../../../classes/Coordinate";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductListService } from '../../../services/products-list.service';
 import { RetailersListService } from '../../../services/retailers-list.service';
-import {DirectionsRenderer} from '@ngui/map'
+import { DirectionsRenderer} from '@ngui/map'
 import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-productd-retailer',
   templateUrl: './productd-retailer.component.html',
   styleUrls: ['./productd-retailer.component.scss'],
-  
+
 })
 export class ProductdRetailerComponent implements OnInit {
   //for path in map
