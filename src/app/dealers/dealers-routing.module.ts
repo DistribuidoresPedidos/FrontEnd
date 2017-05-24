@@ -27,6 +27,9 @@ const dealersRoutes = [
             {   path: 'products',
                 loadChildren: 'app/dealers/products/products.module#ProductsModule'
             },
+            {   path: 'favorites',
+                loadChildren: 'app/dealers/favorites/favorites.module#FavoritesModule'
+            },
             {
                 path: '',
                 loadChildren: 'app/dealers/dashboard/dashboard.module#DashboardModule',

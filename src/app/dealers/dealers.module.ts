@@ -7,6 +7,7 @@ import { DealersRoutingModule } from './dealers-routing.module';
 
 // Component
 import { DealersComponent } from './dealers.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { DealersComponent } from './dealers.component';
   ],
   declarations: [
     DealersComponent,
+    FavoritesComponent,
 
   ]
 })

@@ -1,0 +1,44 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col search">
+    <div class="mdl-grid">
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Nombre" floating-label></mdl-textfield>
+      </div>
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Departamento" floating-label></mdl-textfield>
+      </div>
+      <div class="form-group mdl-cell mdl-cell--4-col">
+        <mdl-textfield type="text" label="Calificacion" floating-label></mdl-textfield>
+      </div>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let distributor of distributors | paginate: { itemsPerPage: 9, currentPage: page }">
+    <mdl-card mdl-shadow="4">
+    <mdl-card-title [style.background-image]="getUrl(distributor.photo.url)">
+      <h2 mdl-card-title-text>{{distributor.name}}</h2>
+    </mdl-card-title>
+    <mdl-card-supporting-text>
+      <p class="card-text">{{distributor.email}} <br> {{distributor.phoneNumber}}</p>
+    </mdl-card-supporting-text>
+    <mdl-card-actions mdl-card-border>
+      <a routerLink="{{distributor.id}}" mdl-button mdl-colored mdl-ripple>Ver perfil</a>
+    </mdl-card-actions>
+    <mdl-card-menu>
+      <button mdl-button mdl-button-type="icon" mdl-ripple>
+        <mdl-icon>more_vert</mdl-icon>
+      </button>
+      <div class="action-btns">
+        <i name="iw" [class.hidden]="!distributor.favorite" class="fav fa fa-heart-o"  (click)="addFavorite(distributor)"></i>
+        <i name="iw" [class.hidden]="distributor.favorite" class="tour fa fa-check-square-o"  (click)="addFavorite(distributor)"></i>
+      </div> 
+    </mdl-card-menu>
+  </mdl-card>
+  </div>
+    <div class ="mdl-grid">
+     <pagination-controls (pageChange)="page = $event"
+                          previousLabel= "Anterior"
+                          nextLabel = "Siguiente"
+     >
+     </pagination-controls> 
+  </div>
+</div>

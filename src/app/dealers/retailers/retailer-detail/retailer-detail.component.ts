@@ -46,4 +46,8 @@ export class RetailerDetailComponent implements OnInit {
       }
   }
 
+  favorites(){
+    this.router.navigate(['app','favorites']);
+  }
+
 }
