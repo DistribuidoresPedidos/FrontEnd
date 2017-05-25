@@ -11,7 +11,8 @@ export class DistributorDetailComponent implements OnInit {
 
   distributorAddress: String;
   distributor: Distributor;
-
+  distributorComments=[];
+  page : number =1;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -23,6 +24,7 @@ export class DistributorDetailComponent implements OnInit {
     console.log(this.route.snapshot.data);
     this.distributor = this.route.snapshot.data['distributor'].data;
     this.distributorAddress = this.route.snapshot.data['distributorAddress'];
+    this.distributorComments= this.route.snapshot.data.distributorComments.data;
   }
 
 }

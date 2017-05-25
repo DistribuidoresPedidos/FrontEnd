@@ -20,11 +20,13 @@ import { DistributorCommentsResolver } from './resolvers/distributor-comments.re
 
 import {NgxPaginationModule} from 'ngx-pagination';
 
+import {RatingModule} from 'ngx-rating';
 @NgModule({
   imports: [
     SharedModule,
     DistributorsRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RatingModule
   ],
   declarations: [
     DistributorsComponent,
