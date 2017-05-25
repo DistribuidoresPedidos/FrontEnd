@@ -51,7 +51,7 @@
         </td>
 
         <td>{{item.totalPrice}}</td>
-        <td><button type="" routerLink="makeComment" (click)="send(item)">comentar</button></td>
+        <td><button *ngIf="item.state=='delivered'" type="" routerLink="makeComment" (click)="send(item)">comentar</button></td>
       </tr>
 
     </tbody>

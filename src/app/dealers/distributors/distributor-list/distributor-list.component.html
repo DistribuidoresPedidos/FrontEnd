@@ -27,6 +27,10 @@
       <button mdl-button mdl-button-type="icon" mdl-ripple>
         <mdl-icon>more_vert</mdl-icon>
       </button>
+      <div class="action-btns">
+        <i name="iw" [class.hidden]="!distributor.favorite" class="fav fa fa-heart-o"  (click)="addFavorite(distributor)"></i>
+        <i name="iw" [class.hidden]="distributor.favorite" class="tour fa fa-check-square-o"  (click)="addFavorite(distributor)"></i>
+      </div> 
     </mdl-card-menu>
   </mdl-card>
   </div>
