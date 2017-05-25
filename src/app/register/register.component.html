@@ -5,6 +5,10 @@
         </div>
     </div>
     <div class="app-body mdl-grid">
+      <image-upload
+          [dropBoxMessage]="'Arrastra tu imagen aqui!'"
+          (onFileUploadFinish)="imageUploaded($event)"
+      ></image-upload>
         <div class="app-content mdl-cell mdl-cell--12-col" id="custom-scroll" mdl-shadow="4">
             <div class="mdl-grid">
               <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">

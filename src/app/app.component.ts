@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor(private _tokenService: Angular2TokenService, location: Location, private router: Router) {
     this._tokenService.init({
-      apiPath: 'http://infinite-river-92156.herokuapp.com/api/v1',
+      apiPath: 'http://localhost:3000/api/v1',
       signInPath: 'sign_in',
       signInRedirect: '/landing',
       signOutPath: 'sign_out',

@@ -35,13 +35,14 @@ import { RetailersListResolver } from "./dealers/retailers/resolvers/retailers-l
 import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-detail.resolver";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {ImageUploadModule} from "angular2-image-upload";
 
 @NgModule({
     imports: [
     BrowserModule,
     SharedModule,
     AppRoutingModule,
+    ImageUploadModule.forRoot(),
     BrowserAnimationsModule
   ],
   declarations: [
