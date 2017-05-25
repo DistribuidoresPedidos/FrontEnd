@@ -54,9 +54,7 @@ export class OrdersService {
       });
     let options = new RequestOptions({ headers : headers });
 
-    return this.http.post(this.makeOrderUrl, bodyString, options)
-    .map((response: Response) => console.log(response.json()))
-    .catch(this.handleError);
+    return this.http.post(this.makeOrderUrl, bodyString, options);
   }
 
   createComment(body: Object , id: number ): Observable<any> {

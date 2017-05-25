@@ -4,8 +4,11 @@ import { Router } from '@angular/router';
 import { Angular2TokenService } from 'angular2-token';
 import { MdlDialogService } from '@angular-mdl/core';
 import { ShoppingCartService } from '../services/shopping-cart.service';
+import { OrdersService } from '../services/orders.service';
 
 import { CartProduct } from '../classes/cartProduct';
+
+import * as _ from 'underscore';
 
 @Component({
   templateUrl: './dealers.component.html',
@@ -23,7 +26,8 @@ export class DealersComponent implements OnInit {
     private authToken: Angular2TokenService,
     private router: Router,
     private dialogService: MdlDialogService,
-    private shoppingCartService: ShoppingCartService
+    private shoppingCartService: ShoppingCartService,
+    private ordersService: OrdersService
   ) { }
 
   ngOnInit() {
@@ -79,7 +83,33 @@ export class DealersComponent implements OnInit {
   }
 
   makeOrder() {
-    console.log(this.cartProducts);
+    this.cartProducts.sort(
+      (item1, item2) => item1.route - item2.route
+    );
+    let items = _.groupBy(this.cartProducts, 'route');
+    let flag = true;
+
+    for (let property in items) {
+      if (items.hasOwnProperty(property)) {
+        let _products = items[property].map(
+          object => (({ offeredProduct, quantity }) => ({ offeredProduct, quantity }))(object)
+        );
+        let body = {
+          'retailer_id': localStorage['userId'],
+          'route_id': property,
+          'products': _products
+        };
+        this.ordersService.createOrder(body).subscribe(
+          response => {
+            if (response.ok) {
+              this.dialogService.alert('El pedido se realizó con éxito');
+            } else {
+              this.dialogService.alert('Hubo un error con el pedido');
+            }
+          }
+        );
+      }
+    }
   }
 
 }

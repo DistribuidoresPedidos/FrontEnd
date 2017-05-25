@@ -27,13 +27,11 @@ import { ChartsModule } from 'ng2-charts';
     ],
     exports: [
         CommonModule,
-
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
         MdlModule,
         Md2Module,
-
         NouisliderModule,
         SwiperModule,
         ScrollEventModule,

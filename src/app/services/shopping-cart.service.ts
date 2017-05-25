@@ -31,7 +31,7 @@ export class ShoppingCartService {
             this.products = [product];
         } else {
             for (let i = 0; i < this.products.length; i++) {
-                if (this.products[i].id === product.id) {
+                if (this.products[i].offeredProduct === product.offeredProduct) {
                     return false;
                 }
             }

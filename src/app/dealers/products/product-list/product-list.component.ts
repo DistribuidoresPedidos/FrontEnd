@@ -49,7 +49,6 @@ export class ProductListComponent implements OnInit {
         if (value === '') {
           value = '*';
         }
-        console.log(value);
         this.productListService.getProducts(localStorage['userId'], value).subscribe(
           data => this.dataItems = data.data
         );
@@ -63,11 +62,12 @@ export class ProductListComponent implements OnInit {
 
   addProduct(product) {
     this.newProduct = {
-      id: product.product.id,
+      offeredProduct: product.product.id,
       name: product.product.name,
       category: product.product.category,
       weight: product.product.weight,
       photo: product.photo,
+      route: product.routes[0].id,
       quantity: 0
     };
   }
