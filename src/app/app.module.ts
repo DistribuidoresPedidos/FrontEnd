@@ -46,7 +46,7 @@ import {ImageUploadModule} from "angular2-image-upload";
     BrowserAnimationsModule
   ],
   declarations: [
-    AppComponent,
+    AppComponent,  
     PageNotFoundComponent,
     RegisterComponent,
   ],
