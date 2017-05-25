@@ -16,7 +16,6 @@ import { DealersComponent } from './dealers.component';
   ],
   declarations: [
     DealersComponent,
-
   ]
 })
 export class DealersModule { }
