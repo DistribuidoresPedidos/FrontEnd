@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import { DealersComponent } from './dealers.component';
 
+
+
 const dealersRoutes = [
     {
         path: '',

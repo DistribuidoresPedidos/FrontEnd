@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import { DashboardComponent } from './dashboard.component';
 
+
 const dashboardRoutes = [
     {
         path: '',

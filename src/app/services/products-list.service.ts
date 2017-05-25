@@ -54,12 +54,22 @@ export class ProductListService {
       //TODO
         return this.http.get(this.distributorsUrl).map((response: Response) => response.json());
     }
+
+    getMostBuyedProducts(id: number): Observable<any> {
+      let url = `http://infinite-river-92156.herokuapp.com/api/v1/retailers/${id}/most_buyed`;
+      return this.http.get(url).map((response: Response) => response.json());
+    }
+
+    getMostSelledProducts(id: number): Observable<any> {
+      let url = `http://infinite-river-92156.herokuapp.com/api/v1/distributors/${id}/most_selled`;
+      return this.http.get(url).map((response: Response) => response.json());
+    }
+
     createProduct( dataform : Object):Observable<any>{
       let head = new Headers({});
       let options = new RequestOptions({ headers : head });
       let url= this.productUrl;
       return this.http.post(url, dataform, options).map((response: Response) => response.json());
-
     }
 
       private handleError (error: Response | any) {

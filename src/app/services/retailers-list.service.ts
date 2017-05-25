@@ -23,4 +23,8 @@ export class RetailersListService{
       console.log(url);
       return this.http.get(url).map((response: Response) => response.json());
   }
+  getRetailerFavourites(id: number): Observable<any> {
+      let url = `http://infinite-river-92156.herokuapp.com/api/v1/retailers/${id}/favorites`;
+      return this.http.get(url).map((response: Response) => response.json());
+  }
 }

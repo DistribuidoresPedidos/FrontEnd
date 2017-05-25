@@ -14,7 +14,7 @@ export class ProductDepartedResolver implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    if(this.authToken.currentUserType === 'DISTRIBUTOR'){
+    if(this.authToken.currentUserType === 'DISTRIBUTOR') {
       return this.distributorService.getProductDeparted(localStorage['userId']);
     }
   }
