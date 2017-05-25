@@ -1,16 +1,18 @@
 <div class="container">
     <div class="app-header" mdl-shadow="2">
         <div class="nav-logo">
-            <img src="src/assets/img/logo.png">
+            <img src="src/assets/img/logo.png" (click)="router.navigateByUrl('/landing')" id="logo">
         </div>
     </div>
     <div class="app-body mdl-grid">
-      <image-upload
-          [dropBoxMessage]="'Arrastra tu imagen aqui!'"
-          (onFileUploadFinish)="imageUploaded($event)"
-      ></image-upload>
         <div class="app-content mdl-cell mdl-cell--12-col" id="custom-scroll" mdl-shadow="4">
             <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <image-upload
+                    [dropBoxMessage]="'Arrastra tu imagen aqui!'"
+                    (onFileUploadFinish)="imageUploaded($event)">
+                </image-upload>
+              </div>
               <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
                 <mdl-icon class="mdl-color-text--indigo">email</mdl-icon>
                 <mdl-textfield

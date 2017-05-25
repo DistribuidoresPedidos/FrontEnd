@@ -5,7 +5,7 @@
         </div>
         <div class="floating-right">
             <a *ngIf="userType=='RETAILER'" class="mdl-navigation__link icon-button" (click)="openCart()"><i class="material-icons md-48 md-light"  [mdl-badge]="cartProducts.length" mdl-badge-overlap>shopping_cart</i></a>
-            <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple style="width: 60px; height:auto;"><img src="src/assets/img/duck.png" id="profile-pic"></button>
+            <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple style="width: 60px; height:60px;"><img [src]="currentUser.photo.url" id="profile-pic"></button>
             <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
                 <mdl-menu-item mdl-ripple (click)="goToProfile()">Mi Perfil</mdl-menu-item>
                 <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider (click)="goToOrders()">Mis Ordenes</mdl-menu-item>
@@ -55,18 +55,19 @@
             <div class="shopping-cart" *ngIf="shoppingCart">
                 <div class="cart-products custom-scroll">
                     <div class="empty-cart" *ngIf="cartProducts.length == 0">
-                        VACIO
+                        <h3>El carrito esta vacío! Agrega ítems desde la página de productos</h3>
+                        <i class="material-icons md-64 md-dark">add_shopping_cart</i>
                     </div>
                     <div class="individual-product" *ngFor="let product of cartProducts">
                         <img src={{product.photo.url}} class="product-photo">
-                        <span class="name">{{product.name}} x {{product.quantity}} unidades</span>
+                        <span class="name">{{product.name}} x {{product.quantity}} unidades. Total = {{product.price}}</span>
                         <a class="icon-button delete-button" (click)="askDelete(product)"><i class="material-icons md-48 md-dark">delete</i></a>
                     </div>
                 </div>
                 <div class="cart-actions">
-                    <button mdl-button (click)="closeCart()" mdl-button-type="icon"><mdl-icon>expand_more</mdl-icon></button>      
-                    <button mdl-button (click)="askEmpty()" mdl-button-type="icon"><mdl-icon>remove_shopping_cart</mdl-icon></button>      
-                    <button mdl-button (click)="askOrder()" mdl-button-type="icon"><mdl-icon>assignment_turned_in</mdl-icon></button>
+                    <a class="cart-icon" (click)="closeCart()" mdl-button mdl-ripple mdl-button-type="icon"><i class="material-icons md-32 md-light">expand_more</i></a>
+                    <a class="cart-icon" (click)="askEmpty()" mdl-button mdl-ripple mdl-button-type="icon"><i class="material-icons md-32 md-light">remove_shopping_cart</i></a>
+                    <a class="cart-icon" (click)="askOrder()" mdl-button mdl-ripple mdl-button-type="icon"><i class="material-icons md-32 md-light">assignment_turned_in</i></a>
                 </div>
             </div>
         </div>

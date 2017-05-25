@@ -68,12 +68,14 @@ export class ProductListComponent implements OnInit {
       weight: product.product.weight,
       photo: product.photo,
       route: product.routes[0].id,
-      quantity: 0
+      quantity: 0,
+      price: product.price
     };
   }
 
   saveProduct() {
     this.newProduct.quantity = this.quantity;
+    this.newProduct.price = this.newProduct.price * this.quantity;
     let response = this.shoppingCartService.addProduct(this.newProduct);
     if (!response) {
       this.dialogService.alert('El producto ya está en el carrito');

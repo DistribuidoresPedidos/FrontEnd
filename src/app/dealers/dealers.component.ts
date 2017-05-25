@@ -18,9 +18,10 @@ import * as _ from 'underscore';
 export class DealersComponent implements OnInit {
 
   userType = localStorage['userType'];
-  currentUser = {};
+  currentUser: any = {};
   shoppingCart = false;
   cartProducts: CartProduct[] = [];
+  totalPrice: number = 0;
 
   constructor(
     private authToken: Angular2TokenService,
@@ -33,12 +34,14 @@ export class DealersComponent implements OnInit {
   ngOnInit() {
     this.getCartProducts();
     this.currentUser = this.authToken.currentUserData;
+    console.log(this.currentUser.photo.url);
   }
 
   logout() {
     this.authToken.signOut().subscribe(
       res => {
         localStorage['userId'] = '';
+        localStorage['shoppingCart'] = '';
         this.router.navigateByUrl('/landing');
       },
       error => {
@@ -65,10 +68,23 @@ export class DealersComponent implements OnInit {
     this.shoppingCart = false;
   }
 
+  getPrice(product) {
+    return product.price * product.quantity;
+  }
+
+  getTotalPrice() {
+    let total = 0;
+    this.cartProducts.forEach(
+      item => total += this.getPrice(item)
+    );
+    return total;
+  }
+
   getCartProducts() {
     this.shoppingCartService.getProducts().subscribe(
       res => {
         this.cartProducts = res;
+        this.totalPrice = this.getTotalPrice();
         console.log(res);
       }
     );
@@ -86,6 +102,7 @@ export class DealersComponent implements OnInit {
 
   deleteProduct(product) {
    this.shoppingCartService.deleteProduct(product);
+   this.totalPrice -= this.getPrice(product);
   }
 
   askEmpty() {
@@ -100,6 +117,7 @@ export class DealersComponent implements OnInit {
 
   emptyCart() {
     this.shoppingCartService.emptyCart();
+    this.totalPrice = 0;
   }
 
   askOrder() {

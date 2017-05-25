@@ -6,7 +6,8 @@ export class CartProduct {
         public weight: number,
         public photo: object,
         public route: number,
-        public quantity: number
+        public quantity: number,
+        public price: number,
     ) {
     }
 }
