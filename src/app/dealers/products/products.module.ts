@@ -21,16 +21,26 @@ import { FilterOfferedProductsPricePipe } from './pipes/filter-offered-products-
 import { ProductListResolver } from './resolvers/products-list.resolver';
 import { ProductDetailResolver } from './resolvers/product-detail.resolver';
 import { ProductCreateResolver } from './resolvers/products-create.resolver';
-
+import { ProductCoordinateResolver } from './resolvers/product-coordinates.resolver';
+import { UserResolver} from './resolvers/user.resolver'
+import { RetailerCoordinateResolver} from './resolvers/retailer-coordinate.resolver'
 
 import { Ng2SelectModule } from 'ng2-material-select';
 import {ImageUploadModule} from "angular2-image-upload";
+
+import { ProductdRetailerComponent } from './productd-retailer/productd-retailer.component';
+import { ProductdDistributorComponent } from './productd-distributor/productd-distributor.component';
+import { NguiMapModule} from '@ngui/map';
+import {DirectionsRenderer} from '@ngui/map'
+
 @NgModule({
   imports: [
     SharedModule,
     ProductsRoutingModule,
     ImageUploadModule.forRoot(),
-    Ng2SelectModule
+    Ng2SelectModule,
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyB5TTHJw5Az7pooIb25JXoh6Dyw48zfuDM'})
+
   ],
   declarations: [
     ProductsComponent,
@@ -41,13 +51,19 @@ import {ImageUploadModule} from "angular2-image-upload";
     FilteredOfferedProductsCategoryPipe,
     FilterOfferedProductsNamePipe,
 
-    ProductCreateComponent
+    ProductCreateComponent,
+    ProductdRetailerComponent,
+    ProductdDistributorComponent
 
   ],
   providers: [
     ProductListResolver,
     ProductDetailResolver,
-    ProductCreateResolver
+    ProductCreateResolver,
+    ProductCoordinateResolver,
+    UserResolver,
+    RetailerCoordinateResolver,
+    DirectionsRenderer
 
   ]
 })

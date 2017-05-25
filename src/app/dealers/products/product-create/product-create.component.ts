@@ -43,9 +43,6 @@ export class ProductCreateComponent implements OnInit {
 
   ) { }
 
-
-
-
   ngOnInit() {
     console.log('products-create');
 

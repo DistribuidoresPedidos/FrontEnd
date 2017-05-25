@@ -1,0 +1,12 @@
+
+<ngui-map zoom="13" center="40.771, -73.974">
+    <directions-renderer
+      [suppressMarkers]="true"
+      [draggable]="true"
+      panel="#my-panel"
+      (directions_changed)="directionsChanged()"
+      [directions-request]="direction">
+    </directions-renderer>
+  </ngui-map>
+
+  {{lat}}

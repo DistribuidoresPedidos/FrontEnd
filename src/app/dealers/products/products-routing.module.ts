@@ -14,7 +14,12 @@ import {ProductDetailResolver} from './resolvers/product-detail.resolver'
 import {ProductListResolver} from './resolvers/products-list.resolver'
 import {ProductCreateResolver} from './resolvers/products-create.resolver'
 import {ProductCoordinateResolver} from './resolvers/product-coordinates.resolver'
+import {UserResolver} from './resolvers/user.resolver'
+import {RetailerCoordinateResolver} from './resolvers/retailer-coordinate.resolver'
+
 //import {ProductPostResolver}
+//externos
+
 
 const productsRoutes = [
   {
@@ -34,7 +39,10 @@ const productsRoutes = [
         component: ProductDetailComponent,
         resolve: {
           product: ProductDetailResolver,
-          productCoordinate: ProductCoordinateResolver
+          productCoordinate: ProductCoordinateResolver,
+          user: UserResolver,
+          retailerCoordinate: RetailerCoordinateResolver
+
         }
       },
       {

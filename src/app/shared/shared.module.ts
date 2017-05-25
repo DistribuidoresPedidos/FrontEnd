@@ -1,5 +1,5 @@
 // Angular Modules
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -12,17 +12,17 @@ import { MdlModule } from '@angular-mdl/core';
 import { NouisliderModule } from 'ng2-nouislider';
 import { MdlSelectModule } from '@angular-mdl/select';
 import { Ng2MapModule } from 'ng2-map';
-
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { Ng2SelectModule } from 'ng2-material-select';
-
+//charts
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
     imports: [
         ScrollEventModule,
         Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' }),
-
-
+        ChartsModule,
         Ng2SelectModule
     ],
     exports: [
@@ -42,6 +42,7 @@ import { Ng2SelectModule } from 'ng2-material-select';
     providers: [
         {provide: SCROLL_EVENT_TIME, useValue: 200}
     ]
+
 })
 export class SharedModule {
 

@@ -45,13 +45,14 @@ export class ProductListService {
     }
 
     getByCategory( category: string ){
-         var url = `${this.productUrl}/products_by_categories/?`;
+        var url = `${this.productUrl}/products_by_categories/?`;
         url += 'categories[]=' + category;
         //console.log(this.http.get(url));
         return this.http.get(url).map((response: Response) => response.json());
     }
-    getProductCoordinates(){
-      return this.http.get(this.productUrl).map((response: Response)=> response.json());
+    getProductCoordinates() {
+      //TODO
+        return this.http.get(this.distributorsUrl).map((response: Response) => response.json());
     }
     createProduct( dataform : Object):Observable<any>{
       let head = new Headers({});

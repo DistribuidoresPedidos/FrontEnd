@@ -7,11 +7,12 @@ import 'rxjs/add/observable/throw';
 
 import { Distributor } from '../classes/distributor';
 import { Comment } from '../classes/comment';
-
+import {OrderProduct} from '../classes/orderProduct';
 @Injectable()
 export class DistributorsService {
   private distributorsUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/distributors';
   private distributorsByRetailer = 'http://infinite-river-92156.herokuapp.com/api/v1/retailers';
+  private distributorProductDetails = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
   constructor(private http: Http) { }
 
 
@@ -28,6 +29,11 @@ export class DistributorsService {
 
   getComments(id: number): Observable<Comment[]> {
       const url = `${this.distributorsUrl}/${id}/comments`;
+      return this.http.get(url).map((response: Response) => response.json());
+  }
+  getProductStadistics(id: number): Observable<OrderProduct[]> {
+      const param= 'delivered'
+      const url = `${this.distributorProductDetails}/${id}/how_many_by_param?param=${param};`;
       return this.http.get(url).map((response: Response) => response.json());
   }
 }

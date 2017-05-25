@@ -1,7 +1,11 @@
-.row{
-  padding-top: 8vh;
+.mdl-card{
+  width: auto;
+  height: 100%;
+  margin-right: 30px;
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-bottom: 15px;
 }
-
 .letra{
 	font-size: 22pt;
 }
@@ -23,10 +27,10 @@
 .img_distribuidor{
 	width: 100px;
 	height: 100px;
-	transition: 5s; 
+	transition: 5s;
 }
 
 .img_distribuidor:hover{
 	transform: scale(1.2);
-	transition: 5s; 	
+	transition: 5s;
 }
