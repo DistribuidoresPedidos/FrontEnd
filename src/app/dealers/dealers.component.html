@@ -66,6 +66,9 @@
             <router-outlet></router-outlet>
             <div class="shopping-cart" *ngIf="shoppingCart">
                 <div class="cart-products custom-scroll">
+                    <div class="empty-cart" *ngIf="cartProducts.length == 0">
+                        VACIO
+                    </div>
                     <div class="individual-product" *ngFor="let product of cartProducts">
                         <img src={{product.photo.url}} class="product-photo">
                         <span class="name">{{product.name}} x {{product.quantity}} unidades</span>
@@ -75,6 +78,7 @@
                 <div class="cart-actions">
                     <button mdl-button (click)="closeCart()" mdl-button-type="icon"><mdl-icon>expand_more</mdl-icon></button>      
                     <button mdl-button (click)="emptyCart()" mdl-button-type="icon"><mdl-icon>remove_shopping_cart</mdl-icon></button>      
+                    <button mdl-button (click)="makeOrder()" mdl-button-type="icon"><mdl-icon>assignment_turned_in</mdl-icon></button>
                 </div>
             </div>
         </div>

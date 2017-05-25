@@ -76,4 +76,8 @@ export class DealersComponent implements OnInit {
     this.shoppingCartService.emptyCart();
   }
 
+  makeOrder() {
+    console.log(this.cartProducts);
+  }
+
 }
