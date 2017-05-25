@@ -34,7 +34,7 @@
     </mdl-card-supporting-text>
     <mdl-card-actions mdl-card-border>
       <a routerLink="{{item.id}}"  mdl-button mdl-colored mdl-ripple>Ver producto</a>
-      <a routerLink="{{item.id}}"  mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple>Pedir</a>
+      <a #addProductButton mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple (click)="addProduct(item); addProductDialog.show()">Pedir</a>
     </mdl-card-actions>
     <mdl-card-menu>
       <button mdl-button mdl-button-type="icon" mdl-ripple>
@@ -46,3 +46,30 @@
   </div>
   
 </div>
+
+<mdl-dialog #addProductDialog
+            [mdl-dialog-config]="{
+              clickOutsideToClose: true,
+              styles:{'width': '300px'},
+              isModal:true,
+              openFrom: addProductButton,
+              enterTransitionDuration: 400,
+              leaveTransitionDuration: 400}"
+              >
+  <div class="mdl-dialog__content">
+      <mdl-textfield
+        name="quantity"
+        type="number"
+        label="Cantidad"
+        min="1"
+        step="1"
+        error-msg="Debe ser un numero"
+        [(ngModel)]="quantity"
+        floating-label >
+      </mdl-textfield>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button mdl-button (click)="saveProduct(); addProductDialog.close()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Añadir</button>
+    <button mdl-button (click)="addProductDialog.close()" mdl-ripple>Cancelar</button>
+  </div>
+</mdl-dialog>

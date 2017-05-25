@@ -1,61 +1,72 @@
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
-    <mdl-icon class="mdl-color-text--indigo">email</mdl-icon>
-    <mdl-textfield
-      type="text"
-      label="Correo Electrónico"
-      autofocus
-      floating-label
-      pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-      error-msg="Correo inválido"
-      [(ngModel)]="email"
-      name="email"></mdl-textfield>
-  </div>
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
-    <mdl-icon class="mdl-color-text--indigo">account_circle</mdl-icon>
-    <mdl-textfield
-      type="text"
-      label="Nombre"
-      floating-label
-      pattern="^[a-zA-Z\s]*$"
-      error-msg="Nombre inválido, solo letras y espacios"
-      [(ngModel)]="name"
-      name="name"></mdl-textfield>
-  </div>
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
-    <mdl-icon class="mdl-color-text--indigo">phone</mdl-icon>
-    <mdl-textfield
-      type="text"
-      label="Celular"
-      floating-label
-      pattern="^[0-9]*$"
-      error-msg="Numero invalido, solo numeros"
-      [(ngModel)]="phoneNumber"
-      name="phoneNumber"></mdl-textfield>
-  </div>
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
-    <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
-    <mdl-textfield
-      type="password"
-      label="Contraseña"
-      floating-label
-      [(ngModel)]="password"
-      name="password"></mdl-textfield>
-  </div>
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
-    <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
-    <mdl-textfield
-      type="password"
-      label="Repetir Contraseña"
-      floating-label
-      [(ngModel)]="passwordConfirmation"
-      name="passwordConfirmation"></mdl-textfield>
-  </div>
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
-    <mdl-radio name="group1" value="DISTRIBUTOR" [(ngModel)]="userType" mdl-ripple>Distribuidor</mdl-radio>
-    <mdl-radio name="group1" value="RETAILER" [(ngModel)]="userType" mdl-ripple>Minorista</mdl-radio>
-  </div>
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop">
-    <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="signUp()">Entrar</button>
-  </div>
+<div class="container">
+    <div class="app-header" mdl-shadow="2">
+        <div class="nav-logo">
+            <img src="src/assets/img/logo.png">
+        </div>
+    </div>
+    <div class="app-body mdl-grid">
+        <div class="app-content mdl-cell mdl-cell--12-col" id="custom-scroll" mdl-shadow="4">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <mdl-icon class="mdl-color-text--indigo">email</mdl-icon>
+                <mdl-textfield
+                  type="text"
+                  label="Correo Electrónico"
+                  autofocus
+                  floating-label
+                  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                  error-msg="Correo inválido"
+                  [(ngModel)]="email"
+                  name="email"></mdl-textfield>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <mdl-icon class="mdl-color-text--indigo">account_circle</mdl-icon>
+                <mdl-textfield
+                  type="text"
+                  label="Nombre"
+                  floating-label
+                  pattern="^[a-zA-Z\s]*$"
+                  error-msg="Nombre inválido, solo letras y espacios"
+                  [(ngModel)]="name"
+                  name="name"></mdl-textfield>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <mdl-icon class="mdl-color-text--indigo">phone</mdl-icon>
+                <mdl-textfield
+                  type="text"
+                  label="Celular"
+                  floating-label
+                  pattern="^[0-9]*$"
+                  error-msg="Numero invalido, solo numeros"
+                  [(ngModel)]="phoneNumber"
+                  name="phoneNumber"></mdl-textfield>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
+                <mdl-textfield
+                  type="password"
+                  label="Contraseña"
+                  floating-label
+                  [(ngModel)]="password"
+                  name="password"></mdl-textfield>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <mdl-icon class="mdl-color-text--indigo">lock</mdl-icon>
+                <mdl-textfield
+                  type="password"
+                  label="Repetir Contraseña"
+                  floating-label
+                  [(ngModel)]="passwordConfirmation"
+                  name="passwordConfirmation"></mdl-textfield>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <mdl-radio name="group1" value="DISTRIBUTOR" [(ngModel)]="userType" mdl-ripple>Distribuidor</mdl-radio>
+                <mdl-radio name="group1" value="RETAILER" [(ngModel)]="userType" mdl-ripple>Minorista</mdl-radio>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+                <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="signUp()">Entrar</button>
+              </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -18,12 +18,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RegisterComponent } from './register/register.component';
 
 
+
 // Services
 import { Angular2TokenService } from 'angular2-token';
 import { MdlDialogService } from '@angular-mdl/core';
 import { ProductListService } from './services/products-list.service';
+import { ShoppingCartService } from './services/shopping-cart.service';
 import { RetailersListService } from './services/retailers-list.service';
-
 import { OrdersService} from './services/orders.service';
 import { DistributorsService } from './services/distributors.service';
 
@@ -54,13 +55,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Angular2TokenService,
     ProductListService,
     RetailersListService,
-
-
     OrdersService,
     RetailersListResolver,
     RetailerDetailResolver,
-
     Angular2TokenService,
+
+    DistributorsService,
+    ShoppingCartService,
 
     DistributorsService
   ],

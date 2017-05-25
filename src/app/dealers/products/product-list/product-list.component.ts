@@ -3,8 +3,11 @@ import { ActivatedRoute , Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
 import { Product } from '../../../classes/product';
+import { CartProduct } from '../../../classes/cartProduct';
 
 import { ProductListService } from '../../../services/products-list.service';
+import { ShoppingCartService } from '../../../services/shopping-cart.service';
+import { MdlDialogService } from '@angular-mdl/core';
 
 import { FilterOfferedProductsNamePipe } from '../pipes/filter-offered-products-name.pipe';
 import { FilterOfferedProductsPricePipe } from '../pipes/filter-offered-products-price.pipe';
@@ -20,6 +23,8 @@ export class ProductListComponent implements OnInit {
 
   dataItems = [];
   filtername = '';
+  newProduct: CartProduct;
+  quantity: number;
 
   filtercategory = [];
   filterprice = [0, 50];
@@ -29,6 +34,8 @@ export class ProductListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productListService: ProductListService,
+    private shoppingCartService: ShoppingCartService,
+    private dialogService: MdlDialogService
     ) { }
 
   ngOnInit() {
@@ -52,5 +59,25 @@ export class ProductListComponent implements OnInit {
 
   getUrl(photoUrl: string) {
     return `url(${photoUrl})`;
+  }
+
+  addProduct(product) {
+    this.newProduct = {
+      id: product.product.id,
+      name: product.product.name,
+      category: product.product.category,
+      weight: product.product.weight,
+      photo: product.photo,
+      quantity: 0
+    };
+  }
+
+  saveProduct() {
+    this.newProduct.quantity = this.quantity;
+    let response = this.shoppingCartService.addProduct(this.newProduct);
+    if (!response) {
+      this.dialogService.alert('El producto ya está en el carrito');
+    }
+    this.quantity = undefined;
   }
 }

@@ -37,7 +37,9 @@ export class RegisterComponent implements OnInit {
       passwordConfirmation: this.passwordConfirmation,
       userType: this.userType
     }).subscribe(
-      res => this.router.navigateByUrl(''),
+      res => {
+        this.router.navigate(['app']);
+      },
       error => {
         let message = JSON.parse(error._body).errors.full_messages[0];
         this.dialogService.alert(message, 'Aceptar', 'Error en registro');
