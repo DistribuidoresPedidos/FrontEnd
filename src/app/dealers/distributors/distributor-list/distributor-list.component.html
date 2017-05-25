@@ -23,8 +23,8 @@
     <mdl-card-actions mdl-card-border>
       <a routerLink="{{distributor.id}}" mdl-button mdl-colored mdl-ripple >Ver perfil</a>
       <div class="action-btns">
-        <i class="material-icons md-32" [class.hidden]="distributor.favorite" (click)="addFavorite(distributor)">favorite</i>
-        <i class="material-icons md-32" [class.hidden]="!distributor.favorite" (click)="addFavorite(distributor)">favorite_border</i>
+        <i class="material-icons md-32" [class.hidden]="!distributor.favorite" (click)="addFavorite(distributor)">favorite</i>
+        <i class="material-icons md-32" [class.hidden]="distributor.favorite" (click)="addFavorite(distributor)">favorite_border</i>
       </div> 
     </mdl-card-actions>
     <mdl-card-menu>

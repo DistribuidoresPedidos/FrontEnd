@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { ProductListService } from '../../services/products-list.service';
 import { RetailersListService } from '../../services/retailers-list.service';
+import { DistributorsService } from '../../services/distributors.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,14 +28,16 @@ export class DashboardComponent implements OnInit {
     slidesPerView: 2,
     effect: 'coverflow',
     autoplay: 3000,
-    centeredSlides: true
+    centeredSlides: true,
+    spaceBetween: 5
   };
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private productService: ProductListService,
-    private retailerService: RetailersListService
+    private retailerService: RetailersListService,
+    private distributorsService: DistributorsService
   ) { }
 
   ngOnInit() {
@@ -69,6 +72,30 @@ export class DashboardComponent implements OnInit {
 
   getUrl(photoUrl: string) {
     return `url(${photoUrl})`;
+  }
+
+  addFavorite(distributor) {
+    this.distributorsService.addFavorite(distributor.id).subscribe(
+          msg => {
+            if(msg.msg === 'Favorite removed'){
+              var index = this.findIndex(distributor);
+              console.log(index);
+              this.favourites.splice(index, 1);
+              console.log('¡Removido de tus favoritos!');
+            }
+            else if(msg.data){
+              var index = this.findIndex(distributor);
+              this.favourites[index].favorite = true;
+              console.log("Se ha añadido a favoritos");
+            }
+          }
+      );
+  }
+
+  findIndex(distributor){
+    for(var i=0; i<this.favourites.length; i++)
+      if(this.favourites[i].distributor.id === distributor.id)
+        return i;
   }
 
 }

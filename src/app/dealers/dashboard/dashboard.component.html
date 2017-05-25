@@ -62,14 +62,17 @@
                             <i class="material-icons md-32">smartphone</i><span>{{item.distributor.phoneNumber}}</span>
                         </mdl-card-supporting-text>
                         <mdl-card-actions mdl-card-border>
+                            <div class="action-btns">
+                                <i class="material-icons md-32" [class.hidden]="item.distributor.favorite" (click)="addFavorite(item.distributor)">favorite</i>
+                                <i class="material-icons md-32" [class.hidden]="!item.distributor.favorite" (click)="addFavorite(item.distributor)">favorite_border</i>
+                            </div> 
                             <a [routerLink]="['distributors',item.distributor.id]" mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple>Ver perfil</a>
                         </mdl-card-actions>
                     </mdl-card>
                 </div>
             </div>
             <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            
         </swiper>
     </div>
     <div class="mdl-cell mdl-cell--8-col my-products" *ngIf="userType=='DISTRIBUTOR'">

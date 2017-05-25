@@ -24,3 +24,16 @@ mdl-textfield{
     text-align: center;
 }
 
+.action-btns {
+  float: right;
+  position: relative;
+  top: 5px;
+  i {
+    color: #ff4081;
+    &:hover{
+      transition: color 0.5s ease;
+      color:#ccc;
+      cursor: pointer;  
+    }
+  }
+}
