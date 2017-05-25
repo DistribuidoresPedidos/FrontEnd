@@ -25,7 +25,7 @@ export class ProductdDistributorComponent implements OnInit {
  public pieChartType:string = 'pie';
 
  // Pie
- public pieChartLabels:string[] = ['En-proceso', 'En-salida', 'Entregado'];
+ public pieChartLabels:string[] = ['En-salida', 'En-proceso', 'Entregado'];
  public pieChartData:number[];
 
  constructor(
@@ -44,7 +44,7 @@ export class ProductdDistributorComponent implements OnInit {
    var n_departed= this.departed.length;
    var n_delivered= this.delivered.length;
 
-   this.pieChartData= [n_processing, n_departed, n_delivered ];
+   this.pieChartData= [n_departed, n_processing, n_delivered ];
    console.log(this.processing.length);
    console.log(this.departed);
    console.log(this.delivered);

@@ -1,26 +1,36 @@
-<p>
-  productd-distributor works!
-</p>
-<div class="col-md-6">
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--5-col ">
 
-   <canvas baseChart
-               [data]="lineChartData"
-               [labels]="lineChartLabels"
-               [options]="lineChartOptions"
-               [chartType]="lineChartType"
-               (chartHover)="chartHovered($event)"
-               (chartClick)="chartClicked($event)"></canvas>
- </div>
- <div class="col-md-6">
-   <canvas baseChart
-               [data]="pieChartData"
-               [labels]="pieChartLabels"
-               [chartType]="pieChartType"
-               (chartHover)="chartHovered($event)"
-               (chartClick)="chartClicked($event)"></canvas>
- </div>
- <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
-   <button (click)="randomizeType()" style="display: inline-block">Toggle</button>
- </div>
+    <div id='line' class="mdl-card mdl-shadow--6dp " mdl-card-expand>
 
+       <canvas baseChart
+                   [data]="lineChartData"
+                   [labels]="lineChartLabels"
+                   [options]="lineChartOptions"
+                   [chartType]="lineChartType"
+                   (chartHover)="chartHovered($event)"
+                   (chartClick)="chartClicked($event)"></canvas>
+     </div>
+   </div>
+  <div class="mdl-cell mdl-cell--2-col ">
+     <div class="text-center" style="">
+       
+       <button (click)="randomizeType()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+         <i class="material-icons">find_replace</i>
+       </button>
+     </div>
+   </div>
+      <div class="mdl-card mdl-shadow--6dp">
+        <div id='poly' class="mdl-cell mdl-cell--5-col" mdl-card-expand>
+       
+       <canvas baseChart
+                   [data]="pieChartData"
+                   [labels]="pieChartLabels"
+                   [chartType]="pieChartType"
+                   (chartHover)="chartHovered($event)"
+                   (chartClick)="chartClicked($event)"></canvas>
+     </div>
+       
+    </div>
+</div>
 
