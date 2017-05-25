@@ -1,6 +1,6 @@
 <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--4-col hot-products" *ngIf="userType=='RETAILER'">
-        <i class="material-icons md-48">whatshot</i><span class="title">El mas comprado</span>
+        <span class="title"><i class="material-icons md-48">whatshot</i>El mas comprado</span>
         <br>
         <br>
         <mdl-card mdl-shadow="4" *ngFor="let product of mostBuyed">
@@ -23,7 +23,7 @@
         </mdl-card>
     </div>
     <div class="mdl-cell mdl-cell--4-col hot-products" *ngIf="userType=='DISTRIBUTOR'">
-        <i class="material-icons md-48">whatshot</i><span class="title">El mas vendido</span>
+        <span class="title"><i class="material-icons md-48">whatshot</i>El mas vendido</span>
         <br>
         <br>
         <mdl-card mdl-shadow="4" *ngFor="let product of mostSelled">
@@ -46,13 +46,13 @@
         </mdl-card>
     </div>
     <div class="mdl-cell mdl-cell--8-col my-favourites" *ngIf="userType=='RETAILER'">
-        <i class="material-icons md-48">star</i><span class="title">Mis distribuidores favoritos</span>
+        <span class="title"><i class="material-icons md-48">star</i>Mis distribuidores favoritos</span>
         <br>
         <br>
         <swiper [config]="config">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" *ngFor="let item of favourites">
-                    <mdl-card class="demo-card-square" mdl-shadow="4">
+                    <mdl-card class="demo-card-square">
                         <mdl-card-title mdl-card-expand [style.background-image]="getUrl(item.distributor.photo.url)">
                             <h2 mdl-card-title-text>{{item.distributor.name}}</h2>
                         </mdl-card-title>
@@ -73,7 +73,7 @@
         </swiper>
     </div>
     <div class="mdl-cell mdl-cell--8-col my-products" *ngIf="userType=='DISTRIBUTOR'">
-        <i class="material-icons md-48">star</i><span class="title">Mis productos</span>
+        <span class="title"><i class="material-icons md-48">star</i>Mis productos</span>
         <br>
         <br>
         <swiper [config]="config">
@@ -89,7 +89,7 @@
                             <i class="material-icons md-32">fitness_center</i><span>{{product.product.weight}}</span>
                         </mdl-card-supporting-text>
                         <mdl-card-actions mdl-card-border>
-                            <a [routerLink]="['products',product.id]" mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple></a>Ver producto</a>
+                            <a [routerLink]="['products',product.id]" mdl-button-type="raised" mdl-button mdl-colored="accent" mdl-ripple>Ver producto</a>
                         </mdl-card-actions>
                     </mdl-card>
                 </div>

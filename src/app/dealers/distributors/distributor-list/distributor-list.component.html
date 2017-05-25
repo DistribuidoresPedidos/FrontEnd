@@ -21,20 +21,20 @@
       <p class="card-text">{{distributor.email}} <br> {{distributor.phoneNumber}}</p>
     </mdl-card-supporting-text>
     <mdl-card-actions mdl-card-border>
-      <a routerLink="{{distributor.id}}" mdl-button mdl-colored mdl-ripple>Ver perfil</a>
+      <a routerLink="{{distributor.id}}" mdl-button mdl-colored mdl-ripple >Ver perfil</a>
+      <div class="action-btns">
+        <i class="material-icons md-32" [class.hidden]="distributor.favorite" (click)="addFavorite(distributor)">favorite</i>
+        <i class="material-icons md-32" [class.hidden]="!distributor.favorite" (click)="addFavorite(distributor)">favorite_border</i>
+      </div> 
     </mdl-card-actions>
     <mdl-card-menu>
       <button mdl-button mdl-button-type="icon" mdl-ripple>
         <mdl-icon>more_vert</mdl-icon>
       </button>
-      <div class="action-btns">
-        <i name="iw" [class.hidden]="!distributor.favorite" class="fav fa fa-heart-o"  (click)="addFavorite(distributor)"></i>
-        <i name="iw" [class.hidden]="distributor.favorite" class="tour fa fa-check-square-o"  (click)="addFavorite(distributor)"></i>
-      </div> 
     </mdl-card-menu>
   </mdl-card>
   </div>
-    <div class ="mdl-grid">
+  <div class ="mdl-cell--12-col">
      <pagination-controls (pageChange)="page = $event"
                           previousLabel= "Anterior"
                           nextLabel = "Siguiente"

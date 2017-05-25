@@ -24,7 +24,10 @@ export class DashboardComponent implements OnInit {
     prevButton: '.swiper-button-prev',
     loop: true,
     speed: 400,
-    slidesPerView: 2
+    slidesPerView: 2,
+    effect: 'coverflow',
+    autoplay: 3000,
+    centeredSlides: true
   };
 
   constructor(
