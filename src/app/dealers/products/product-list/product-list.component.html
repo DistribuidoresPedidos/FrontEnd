@@ -21,7 +21,7 @@
   </div>
   <div class="mdl-cell mdl-cell--4-col" *ngFor="let item of dataItems
                 |filteredOfferedProductsCategory : filtercategory
-                |filterOfferedProductsPrice :filterprice ">
+                |filterOfferedProductsPrice :filterprice | paginate: { itemsPerPage: 5, currentPage: page }">
     <mdl-card mdl-shadow="4">
     <mdl-card-title [style.background-image]="getUrl(item.photo.url)">
       <h2 mdl-card-title-text>{{item.product.name}}</h2>
@@ -44,9 +44,15 @@
   </mdl-card>
 
   </div>
-  
-</div>
 
+</div>
+      <div class ="mdl-grid">
+     <pagination-controls (pageChange)="page = $event"
+                          previousLabel= "Anterior"
+                          nextLabel = "Siguiente"
+     >
+     </pagination-controls> 
+  </div>
 <mdl-dialog #addProductDialog
             [mdl-dialog-config]="{
               clickOutsideToClose: true,
