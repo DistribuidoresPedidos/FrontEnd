@@ -19,7 +19,7 @@ export class UserResolver implements Resolve<any> {
       return this.retailertService.getRetailerCoordinates(localStorage['userId']);
     }
     else{
-      return this.distributorService.getProductStadistics(localStorage['userId']);
+      return this.distributorService.getProductDelivered(localStorage['userId']);
     }
   }
 }
