@@ -18,7 +18,7 @@ export class ShoppingCartService {
         if (localStorage['shoppingCart'] === '') {
             this.products = [];
         } else {
-            this.products = JSON.parse(localStorage['shoppingCart'])
+            this.products = JSON.parse(localStorage['shoppingCart']);
         }
     }
 

@@ -15,6 +15,7 @@ import { CartProduct } from '../classes/cartProduct';
 export class DealersComponent implements OnInit {
 
   userType = localStorage['userType'];
+  currentUser = {};
   shoppingCart = false;
   cartProducts: CartProduct[] = [];
 
@@ -27,6 +28,7 @@ export class DealersComponent implements OnInit {
 
   ngOnInit() {
     this.getCartProducts();
+    this.currentUser = this.authToken.currentUserData;
   }
 
   logout() {
