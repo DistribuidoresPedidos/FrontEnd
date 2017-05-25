@@ -27,13 +27,11 @@ import { Ng2SelectModule } from 'ng2-material-select';
     ],
     exports: [
         CommonModule,
-
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
         MdlModule,
         Md2Module,
-
         NouisliderModule,
         SwiperModule,
         ScrollEventModule,

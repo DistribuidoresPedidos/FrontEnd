@@ -18,7 +18,7 @@ export class ShoppingCartService {
         if (localStorage['shoppingCart'] === '') {
             this.products = [];
         } else {
-            this.products = JSON.parse(localStorage['shoppingCart'])
+            this.products = JSON.parse(localStorage['shoppingCart']);
         }
     }
 
@@ -31,7 +31,7 @@ export class ShoppingCartService {
             this.products = [product];
         } else {
             for (let i = 0; i < this.products.length; i++) {
-                if (this.products[i].id === product.id) {
+                if (this.products[i].offeredProduct === product.offeredProduct) {
                     return false;
                 }
             }

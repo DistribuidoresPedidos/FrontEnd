@@ -39,7 +39,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
-
     BrowserModule,
     SharedModule,
     AppRoutingModule,
@@ -59,10 +58,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RetailersListResolver,
     RetailerDetailResolver,
     Angular2TokenService,
-
     DistributorsService,
     ShoppingCartService,
-
     DistributorsService
   ],
   bootstrap: [AppComponent]
