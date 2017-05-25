@@ -31,9 +31,20 @@ export class DistributorsService {
       const url = `${this.distributorsUrl}/${id}/comments`;
       return this.http.get(url).map((response: Response) => response.json());
   }
-  getProductStadistics(id: number): Observable<OrderProduct[]> {
+  getProductDelivered(id: number): Observable<OrderProduct[]> {
       const param= 'delivered'
       const url = `${this.distributorProductDetails}/${id}/how_many_by_param?param=${param};`;
       return this.http.get(url).map((response: Response) => response.json());
   }
+  getProductProcessing(id: number): Observable<OrderProduct[]> {
+      const param= 'processing'
+      const url = `${this.distributorProductDetails}/${id}/how_many_by_param?param=${param};`;
+      return this.http.get(url).map((response: Response) => response.json());
+  }
+  getProductDeparted(id: number): Observable<OrderProduct[]> {
+      const param= 'departed'
+      const url = `${this.distributorProductDetails}/${id}/how_many_by_param?param=${param};`;
+      return this.http.get(url).map((response: Response) => response.json());
+  }
+
 }

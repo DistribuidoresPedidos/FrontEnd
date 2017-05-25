@@ -54,8 +54,11 @@
               </span>
             </li>
             <li>
-               <a mdl-button mdl-button-type="raised" mdl-ripple mdl-colored="accent" (click)= 'detailsUser=!detailsUser' >
+               <a *ngIf='userFlag' mdl-button mdl-button-type="raised" mdl-ripple mdl-colored="accent" (click)= 'detailsUser=!detailsUser' >
                       {{detailsUser ? 'Ocultar ruta' : 'Mostrar ruta'}}</a>
+
+               <a *ngIf='!userFlag' mdl-button mdl-button-type="raised" mdl-ripple mdl-colored="accent" (click)= 'detailsUser=!detailsUser' >
+                      <i class="material-icons">equalizer</i> {{detailsUser ? 'Ocultar Estadisticas' : 'Mostrar Estadisticas'}}</a>
             </li>
     		</ul>
     	</div>
@@ -66,9 +69,8 @@
   </div>
 </div>
 <div class="" *ngIf='detailsUser'>
-  <div class="mdl-card mdl-shadow--6dp">
-    <app-productd-retailer id='map' *ngIf='userFlag'></app-productd-retailer>
+  <div class="mdl-card mdl-shadow--6dp" *ngIf='userFlag'>
+    <app-productd-retailer id='map' ></app-productd-retailer>
   </div>
-</div>
-
   <app-productd-distributor *ngIf='!userFlag'></app-productd-distributor>
+</div>
