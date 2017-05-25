@@ -37,11 +37,13 @@ import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-d
 
 
 
+
 @NgModule({
     imports: [
     BrowserModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   declarations: [
     AppComponent,
@@ -57,8 +59,11 @@ import { RetailerDetailResolver } from "./dealers/retailers/resolvers/retailer-d
     RetailersListResolver,
     RetailerDetailResolver,
     Angular2TokenService,
+
     DistributorsService,
-    ShoppingCartService
+    ShoppingCartService,
+
+    DistributorsService
   ],
   bootstrap: [AppComponent]
 })

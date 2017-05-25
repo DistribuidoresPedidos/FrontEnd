@@ -37,6 +37,7 @@ counter = 1;
   ngOnChange(){
     console.log(this.retailer_id);
   }
+  
   addOrder(body : any) :Observable<any>{
     if (!body){ return;}
     

@@ -12,8 +12,8 @@ export class OrderListResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     //console.log("resolver" + this.authToken.currentUserData.id);
-
     //return this.ordersService.getOrdersById(this.authToken.currentUserData.id);
     return this.ordersService.getOrders();
-}
+  }
+
 }
