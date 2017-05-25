@@ -20,7 +20,7 @@ import { FilteredOfferedProductsCategoryPipe } from '../pipes/filtered-offered-p
 
 })
 export class ProductListComponent implements OnInit {
-
+  page :number = 1;
   dataItems = [];
   filtername = '';
   newProduct: CartProduct;

@@ -35,6 +35,8 @@ import { ProductdDistributorComponent } from './productd-distributor/productd-di
 import { NguiMapModule} from '@ngui/map';
 import {DirectionsRenderer} from '@ngui/map'
 import { ChartsModule } from 'ng2-charts';
+
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   imports: [
     SharedModule,
@@ -42,6 +44,7 @@ import { ChartsModule } from 'ng2-charts';
     ImageUploadModule.forRoot(),
     Ng2SelectModule,
     ChartsModule,
+    NgxPaginationModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyB5TTHJw5Az7pooIb25JXoh6Dyw48zfuDM'})
 
   ],
