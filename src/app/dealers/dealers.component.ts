@@ -74,12 +74,42 @@ export class DealersComponent implements OnInit {
     );
   }
 
+  askDelete(product){
+    let result = this.dialogService.confirm(`¿Está seguro que desea eliminar el producto ${product.name} del carrito?`, 'No', 'Sí');
+    result.subscribe( () => {
+      this.deleteProduct(product);
+    },
+    (err: any) => {
+      console.log('Fuck u');
+    });
+  }
+
   deleteProduct(product) {
    this.shoppingCartService.deleteProduct(product);
   }
 
+  askEmpty() {
+    let result = this.dialogService.confirm('¿Está seguro que desea vaciar el carrito?', 'No', 'Sí');
+    result.subscribe( () => {
+      this.emptyCart();
+    },
+    (err: any) => {
+      console.log('Fuck u');
+    });
+  }
+
   emptyCart() {
     this.shoppingCartService.emptyCart();
+  }
+
+  askOrder() {
+    let result = this.dialogService.confirm('¿Está seguro que desea realizar el pedido?', 'No', 'Sí');
+    result.subscribe( () => {
+      this.makeOrder();
+    },
+    (err: any) => {
+      console.log('Fuck u');
+    });
   }
 
   makeOrder() {
@@ -103,6 +133,7 @@ export class DealersComponent implements OnInit {
           response => {
             if (response.ok) {
               this.dialogService.alert('El pedido se realizó con éxito');
+              this.shoppingCartService.emptyCart();
             } else {
               this.dialogService.alert('Hubo un error con el pedido');
             }
