@@ -15,13 +15,14 @@ import { Ng2MapModule } from 'ng2-map';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { Ng2SelectModule } from 'ng2-material-select';
-
+//charts
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
     imports: [
         ScrollEventModule,
         Ng2MapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCzikUZvUagG1tusaTczWY7AR8qtPyISFs' }),
-
+        ChartsModule,
         Ng2SelectModule
     ],
     exports: [

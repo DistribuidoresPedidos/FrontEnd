@@ -12,7 +12,7 @@ import {OrderProduct} from '../classes/orderProduct';
 export class DistributorsService {
   private distributorsUrl = 'http://infinite-river-92156.herokuapp.com/api/v1/distributors';
   private distributorsByRetailer = 'http://infinite-river-92156.herokuapp.com/api/v1/retailers';
-  private distributorProductDetails = 'http://localhost:3000/api/v1/offered_products';
+  private distributorProductDetails = 'http://infinite-river-92156.herokuapp.com/api/v1/offered_products';
   constructor(private http: Http) { }
 
 
