@@ -15,7 +15,7 @@ export class OrdersService {
 
   //shared variable between orderList and makeCOment
   private orderSubject = new BehaviorSubject <any>(0);
-  
+
   constructor(private http:Http , private authToken: Angular2TokenService){}
 
   sendOrderSubject(data){
@@ -23,7 +23,7 @@ export class OrdersService {
     this.orderSubject.next({data});
   }
   getOrderSubject(): Observable<any>{
-    
+
     return this.orderSubject.getValue();
   }
 
@@ -41,11 +41,11 @@ export class OrdersService {
     return this.http.get(OrdersURL_ID).map((response: Response) => response.json());
   }
 
- 
+
  getOfferedProduct(){
    return this.http.get(this.offeredProductsURL).map((response : Response)=> response.json());
  }
-  
+
 
 
 
@@ -63,19 +63,19 @@ export class OrdersService {
     .map((response : Response)=>console.log(response.json()))
     .catch(this.handleError);
   }
-  
+
   createComment(body :Object , id : number ): Observable<any>{
     const createCommentURL_ID= `${this.makeCommentUrl}/${id}/comments`;
     let bodyString = JSON.stringify(body);
     console.log("post",bodyString);
     //console.log("url",createCommentURL_ID);
        let headers = new Headers(
-      { 
+      {
         'Content-Type': 'application/json',
       });
      let options = new RequestOptions({ headers : headers });
     return this.http.post(createCommentURL_ID,body,options) .map((response : Response)=>console.log(response.json()))
-    .catch(this.handleError); 
+    .catch(this.handleError);
   }
 
 
