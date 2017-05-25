@@ -23,6 +23,8 @@ export class ProductListComponent implements OnInit {
 
   dataItems = [];
   filtername = '';
+  newProduct: CartProduct;
+  quantity: number;
 
   filtercategory = [];
   filterprice = [0, 50];
@@ -60,17 +62,22 @@ export class ProductListComponent implements OnInit {
   }
 
   addProduct(product) {
-    let newProduct: CartProduct = {
+    this.newProduct = {
       id: product.product.id,
       name: product.product.name,
       category: product.product.category,
       weight: product.product.weight,
       photo: product.photo,
-      quantity: 10
+      quantity: 0
     };
-    let response = this.shoppingCartService.addProduct(newProduct);
+  }
+
+  saveProduct() {
+    this.newProduct.quantity = this.quantity;
+    let response = this.shoppingCartService.addProduct(this.newProduct);
     if (!response) {
       this.dialogService.alert('El producto ya está en el carrito');
     }
+    this.quantity = undefined;
   }
 }
